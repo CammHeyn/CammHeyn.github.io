@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives | Hunter</title>
+  <title>Introduction to Quantum Mechanics | Hunter</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hunter">
-<meta property="og:url" content="http://example.com/archives/index.html">
+  <meta name="description" content="Ch2. Intro to QMLinear AlgebraSpectral Decomposition: Any normal operator $M$ on a vector space $V$ is diagonal w.r.t. some orthonormal basis for $V$. Conversely, any diagonalizable (w.r.t. some ortho">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Introduction to Quantum Mechanics">
+<meta property="og:url" content="http://example.com/2020/04/04/Ch2.%20Intro%20to%20QM/index.html">
 <meta property="og:site_name" content="Hunter">
+<meta property="og:description" content="Ch2. Intro to QMLinear AlgebraSpectral Decomposition: Any normal operator $M$ on a vector space $V$ is diagonal w.r.t. some orthonormal basis for $V$. Conversely, any diagonalizable (w.r.t. some ortho">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-04-04T09:14:42.039Z">
+<meta property="article:modified_time" content="2021-02-20T12:00:26.169Z">
 <meta property="article:author" content="Qi C. Huang">
+<meta property="article:tag" content="tags">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hunter" type="application/atom+xml">
@@ -150,100 +155,176 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Ch2. Intro to QM" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/02/19/My-First-Blog/" class="archive-article-date">
-  	<time datetime="2021-02-19T05:29:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-19</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/02/19/My-First-Blog/">My First Blog</a>
+    <h1 class="article-title" itemprop="name">
+      Introduction to Quantum Mechanics
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/02/19/hello-world/" class="archive-article-date">
-  	<time datetime="2021-02-19T05:26:13.545Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/02/19/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/04/Ch2.%20Intro%20to%20QM/" class="archive-article-date">
+        
+        <a href="/2020/04/04/Ch2.%20Intro%20to%20QM/" class="archive-article-date">
   	<time datetime="2020-04-04T09:14:42.039Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-04</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/04/Ch2.%20Intro%20to%20QM/">Introduction to Quantum Mechanics</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Ch2-Intro-to-QM"><a href="#Ch2-Intro-to-QM" class="headerlink" title="Ch2. Intro to QM"></a>Ch2. Intro to QM</h2><h3 id="Linear-Algebra"><a href="#Linear-Algebra" class="headerlink" title="Linear Algebra"></a>Linear Algebra</h3><p><strong>Spectral Decomposition:</strong> Any normal operator $M$ on a vector space $V$ is diagonal w.r.t. some orthonormal basis for $V$. Conversely, any diagonalizable (w.r.t. some orthonormal basis) operator is normal.</p>
+<blockquote>
+<p><strong>Proof:</strong> The inverse is trivial. Now if $M^\dagger M=MM^\dagger$, pick eigenvalue $\lambda$ and be $P$ the projector onto its eigenspace, and $Q$ the projector onto its orthogonal complement. Thus $P+Q=I$, with $M=(P+Q)M(P+Q)$. $PMP=\lambda P$, $QMP=0$, $PMQ=0$ since $\forall |v\rangle\in P, MM^\dagger|v\rangle=\lambda M^\dagger|v\rangle$ which makes $M^\dagger|v\rangle\in P$, thus $QM^\dagger P=0$, in turn $PMQ=0$. Now $M=PMP+QMQ$, so $P$ and $Q$ subspaces are invariant. Now for the $Q$ subspace,</p>
+<script type="math/tex; mode=display">
+\begin{align}
+QMQQM^\dagger Q&=QMQM^\dagger Q=QM(P+Q)M^\dagger Q\\
+&=QMM^\dagger Q=QM^\dagger MQ=QM^\dagger QMQ\\
+&=QM^\dagger QQMQ
+\end{align}</script><p>By induction on $\dim V$, we conclude that $M$ is diagonalizable.</p>
+</blockquote>
+<p><strong>Hilbert-Schmidt Trace Inner Product:</strong> $(\cdot,\cdot):L_V\times L_V\longrightarrow\mathbb{C}$ by defining $(A,B)\equiv\mbox{tr}(A^\dagger B)$.</p>
+<p>Pauli-matrices algebra</p>
+<script type="math/tex; mode=display">
+[\sigma_j,\sigma_k]=2\bold{i}\varepsilon_{jkl}\sigma_l~(j,k,l=1,2,3)</script><script type="math/tex; mode=display">
+\{\sigma_i,\sigma_j\}=0~(i\ne j; i,j=1,2,3)</script><script type="math/tex; mode=display">
+\sigma_i^2=\sigma_0~(i=0,1,2,3)</script><script type="math/tex; mode=display">
+\sigma_j\sigma_k=\delta_{jk}\sigma_0+\bold{i}\varepsilon_{jkl}\sigma_l</script><p><strong>Polar Decomposition:</strong> $A$ is linear operator on $V$. There exists unitary $U$, positive $J$ and $K$ such $A=UJ=KU$, where $J\equiv\sqrt{A^\dagger A}$, $K\equiv\sqrt{AA^\dagger}$. Moreover, if $A$ is invertible, $U$ is unique.</p>
+<blockquote>
+<p><strong>Proof:</strong> Orthonormal decomposition $J=\sqrt{A^\dagger A}=\sum_i\lambda_i|i\rangle\langle i|$. Define $|\psi_i\rangle=A|i\rangle$, then $\langle\psi_i|\psi_j\rangle=\langle i|A^\dagger A|j\rangle=\lambda^2_i\delta_{ij}$, then normalize $|\psi\rangle$ to $|e\rangle$ and randomly pick orthonormal substitutes for the non-normalizable part. Define $U|i\rangle=|e_i\rangle$, $UJ=\sum_i\lambda_i|e_i\rangle\langle i|=A$. Rest is trivial.</p>
+</blockquote>
+<p><strong>Singular Value Decomposition:</strong> $A$ is square matrix, there exists unitary $U,V$, diagonal $D$ with non-negative entries such $A=UDV$. Diagonal elements of $D$ are called singular values of $A$.</p>
+<blockquote>
+<p><strong>Proof:</strong> $A=SJ=STDT^\dagger=UDV$.</p>
+</blockquote>
+<h3 id="The-Postulates-of-Quantum-Mechanics"><a href="#The-Postulates-of-Quantum-Mechanics" class="headerlink" title="The Postulates of Quantum Mechanics"></a>The Postulates of Quantum Mechanics</h3><p><strong>Postulate 1:</strong> Associated to any isolated physical system is a complex vector space with inner product (that is, a Hilbert space) known as the <em>state space</em> of the system. The system is completely described by its <em>state vector</em>, which is a unit vector in the system’s state space.</p>
+<p><strong>Postulate 2:</strong> The evolution of a <em>closed</em> quantum system is described by a <em>unitary transformation</em>. That is, the state $|\psi\rangle$ of the system at time $t_1$ is related to the state $|\psi’\rangle$ of the system at time $t_2$ by a unitary operator $U$ which depends only on the times $t_1$ and $t_2$,</p>
+<script type="math/tex; mode=display">
+|\psi'\rangle=U|\psi\rangle</script><p><strong>Postulate 2’:</strong> The time evolution of the state of a closed quantume system is described by the <em>Schrödinger equation</em>,</p>
+<script type="math/tex; mode=display">
+\bold{i}\hbar\frac{\mbox{d}|\psi\rangle}{\mbox{d}t}=H|\psi\rangle</script><p>In this equation, $\hbar$ is a physical constant known as <em>Planck’s constant</em> whose value must be experimentally determined. The exact value is not important to us. In practice, it is common to absorb the factor $\hbar$ into $H$, effectively setting $\hbar=1$. $H$ is a fixed Hermitian operator known as the <em>Hamiltonian</em> of the closed system.</p>
+<p><strong>Postulate 3:</strong> Quantum measurements are described by a collection $\{M_m\}$ of <em>measurement operators</em>. These are operators acting on the state space of the system being measured. The index $m$ refers to the measurement outcomes that may occur in the experiment. If the state of the quantum system is $|\psi\rangle$ immediately before the measurement then the probability that result $m$ occurs is given by</p>
+<script type="math/tex; mode=display">
+p(m)=\langle\psi|M_m^\dagger M_m|\psi\rangle</script><p>and the state of the system after the measurement is</p>
+<script type="math/tex; mode=display">
+\frac{M_m|\psi\rangle}{\sqrt{p(m)}}</script><p>The measurement operators satisfy the <em>completeness equation</em>,</p>
+<script type="math/tex; mode=display">
+\sum_mM_m^\dagger M_m=I</script><p>The completeness equation expresses the fact that probabilites sum to one:</p>
+<script type="math/tex; mode=display">
+1=\sum_mp(m)</script><blockquote>
+<p>As a special case of <strong>Postulate 3</strong>,</p>
+<p><strong>Projective measurements(PVM):</strong> A projective measurement is described by an <em>observable</em>, $M$, a Hermitian operator on the state space of the system being observed. The observable has a spectral decomposition,</p>
+<script type="math/tex; mode=display">
+M=\sum_mmP_m</script><p>where $P_m$ is the projector onto the eigensubspace of $M$ with eigenvalue $m$. The possible outcomes of the measurement correspond to the eigenvalues, $m$, of the observable. Upon measuring the state $|\psi\rangle$, the probability of getting result $m$ is given by</p>
+<script type="math/tex; mode=display">
+p(m)=\langle\psi|P_m|\psi\rangle</script><p>Given that outcome $m$ occurred, the state of the quantum system immediately after the measurement is</p>
+<script type="math/tex; mode=display">
+\frac{P_m|\psi\rangle}{\sqrt{p(m)}}</script><p>More generally comes</p>
+<p><strong>Positive Operator-Valued Measurement(POVM):</strong> A set $\{E_m\}$ where $E_m\equiv M_m^\dagger M_m$ and $\sum_mE_m=1$, $p(m)=\langle\psi|E_m|\psi\rangle$. The set $\{E_m\}$ is called a POVM of the system. A POVM can be any set such: (1) each $E_m$ is positive (so as to define $M_m\equiv\sqrt{E_m}$); (2) completeness $\sum_mE_m=I$ is assured.</p>
+</blockquote>
+<p><strong>Postulate 4:</strong> The state space of a composite physical system is the tensor product of the state spaces of the component physical systems. Moreover, if we have systems numbered $1$ through $n$, and system number $i$ is prepared in the state $|\psi_i\rangle$, then the joint state of the total system is $|\psi_1\rangle\otimes|\psi_2\rangle\otimes\ldots\otimes|\psi_n\rangle$.</p>
+<h3 id="The-Density-Operator"><a href="#The-Density-Operator" class="headerlink" title="The Density Operator"></a>The Density Operator</h3><p><strong>Characterization of density operator:</strong> $\rho$ is density operator to $\{p_i,|\psi_i\rangle\}$ iff</p>
+<p>(1) (Trace condition) $\mbox{tr}(\rho)=1$</p>
+<p>(2) (Positivity condition) $\rho$ is positive.</p>
+<p>Thus we can reformulate the postulates of quantum mechanics in the density operator picture.</p>
+<p><strong>Postulate 1:</strong> Associated to any isolated physical system is a complex vector space with inner product (that is, Hilbert space) known as the <em>state space</em> of the system. The system is completely described by its <em>density operator</em>, which is a positive operator $\rho$ with trace one, acting on the state space of the system. If a quantum system is in the state $\rho_i$ with probability $p_i$, then the density operator for the system is $\sum_ip_i\rho_i$.</p>
+<p><strong>Postulate 2:</strong> The evolution of a <em>closed</em> quantum system is described by a <em>unitary transformation</em>. That is, the state $\rho$ of the system at time $t_1$ is related to the state $\rho’$ of the system ate time $t_2$ by a unitary operator $U$ which depends only on the times $t_1$ and $t_2$,</p>
+<script type="math/tex; mode=display">
+\rho'=U\rho U^\dagger</script><p><strong>Postulate 3:</strong> Quantum measurements are described by a collection $\{M_m\}$ of <em>measurement operators</em>. These are operators acting on the state space of the system being measured. The index $m$ refers to the measurement outcomes that may occur in the experiment. If the state of the quantum system is $\rho$ immediately before the measurement then the probability that result $m$ occurs is given by</p>
+<script type="math/tex; mode=display">
+\begin{align}
+p(m)&=
+\sum_ip(m|i)\cdot p_i
+\\
+&=\sum_i\langle\psi_i|M_m^\dagger M_m|\psi_i\rangle\cdot p_i
+\\
 
-        <div class="article-info info-on-right">
-          
+&=\mbox{tr}(M_m^\dagger M_m\rho)
+\end{align}</script><p>and the state of the system after the measurement is</p>
+<script type="math/tex; mode=display">
+\frac{M_m\rho M_m^\dagger}{\mbox{tr}(M_m^\dagger M_m\rho)}</script><p>The measurement operators satisfy the <em>completeness equation</em>,</p>
+<script type="math/tex; mode=display">
+\sum_mM_m^\dagger M_m=I</script><p><strong>Postulate 4:</strong> The state space of a composite physical system is the tensor product of the state spaces of the component physical systems. Moreover, if we have systems numbered $1$ through $n$, and system number $i$ is prepared in the state $\rho_i$, then the joint state of the total system is $\rho_1\otimes\rho_2\otimes\ldots\otimes\rho_n$.</p>
+<p><strong>Unitary freedom in ensemble for density matrices:</strong> Denote $|\tilde{\psi_i}\rangle\equiv\sqrt{p_i}|\psi_i\rangle$, then a set $\{|\tilde{\psi_i}\rangle\}$ and $\{|\tilde{\varphi_i}\rangle\}$ generates the same density matrix iff $|\tilde{\psi_i}\rangle=\sum_ju_{ij}|\tilde{\varphi_j}\rangle$, where $u_{ij}$ is unitary matrix.</p>
+<blockquote>
+<p><strong>Proof:</strong> First justify the dimensionality. The two sets can always contain same number of vectors given 0 probability is allowed in the representation. If $|\tilde{\psi_i}\rangle=\sum_ju_{ij}|\tilde{\varphi_j}\rangle$, $\rho_\psi=\sum_i|\tilde{\psi_i}\rangle\langle\tilde{\psi_i}|=\sum_{ijk}u_{ij}u_{ik}^*|\tilde{\varphi_j}\rangle\langle\tilde{\varphi_k}|=\rho_\varphi$. </p>
+<p>Conversely, if $\psi$ and $\varphi$ represents the same state $\rho=\sum|\tilde{\psi_i}\rangle\langle\tilde{\psi_i}|=\sum|\tilde{\varphi_j}\rangle\langle\tilde{\varphi_j}|$, take orthornormal decomposition of the density matrix $\rho=\sum_k\lambda_k|k\rangle\langle k|=\sum_k|\tilde k\rangle\langle\tilde k|$. If $|\tilde k\rangle$ does not span the entire space, then for any $|\psi\rangle$ orthogonal to the space spanned by $|\tilde k\rangle$, $0=\langle\psi|\rho|\psi\rangle=\sum_i\langle\psi|\tilde{\psi_i}\rangle\langle\tilde{\psi_i}|\psi\rangle$, which leads to the result that $|\tilde{\psi_i}\rangle$ can be represented by the non-zero $|\tilde k\rangle$’s alone. Say $|\tilde\psi_i\rangle=\sum_kc_{ik}|\tilde k\rangle$, then</p>
+<script type="math/tex; mode=display">
+\sum_k|\tilde k\rangle\langle\tilde k|=\sum_{kl}(\sum_ic_{ik}c_{il}^*)|\tilde k\rangle\langle\tilde l|</script><p>Then $c_{ik}$ can be expanded to become a unitary matrix.</p>
+</blockquote>
+<p>Bloch sphere for mixed states $\rho=\frac{1}{2}(I+\vec r\cdot\vec \sigma)$.</p>
+<p>A <em>minimal ensemble</em> for $\rho$ is an ensenmble $\{p_i,|\psi_i\rangle\}$ containing a number of elements equal to the rank of $\rho$. $\forall |\psi\rangle$ in the support of $\rho$, there exists a minimal ensemble for $\rho$ that contains $|\psi\rangle$ as $|\psi_i\rangle$ with probability $p_i=1/\langle\psi_i|\rho^{-1}|\psi_i\rangle$. This is done by explicitly $|\tilde j\rangle\longrightarrow|\tilde\psi_j\rangle$ through unitary matrix.</p>
+<p>Reduced Density Operator $\rho^A\equiv\mbox{tr}_B(\rho^{AB})$.</p>
+<blockquote>
+<p>Suppose $M$ is any observable on system $A$, let $\tilde M$ be the corresponding observable for the same measurement on composite system $AB$. Then</p>
+<script type="math/tex; mode=display">
+\tilde M=M\otimes I_B</script><p>as seen by special cases when $AB$ is in the state $|m\rangle|\psi\rangle$. Moreover,</p>
+<script type="math/tex; mode=display">
+\tilde M=\sum_mmP_m\otimes I_B=M\otimes I_B</script><p>Physical requirement that measurement averages should be</p>
+<script type="math/tex; mode=display">
+\mbox{tr}(M\rho^A)=\mbox{tr}((M\otimes I_B)\rho^{AB})</script><p>which can be met choosing $\rho^A\equiv\mbox{tr}_B(\rho^{AB})$, while for any $f(\cdot)$, if</p>
+<script type="math/tex; mode=display">
+\mbox{tr}(Mf(\rho^{AB}))=\mbox{tr}((M\otimes I_B)\rho^{AB})</script><p>Pick orthonormal basis (under H-S inner product) for Hermitian operator $M_i$, then</p>
+<script type="math/tex; mode=display">
+f(\rho^{AB})=\sum_iM_i\mbox{tr}(M_if(\rho^{AB}))=\sum_iM_i\mbox{tr}((M_i\otimes I_B)\rho^{AB})</script><p>which uniquely determines $f$.</p>
+</blockquote>
+<p><strong>Schmidt Decomposition:</strong> $|\psi\rangle$ is pure state of composite system $AB$. There exists orthonormal basis $\{|i_A\rangle\}$, $\{|i_B\rangle\}$ such that</p>
+<script type="math/tex; mode=display">
+|\psi\rangle=\sum_i\lambda_i|i_A\rangle|i_B\rangle</script><p>where $\lambda_i$ are non-negative real numbers called <em>Schmidt coefficients</em> with $\sum_i\lambda_i^2=1$. (only for 2-partite systems)</p>
+<blockquote>
+<p><strong>Proof:</strong> First the case where $A$ and $B$ have same dimensionality. Generally, $|\psi\rangle=\sum_{jk}a_{jk}|j\rangle|k\rangle$, where $|j\rangle$ and $|k\rangle$ are orthonormal basis of $A$ and $B$ respectively. Using singular value decomposition $a=udv$, we have</p>
+<script type="math/tex; mode=display">
+\begin{align}
+|\psi\rangle&=\sum_{ijk}u_{ji}d_{ii}v_{ik}|j\rangle|k\rangle\\
+&=\sum_id_{ii}(\sum_ju_{ji}|j\rangle)(\sum_kv_{ki}|k\rangle)\\
+&=\sum_id_{ii}|i_A\rangle|i_B\rangle
+\end{align}</script><p>For the case where $n=\dim A\ge\dim B=m$, treat $a_{jk}$ as an $n\times n$ matrix with the rightest $(n-m)$ columns empty. Then the singular value decomposition gives $a=udv$ with its block-diagonal form obvious enough to render the above thesis valid. (using $\sqrt{A^\dagger A}$)</p>
+</blockquote>
+<p>As a consequence, $\rho^A=\sum_i\lambda_i^2|i_A\rangle\langle i_A|$, and likewise for $\rho^B=\sum_i\lambda_i^2|i_B\rangle\langle i_B|$.</p>
+<p>$|i_A\rangle$ and $|i_B\rangle$ are called Schmidt bases. Schmidt number is defined by the number of non-zero $\lambda_i$’s in a Schmidt decomposition for $|\psi\rangle$, it quantifies the amount of entanglement. <u>Given a pure state, its Schmidt number can be immediately determined by taking $\mbox{rank}(\rho^A)$.</u> Schmidt number is preserved under unitary transformation on system $A$ or system $B$ alone, since under respective evolution entanglement is maintained. Only when there is interaction may the entanglement between the two subsystems be varied.</p>
+<p>Pure state of composite system $AB$ is a product state iff it has Schmidt # 1, iff $\rho^A$ and $\rho^B$ are pure. To elaborate the latter, if $\rho^A$ pure, Schmidt # = 1.</p>
+<p><strong><em>QUESTION:</em></strong> For $\rho^{AB}$, if $\rho^A$ pure, is $\rho^{AB}$ pure? Even if $\rho^{AB}$ is not pure, we purify it to yield a pure system $ABC$, in which $\mbox{tr}_{BC}(|ABC\rangle\langle ABC|)=\rho^A$ is pure. Then $\rho^{BC}$ is pure as well. Thus $ABC$ is product state of $A,\{BC\}$, namely $|a\rangle|\psi\rangle_{BC}$. The overall effect is that we introduced an ancilla system to purify $B$, and $AB$ as well. If we have furthermore that $\rho^B$ is pure, we can then conclude that $\rho^C$ is pure and then $\rho^{AB}$ is pure.</p>
+<p><strong>Purification:</strong> Given $\rho^A$, there exists $R$ (reference system) such that $|AR\rangle$ is pure, with natural reduction $\rho^A=\mbox{tr}_R(|AR\rangle\langle AR|)$. This can be done by finding orthonormal decomposition of $\rho^A=\sum p_i|i^A\rangle\langle i^A|$ and picking $|AR\rangle=\sum_i\sqrt{p_i}|i^A\rangle|i^R\rangle$.</p>
+<blockquote>
+<p>$|\psi\rangle=(U\otimes V)|\varphi\rangle$ transform pure state to another pure state.</p>
+<p><strong>Freedom in purifications</strong> If $|AR_1\rangle$ and $|AR_2\rangle$ are two purifications of a state $\rho^A$ to a composite system $AR$. There exists $|AR_1\rangle=(I_A\otimes U_R)|AR_2\rangle$.</p>
+<p>If we introduce ancilla system $R$ of same dimensionality as $A$, and set any orthonormal basis $|i_A\rangle$, $|i_R\rangle$. Denote maximum entangled state  $|m\rangle\equiv\sum_i|i_R\rangle|i_A\rangle$. Then any purification of the system $\rho^A$ can be written</p>
+<script type="math/tex; mode=display">
+|AR\rangle=(U_R\otimes\sqrt{\rho^A}U_A)|m\rangle</script><p><strong>Properties of Schmidt number</strong> Suppose $|\psi\rangle$ is pure state of $\{A,B\}$.</p>
+<p>(a) $\mbox{Sch}(|\psi\rangle)=\mbox{rank}(\rho^A)$</p>
+<p>Proof: Schmidt decomposition $|\psi\rangle=\sum_i\lambda_i|i_A\rangle|i_B\rangle$. $\rho^A=\sum_i\lambda_i^2|i_A\rangle\langle i_A|$.</p>
+<p>(b) Suppose $|\psi\rangle=\sum_j|\alpha_j\rangle|\beta_j\rangle$ is a representation. The # of terms in such a decomposition $\ge\mbox{Sch}(|\psi\rangle)$.</p>
+<p>Proof: Schmidt decomposition $|\psi\rangle=\sum_i\lambda_i|i_A\rangle|i_B\rangle=\sum_j\mu_j|\tilde\alpha_j\rangle|\tilde\beta_j\rangle$, where tilde gives normalized vectors. From this $\rho^A=\sum_i\lambda_i^2|i_A\rangle\langle i_A|=\sum_j\mu_j^2|\tilde\alpha_j\rangle\langle\tilde\alpha_j|$, we can actually link</p>
+<script type="math/tex; mode=display">
+\lambda_i|i_A\rangle=\sum_ju_{ij}\mu_j|\tilde\alpha_j\rangle</script><p>If # of terms for $|\alpha_i\rangle$ is smaller than $\mbox{Sch}(|\psi\rangle)$, it would not be possible for such linear representation to hold.</p>
+<p>(c) Suppose $|\psi\rangle=\alpha|\varphi\rangle+\beta|\gamma\rangle$, then $\mbox{Sch}(\psi)\ge|\mbox{Sch}(\varphi)-\mbox{Sch}(\gamma)|$.</p>
+<p>Proof: Since $|\psi\rangle-\alpha|\varphi\rangle=\beta|\gamma\rangle$. LHS is a representation, having $\mbox{Sch}(\psi)+\mbox{Sch}(\varphi)$ terms. Thus from (b) we have $\mbox{Sch}(\psi)+\mbox{Sch}(\varphi)\ge\mbox{Sch}(\gamma)$. And the other way around.</p>
+</blockquote>
+<h3 id="EPR-amp-Bell-Inequality"><a href="#EPR-amp-Bell-Inequality" class="headerlink" title="EPR&amp; Bell Inequality"></a>EPR&amp; Bell Inequality</h3><hr>
+<p><strong>Measurement via apparatus analysis</strong></p>
+<p>System $Q$ and ancilla system $M$ interacts to give the outcome of a full measurement. Consider $Q$ in the state $|\psi\rangle$ and $M$ in the state $|0\rangle$ initially. $M$ has a set of orthonormal states as basis $|m\rangle$. Thus the evolution of the composite system is written</p>
+<script type="math/tex; mode=display">
+U|\psi\rangle|0\rangle=\sum_m (M_m\otimes I)|\psi\rangle|m\rangle</script><p>The unitary property is reserved iff</p>
+<script type="math/tex; mode=display">
+\begin{align}
+(U|\varphi\rangle|0\rangle,U|\psi\rangle|0\rangle)&=\sum_m\langle\varphi|M_m^\dagger M_m|\psi\rangle\\
+&=\langle\varphi|\psi\rangle
+\end{align}</script><p>which requires that $\sum_m M_m^\dagger M_m=I$.</p>
+<p>Exploiting the semi-classical nature of the apparatus, as an outcome of the measurement action, do projection $P_m=I\otimes|m\rangle\langle m|$, yielding the outcome composite state</p>
+<script type="math/tex; mode=display">
+\frac{M_m|\psi\rangle}
+{\sqrt{\langle\psi|M_m^\dagger M_m|\psi\rangle}}\otimes|m\rangle</script><p>And the corresponding probablity is given by</p>
+<script type="math/tex; mode=display">
+p(m)=\frac{\langle\psi|M_m^\dagger M_m|\psi\rangle}{\sum_m\langle\psi|M_m^\dagger M_m|\psi\rangle}=\langle\psi|M_m^\dagger M_m|\psi\rangle</script>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -255,19 +336,110 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/04/04/Ch2.%20Intro%20to%20QM/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2021/02/19/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
   
   
-    </div></section>
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -290,8 +462,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
