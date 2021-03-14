@@ -43,7 +43,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="" class="js-avatar">
+			<img src="/img/settler.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/"></a></h1>
@@ -85,6 +85,8 @@
 		        
 					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
 		        
+					<a class="mail" target="_blank" href="/hq4907@pku.edu.cn" title="mail"><i class="icon-mail"></i></a>
+		        
 			</div>
 		</nav>
 	</header>		
@@ -101,7 +103,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="" class="js-avatar">
+				<img src="/img/settler.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author"></h1>
@@ -125,6 +127,8 @@
 						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
 			        
 						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+			        
+						<a class="mail" target="_blank" href="/hq4907@pku.edu.cn" title="mail"><i class="icon-mail"></i></a>
 			        
 				</div>
 			</nav>
@@ -151,6 +155,118 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-Real-Analysis-0.Preliminaries" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/02/24/Real-Analysis-0.Preliminaries/">Real Analysis - 0.Preliminaries</a>
+    </h1>
+  
+
+        
+        <a href="/2021/02/24/Real-Analysis-0.Preliminaries/" class="archive-article-date">
+  	<time datetime="2021-02-24T07:43:05.170Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="rudiments-of-real-analysis">Rudiments of Real Analysis</h1>
+<p>This series of notes is a beginner's level summary of the topic of real analysis, which underlies various fundamental constructions of physics theories such as [...]. A cautious examination of the math would eventually benefit the understandings of physics.</p>
+<p>This note would briefly set the stage for future development of the series.</p>
+<h2 id="preliminaries">0. Preliminaries</h2>
+<p>The purpose of this note is to establish notations and present a few results from set theory and analysis that will be useful later on.</p>
+<h3 id="set-theory">0.1 Set Theory</h3>
+<p>For a family of sets indexed by <span class="math inline">\(\mathbb{N}\)</span>, namely <span class="math inline">\(\{E_n\}_{n=1}^\infty\)</span>, the notions of <em>limit superior</em> and <em>limit inferior</em> are <span class="math display">\[
+\lim\sup E_n:=\bigcap_{k=1}^\infty\bigcup_{n=k}^\infty E_n
+\]</span></p>
+<p><span class="math display">\[
+\lim\inf E_n:=\bigcup_{k=1}^\infty\bigcap_{n=k}^\infty E_n
+\]</span></p>
+<p>or alternatively <span class="math display">\[
+\lim\sup E_n=\{x:x\in E_n\text{ for infinitely many }n\}
+\]</span></p>
+<p><span class="math display">\[
+\lim\inf E_n=\{x:x\in E_n\text{ for all but finitely many }n\}
+\]</span></p>
+<p>With comparison to the <em>difference</em> of two sets, namely <span class="math inline">\(E\backslash F:=\{x:x\in E\text{ and }x\notin F\}\)</span>, the definition of <em>symmetric difference</em> is <span class="math display">\[
+E\Delta F:=(E\backslash F)\cup(F\backslash E)
+\]</span></p>
+<p>A commonly known theorem is the <em>deMorgan's laws</em>, namely <span class="math display">\[
+\left(\bigcup_{\alpha\in A}E_\alpha\right)^c=\bigcap_{\alpha\in A}E_\alpha^c,~~~\left(\bigcap_{\alpha\in A} E_\alpha\right)^c=\bigcup_{\alpha\in A}E_\alpha^c
+\]</span> If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are sets, their <em>Cartesian product</em> <span class="math inline">\(X\times Y\)</span> is the set of all ordered pairs <span class="math inline">\((x,y)\)</span> such that <span class="math inline">\(x\in X\)</span> and <span class="math inline">\(y\in Y\)</span>. A <em>relation</em> from <span class="math inline">\(X\)</span> to <span class="math inline">\(Y\)</span> is a subset of <span class="math inline">\(X\times Y\)</span>. Specially, if <span class="math inline">\(Y=X\)</span>, we speak of a relation <em>on</em> <span class="math inline">\(X\)</span>. If <span class="math inline">\(R\)</span> is a relation from <span class="math inline">\(X\)</span> to <span class="math inline">\(Y\)</span>, we shall sometimes write <span class="math inline">\(xRy\)</span> to mean that <span class="math inline">\((x,y)\in R\)</span>. The most important types of relations are the following:</p>
+<ul>
+<li><p>Equivalence relations. An <em>equivalence relation</em> on <span class="math inline">\(X\)</span> is a relation on <span class="math inline">\(X\)</span> such that</p>
+<blockquote>
+<p><span class="math inline">\(xRx\)</span> for all <span class="math inline">\(x\in X\)</span>,</p>
+<p><span class="math inline">\(xRy\)</span> iff <span class="math inline">\(yRx\)</span>,</p>
+<p><span class="math inline">\(xRz\)</span> whenever <span class="math inline">\(xRy\)</span> and <span class="math inline">\(yRz\)</span> for some <span class="math inline">\(y\)</span>.</p>
+</blockquote>
+<p>The <em>equivalence class</em> of an element <span class="math inline">\(x\)</span> is <span class="math inline">\(\{y\in X: xRy\}\)</span>. <span class="math inline">\(X\)</span> is the disjoint union of these equivalence classes.</p></li>
+<li><p>Orderings.</p></li>
+<li><p>Mappings. A <em>mapping</em> <span class="math inline">\(f:X\rightarrow Y\)</span> is a relation <span class="math inline">\(R\)</span> from <span class="math inline">\(X\)</span> to <span class="math inline">\(Y\)</span> with the property that for every <span class="math inline">\(x\in X\)</span> there is a unique <span class="math inline">\(y\in Y\)</span> such that <span class="math inline">\(xRy\)</span>, in which case we write <span class="math inline">\(y=f(x)\)</span>. Mappings are sometimes called <em>maps</em> or <em>functions</em>; we shall generally reserve the latter name for the case when <span class="math inline">\(Y\)</span> is <span class="math inline">\(\mathbb{C}\)</span> or some subset thereof.</p></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Analysis</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Real Analysis</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/02/24/Real-Analysis-0.Preliminaries/">Show All >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-This-Website-is-under-Construction-and-Maintenance" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -187,7 +303,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2021/02/21/This-Website-is-under-Construction-and-Maintenance/">展开全文 >></a>
+          <a class="article-more-a" href="/2021/02/21/This-Website-is-under-Construction-and-Maintenance/">Show All >></a>
         </p>
       
 
@@ -230,7 +346,8 @@
     		&copy; 2021 Qi Camm Huang
     	</div>
       	<div class="footer-right">
-      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+          Powered by 
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  | Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> <!-- by Litten -->
       	</div>
     </div>
   </div>
@@ -329,6 +446,14 @@ MathJax.Hub.Queue(function() {
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Analysis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Real Analysis</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>

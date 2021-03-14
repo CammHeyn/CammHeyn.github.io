@@ -6,14 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives | SETTLERS</title>
+  <title>Real Analysis - 0.Preliminaries | SETTLERS</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="SETTLERS">
-<meta property="og:url" content="http://example.com/archives/index.html">
+  <meta name="description" content="Rudiments of Real Analysis This series of notes is a beginner&#39;s level summary of the topic of real analysis, which underlies various fundamental constructions of physics theories such as [...]. A caut">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Real Analysis - 0.Preliminaries">
+<meta property="og:url" content="http://example.com/2021/02/24/Real-Analysis-0.Preliminaries/index.html">
 <meta property="og:site_name" content="SETTLERS">
+<meta property="og:description" content="Rudiments of Real Analysis This series of notes is a beginner&#39;s level summary of the topic of real analysis, which underlies various fundamental constructions of physics theories such as [...]. A caut">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-02-24T07:43:05.170Z">
+<meta property="article:modified_time" content="2021-03-14T12:22:31.303Z">
 <meta property="article:author" content="Qi Camm Huang">
+<meta property="article:tag" content="Analysis">
+<meta property="article:tag" content="Real Analysis">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="SETTLERS" type="application/atom+xml">
@@ -154,36 +160,69 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Real-Analysis-0.Preliminaries" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/02/24/Real-Analysis-0.Preliminaries/" class="archive-article-date">
-  	<time datetime="2021-02-24T07:43:05.170Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-24</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/02/24/Real-Analysis-0.Preliminaries/">Real Analysis - 0.Preliminaries</a>
+    <h1 class="article-title" itemprop="name">
+      Real Analysis - 0.Preliminaries
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2021/02/24/Real-Analysis-0.Preliminaries/" class="archive-article-date">
+  	<time datetime="2021-02-24T07:43:05.170Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="rudiments-of-real-analysis">Rudiments of Real Analysis</h1>
+<p>This series of notes is a beginner's level summary of the topic of real analysis, which underlies various fundamental constructions of physics theories such as [...]. A cautious examination of the math would eventually benefit the understandings of physics.</p>
+<p>This note would briefly set the stage for future development of the series.</p>
+<h2 id="preliminaries">0. Preliminaries</h2>
+<p>The purpose of this note is to establish notations and present a few results from set theory and analysis that will be useful later on.</p>
+<h3 id="set-theory">0.1 Set Theory</h3>
+<p>For a family of sets indexed by <span class="math inline">\(\mathbb{N}\)</span>, namely <span class="math inline">\(\{E_n\}_{n=1}^\infty\)</span>, the notions of <em>limit superior</em> and <em>limit inferior</em> are <span class="math display">\[
+\lim\sup E_n:=\bigcap_{k=1}^\infty\bigcup_{n=k}^\infty E_n
+\]</span></p>
+<p><span class="math display">\[
+\lim\inf E_n:=\bigcup_{k=1}^\infty\bigcap_{n=k}^\infty E_n
+\]</span></p>
+<p>or alternatively <span class="math display">\[
+\lim\sup E_n=\{x:x\in E_n\text{ for infinitely many }n\}
+\]</span></p>
+<p><span class="math display">\[
+\lim\inf E_n=\{x:x\in E_n\text{ for all but finitely many }n\}
+\]</span></p>
+<p>With comparison to the <em>difference</em> of two sets, namely <span class="math inline">\(E\backslash F:=\{x:x\in E\text{ and }x\notin F\}\)</span>, the definition of <em>symmetric difference</em> is <span class="math display">\[
+E\Delta F:=(E\backslash F)\cup(F\backslash E)
+\]</span></p>
+<p>A commonly known theorem is the <em>deMorgan's laws</em>, namely <span class="math display">\[
+\left(\bigcup_{\alpha\in A}E_\alpha\right)^c=\bigcap_{\alpha\in A}E_\alpha^c,~~~\left(\bigcap_{\alpha\in A} E_\alpha\right)^c=\bigcup_{\alpha\in A}E_\alpha^c
+\]</span> If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are sets, their <em>Cartesian product</em> <span class="math inline">\(X\times Y\)</span> is the set of all ordered pairs <span class="math inline">\((x,y)\)</span> such that <span class="math inline">\(x\in X\)</span> and <span class="math inline">\(y\in Y\)</span>. A <em>relation</em> from <span class="math inline">\(X\)</span> to <span class="math inline">\(Y\)</span> is a subset of <span class="math inline">\(X\times Y\)</span>. Specially, if <span class="math inline">\(Y=X\)</span>, we speak of a relation <em>on</em> <span class="math inline">\(X\)</span>. If <span class="math inline">\(R\)</span> is a relation from <span class="math inline">\(X\)</span> to <span class="math inline">\(Y\)</span>, we shall sometimes write <span class="math inline">\(xRy\)</span> to mean that <span class="math inline">\((x,y)\in R\)</span>. The most important types of relations are the following:</p>
+<ul>
+<li><p>Equivalence relations. An <em>equivalence relation</em> on <span class="math inline">\(X\)</span> is a relation on <span class="math inline">\(X\)</span> such that</p>
+<blockquote>
+<p><span class="math inline">\(xRx\)</span> for all <span class="math inline">\(x\in X\)</span>,</p>
+<p><span class="math inline">\(xRy\)</span> iff <span class="math inline">\(yRx\)</span>,</p>
+<p><span class="math inline">\(xRz\)</span> whenever <span class="math inline">\(xRy\)</span> and <span class="math inline">\(yRz\)</span> for some <span class="math inline">\(y\)</span>.</p>
+</blockquote>
+<p>The <em>equivalence class</em> of an element <span class="math inline">\(x\)</span> is <span class="math inline">\(\{y\in X: xRy\}\)</span>. <span class="math inline">\(X\)</span> is the disjoint union of these equivalence classes.</p></li>
+<li><p>Orderings.</p></li>
+<li><p>Mappings. A <em>mapping</em> <span class="math inline">\(f:X\rightarrow Y\)</span> is a relation <span class="math inline">\(R\)</span> from <span class="math inline">\(X\)</span> to <span class="math inline">\(Y\)</span> with the property that for every <span class="math inline">\(x\in X\)</span> there is a unique <span class="math inline">\(y\in Y\)</span> such that <span class="math inline">\(xRy\)</span>, in which case we write <span class="math inline">\(y=f(x)\)</span>. Mappings are sometimes called <em>maps</em> or <em>functions</em>; we shall generally reserve the latter name for the case when <span class="math inline">\(Y\)</span> is <span class="math inline">\(\mathbb{C}\)</span> or some subset thereof.</p></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -199,46 +238,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/02/24/Real-Analysis-0.Preliminaries/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/02/21/This-Website-is-under-Construction-and-Maintenance/" class="archive-article-date">
-  	<time datetime="2021-02-21T08:27:55.267Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-21</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2021/02/21/This-Website-is-under-Construction-and-Maintenance/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">This Website is under Construction and Maintenance</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/02/21/This-Website-is-under-Construction-and-Maintenance/">This Website is under Construction and Maintenance</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -262,8 +361,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
