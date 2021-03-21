@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>This Website is under Constant Construction and Maintenance | SETTLERS</title>
+  <title>Distance Measures for Quantum Information | SETTLERS</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Thank you for your patience! The website will be launched as soon as it is ready. I give my deepest gratitude to Siyi Ai, Yipeng Lu and Chenbing Wang. Qi Camm Huang">
+  <meta name="description" content="##Ch9. Distance measures for QI Classical information Hamming distance: number of places at which two bit strings are not equal. No direct generalization to the quantum case. Trace distance (\(L_1\)di">
 <meta property="og:type" content="article">
-<meta property="og:title" content="This Website is under Constant Construction and Maintenance">
-<meta property="og:url" content="http://example.com/2021/02/21/This-Website-is-under-Construction-and-Maintenance/index.html">
+<meta property="og:title" content="Distance Measures for Quantum Information">
+<meta property="og:url" content="http://example.com/2020/04/09/Ch9.%20Distance%20measures%20for%20QI/index.html">
 <meta property="og:site_name" content="SETTLERS">
-<meta property="og:description" content="Thank you for your patience! The website will be launched as soon as it is ready. I give my deepest gratitude to Siyi Ai, Yipeng Lu and Chenbing Wang. Qi Camm Huang">
+<meta property="og:description" content="##Ch9. Distance measures for QI Classical information Hamming distance: number of places at which two bit strings are not equal. No direct generalization to the quantum case. Trace distance (\(L_1\)di">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-02-21T08:27:55.267Z">
-<meta property="article:modified_time" content="2021-03-14T12:28:57.399Z">
+<meta property="article:published_time" content="2020-04-08T16:35:09.477Z">
+<meta property="article:modified_time" content="2021-03-02T12:59:48.804Z">
 <meta property="article:author" content="Qi Camm Huang">
+<meta property="article:tag" content="Quantum Information">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="SETTLERS" type="application/atom+xml">
@@ -158,30 +159,188 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-This-Website-is-under-Construction-and-Maintenance" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Ch9. Distance measures for QI" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      This Website is under Constant Construction and Maintenance
+      Distance Measures for Quantum Information
     </h1>
   
 
         
-        <a href="/2021/02/21/This-Website-is-under-Construction-and-Maintenance/" class="archive-article-date">
-  	<time datetime="2021-02-21T08:27:55.267Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-21</time>
+        <a href="/2020/04/09/Ch9.%20Distance%20measures%20for%20QI/" class="archive-article-date">
+  	<time datetime="2020-04-08T16:35:09.477Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-09</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Thank you for your patience!</p>
-<p>The website will be launched as soon as it is ready.</p>
-<p>I give my deepest gratitude to Siyi Ai, Yipeng Lu and Chenbing Wang.</p>
-<p>Qi <em>Camm</em> Huang</p>
+        <p>##Ch9. Distance measures for QI</p>
+<h3 id="classical-information">Classical information</h3>
+<p><em>Hamming distance:</em> number of places at which two bit strings are not equal. No direct generalization to the quantum case.</p>
+<p><em>Trace distance (</em><span class="math inline">\(L_1\)</span><em>distance/ Kolmogorov distance):</em> <span class="math display">\[
+D(p_x,q_x)\equiv\frac{1}{2}\sum_x|p_x-q_x|
+\]</span> symmetric, and satisfies the triangle inequality, has property (abs sign can be removed) <span class="math display">\[
+D(p_x,q_x)=\max_{S}|p(S)-q(S)|
+\]</span> <em>Fidelity:</em> <span class="math display">\[
+F(p_x,q_x)\equiv\sum_x\sqrt{p_xq_x}
+\]</span> <em>Dynamic measure:</em> A random variable <span class="math inline">\(X\)</span> is sent through a noisy channel, giving as output another random variable <span class="math inline">\(Y\)</span>, to form a Markov process <span class="math inline">\(X\longrightarrow Y\)</span>. Make a copy of <span class="math inline">\(X\)</span>, creating new random variable <span class="math inline">\(\tilde X=X\)</span>. <span class="math display">\[
+\begin{align}
+D((\tilde X,X),(\tilde X, Y))&amp;=\frac{1}{2}\sum_{xx&#39;}|p(\tilde X=x,X=x&#39;)-p(\tilde X=x, Y=x&#39;)|\\
+&amp;=\frac{1}{2}\sum_{xx&#39;}|\delta_{xx&#39;}p(X=x)-p(\tilde X=x,Y=x&#39;)|
+\\
+&amp;=\frac{1}{2}\sum_{x\ne x&#39;}p(\tilde X=x,Y=x&#39;)+\frac{1}{2}
+\sum_x(p(X=x)-p(X=x,Y=x))
+\\
+&amp;=\frac{p(X\ne Y)+1-p(X=Y)}{2}\\
+&amp;=p(X\ne Y)
+\end{align}
+\]</span></p>
+<p>###Quantum information</p>
+<p><em>Trace distance:</em> <span class="math display">\[
+D(\rho,\sigma)\equiv\frac12\mbox{tr}|\rho-\sigma|
+\]</span> where <span class="math inline">\(|A|\equiv\sqrt{A^\dagger A}\)</span>, degenerates to the classical case when <span class="math inline">\(\rho\)</span> and <span class="math inline">\(\sigma\)</span> commutes.</p>
+<p>Bloch sphere representation gives <span class="math inline">\(D(\vec r, \vec s)=\frac{|\vec r- \vec s|}{2}\)</span>.</p>
+<p>Trace distance is preserved under unitary transformations <span class="math display">\[
+D(U\rho U^\dagger, U\sigma U^\dagger)=\frac{1}{2}\mbox{tr}|U(\rho-\sigma)U^\dagger|=D(\rho,\sigma)
+\]</span> Also <span class="math display">\[
+D(\rho,\sigma)=\max_P\mbox{tr}(P(\rho-\sigma))
+\]</span> where the maximization may be taken over all projectors <span class="math inline">\(P\)</span>, or, alternately, over all positive operators which <span class="math inline">\(P\le I\)</span>. To verify, take <span class="math inline">\(\rho-\sigma=Q-S\)</span> where <span class="math inline">\(Q\)</span> and <span class="math inline">\(S\)</span> are positive operators with orthogonal support, thus <span class="math inline">\(|\rho-\sigma|=Q+S\)</span>. So <span class="math inline">\(D(\rho,\sigma)=\frac12\mbox{tr}(Q+S)\)</span>, <span class="math inline">\(\mbox{tr}(Q-S)=\mbox{tr}(\rho-\sigma)=0\)</span>. Therefore <span class="math inline">\(D(\rho,\sigma)=\mbox{tr}(Q)=\mbox{tr}(S)\)</span>. Let <span class="math inline">\(P\)</span> be projector onto support of <span class="math inline">\(Q\)</span>, then <span class="math inline">\(\mbox{tr}(P(Q-S))=\mbox{tr}(PQ)=\mbox{tr}(Q)=D(\rho,\sigma)\)</span>, while for any positive operator which <span class="math inline">\(P\le I\)</span>, it can be shown that <span class="math inline">\(\mbox{tr}(P(Q-S))\le\mbox{tr}(PQ)\le\mbox{tr}(Q)=D(\rho,\sigma)\)</span>.</p>
+<p><strong>Theorem 9.1:</strong> Let <span class="math inline">\(\{E_m\}\)</span> be a POVM, with <span class="math inline">\(p_m\equiv\mbox{tr}(\rho E_m)\)</span> and <span class="math inline">\(q_m\equiv\mbox{tr}(\rho E_m)\)</span> as the probabilities of obtaining a measurement outcome labeled by <span class="math inline">\(m\)</span>. Then <span class="math display">\[
+D(\rho,\sigma)=\max_{\{E_m\}}D(p_m,q_m)
+\]</span> where the maximization is over all POVMs <span class="math inline">\(\{E_m\}\)</span>.</p>
+<blockquote>
+<p><strong>Proof:</strong> <span class="math inline">\(D(p_m,q_m)=\frac12\sum_m|\mbox{tr}(E_m(\rho-\sigma))|\)</span>. Where <span class="math inline">\(|\mbox{tr}(E_m(\rho-\sigma))|=|\mbox{tr}(E_m(Q-S))|\le\mbox{tr}(E_m(Q+S))\le\mbox{tr}(E_m|\rho-\sigma|)\)</span>. Thus <span class="math inline">\(D(p_m,q_m)\le D(\rho,\sigma)\)</span>.</p>
+</blockquote>
+<p><span class="math inline">\(D(\rho,\sigma)\)</span> is symmetric and gives <span class="math inline">\(0\)</span> if and only if <span class="math inline">\(\rho=\sigma\)</span>. Triangle inequality also holds <span class="math inline">\(D(\rho,\tau)\le D(\rho,\sigma)+D(\tau,\sigma)\)</span> using the achievable upper bound property. Thus the trace distance is a metric.</p>
+<p><strong>Theorem 9.2:</strong> (Trace-preserving quantum operations are contractive). Suppose <span class="math inline">\(\mathcal{E}\)</span> is a trace-preserving quantum operation. Let <span class="math inline">\(\rho\)</span> and <span class="math inline">\(\sigma\)</span> be density operators. Then <span class="math display">\[
+D(\mathcal{E}(\rho),\mathcal{E}(\sigma))\le D(\rho,\sigma)
+\]</span></p>
+<blockquote>
+<p><strong>Proof:</strong> Decompose <span class="math inline">\(\rho-\sigma=Q-S\)</span> and let <span class="math inline">\(D(\mathcal{E}(\rho),\mathcal{E}(\sigma))=\mbox{tr}(P(\mathcal{E}(\rho)-\mathcal{E}(\sigma)))\)</span>. With <span class="math inline">\(\mbox{tr}(Q)-\mbox{tr}(S)=\mbox{tr}(\rho)-\mbox{tr}(\sigma)=0\)</span> and thus <span class="math inline">\(\mbox{tr}(\mathcal{E}(Q))=\mbox{tr}(\mathcal{E}(S))\)</span> due to the trace-preserving nature of the operation. We then have <span class="math display">\[
+\begin{align}
+D(\rho,\sigma)&amp;=\frac12\mbox{tr}|\rho-\sigma|=\mbox{tr}(\mathcal{E}(Q))\\
+&amp;\ge\mbox{tr}(P\mathcal{E}(Q))\ge\mbox{tr}(P(\mathcal E(Q)-\mathcal E(S)))=D(\mathcal E(\rho), \mathcal E(\sigma))
+\end{align}
+\]</span> <strong>Remark:</strong> Partial trace is a trace-preserving quantum operation. So <span class="math display">\[
+D(\rho^A,\sigma^A)\le D(\rho^{AB},\sigma^{AB})
+\]</span></p>
+</blockquote>
+<p><strong>Theorem 9.3:</strong> (Strong convexity of the trace distance). Let <span class="math inline">\(\{p_i\}\)</span> and <span class="math inline">\(\{q_i\}\)</span> be probability distributions over the same index set, and <span class="math inline">\(\rho_i\)</span> and <span class="math inline">\(\sigma_i\)</span> be density operators, also with indices from the same index set. Then <span class="math display">\[
+D(\sum_ip_i\rho_i,\sum_iq_i\sigma_i)\le D(p_i,q_i)+\sum_ip_iD(\rho_i,\sigma_i)
+\]</span> where <span class="math inline">\(D(p_i,q_i)\)</span> is the classical trace distance between the probability distribution <span class="math inline">\(\{p_i\}\)</span> and <span class="math inline">\(\{q_i\}\)</span>.</p>
+<blockquote>
+<p><strong>Proof:</strong> There exists <span class="math display">\[
+\begin{align}
+D(\sum_ip_i\rho_i,\sum_iq_i\sigma_i)&amp;=\sum_ip_i\mbox{tr}(P\rho_i)-\sum_iq_i\mbox{tr}(P\sigma_i)\\
+&amp;=\sum_ip_i\mbox{tr}(P(\rho_i-\sigma_i))+\sum_i(p_i-q_i)\mbox{tr}(P\sigma_i)\\
+&amp;\le\sum_ip_iD(\rho_i,\sigma_i)+D(p_i,q_i)
+\end{align}
+\]</span> Where we have used <span class="math inline">\(\sum_i(p_i-q_i)\mbox{tr}(P\sigma_i)\le\max_S(p(S)-q(S))\)</span>.</p>
+</blockquote>
+<p>As a special case, joint convexity says <span class="math display">\[
+D(\sum_ip_i\rho_i,\sum_ip_i\sigma_i)\le\sum_ip_iD(\rho_i,\sigma_i)
+\]</span></p>
+<blockquote>
+<p><strong>Exercise 9.8</strong> Take <span class="math inline">\(q_i\equiv p_i\)</span>, trivial.</p>
+<p><strong>Exercise 9.9</strong> <em>Schauder's fixed point theorem:</em> any continuous map on a convex, compact subset of a Hilbert Space has a fixed point.</p>
+</blockquote>
+<p><em>Fidelity:</em> <span class="math display">\[
+F(\rho,\sigma)\equiv\mbox{tr}\sqrt{\rho^{1/2}\sigma\rho^{1/2}}
+\]</span> when <span class="math inline">\(\rho\)</span> and <span class="math inline">\(\sigma\)</span> commute, it degenerates to the classical case. <span class="math display">\[
+F(|\psi\rangle,\rho)=\sqrt{\langle\psi|\sigma|\psi\rangle}
+\]</span> No similar clear geometric interpretation is known for fidelity between two states of a qubit. <span class="math display">\[
+F(U\rho U^\dagger,U\sigma U^\dagger)=F(\rho,\sigma)
+\]</span> Note that for any positive <span class="math inline">\(A\)</span> and unitary <span class="math inline">\(U\)</span>, <span class="math inline">\(\sqrt{UAU^\dagger}=U\sqrt A U^\dagger\)</span>.</p>
+<p><strong>Theorem 9.4 (Uhlmann's thm):</strong> <span class="math inline">\(\rho\)</span> and <span class="math inline">\(\sigma\)</span> are states of system <span class="math inline">\(Q\)</span>. Introduce a second system <span class="math inline">\(R\)</span> which is a copy of <span class="math inline">\(Q\)</span>. Then <span class="math display">\[
+F(\rho,\sigma)=\max_{|\psi\rangle,|\varphi\rangle}|\langle\psi|\varphi\rangle|
+\]</span> where the maximization is over all purifications <span class="math inline">\(|\psi\rangle\)</span> of <span class="math inline">\(\rho\)</span> and <span class="math inline">\(|\varphi\rangle\)</span> of <span class="math inline">\(\sigma\)</span> into <span class="math inline">\(RQ\)</span>.</p>
+<blockquote>
+<p><strong>Proof:</strong> (Lemma 9.5) For any operator <span class="math inline">\(A\)</span>, unitary <span class="math inline">\(U\)</span>, then <span class="math display">\[
+|\mbox{tr}(AU)|\le\mbox{tr}|A|
+\]</span> with equality being attained by choosing <span class="math inline">\(U=V^\dagger\)</span>, where <span class="math inline">\(A=V|A|\)</span> is the polar decomposition of <span class="math inline">\(A\)</span>. This can be seen by <span class="math display">\[
+|\mbox{tr}(AU)|=|\mbox{tr}(V|A|U)|=|\mbox{tr}(|A|^{1/2}|A|^{1/2}UV)|
+\]</span> Then exploit Cauchy-Schwarz inequality, <span class="math display">\[
+|\mbox{tr}(AU)|\le\sqrt{
+\mbox{tr}(|A|)
+\mbox{tr}(V^\dagger U^\dagger|A|UV)
+}=\mbox{tr}(|A|)
+\]</span> Back to Uhlmann's theorem, define <span class="math inline">\(|m\rangle=\sum_i|i_R\rangle|i_Q\rangle\)</span>, where the basis for <span class="math inline">\(R\)</span> and <span class="math inline">\(Q\)</span> are fixed. Let <span class="math inline">\(|\psi\rangle\)</span> be any purification of <span class="math inline">\(\rho\)</span>, then <span class="math display">\[
+|\psi\rangle=(U_R\otimes\sqrt{\rho}U_Q)|m\rangle
+\]</span> And <span class="math display">\[
+|\varphi\rangle=(V_R\otimes\sqrt{\rho}V_Q)|m\rangle
+\]</span> Inner product <span class="math display">\[
+\begin{align}|\langle\varphi|\psi\rangle|&amp;=|\langle m|U_R^\dagger V_R\otimes U_Q^\dagger\sqrt{\rho}\sqrt{\sigma}U_Q|m\rangle|\\&amp;=|\mbox{tr}(V^\dagger_RU_RU^\dagger_Q\sqrt{\rho}\sqrt{\sigma}V_Q)|\\&amp;=|\mbox{tr}(\sqrt{\rho}\sqrt{\sigma}V_QV_R^\dagger U_RU_Q^\dagger)|\\&amp;\le\mbox{tr}|\sqrt{\rho}\sqrt{\sigma}|=\mbox{tr}\sqrt{\sigma^{1/2}\rho\sigma^{1/2}}\end{align}
+\]</span> The equality is attained when, for example, <span class="math inline">\(U_Q=U_R=V_R=I\)</span> and <span class="math inline">\(V_Q=V^\dagger\)</span> where <span class="math display">\[
+\sqrt{\rho}\sqrt{\sigma}=V|\sqrt{\rho}\sqrt{\sigma}|
+\]</span> is the polar decomposition.</p>
+</blockquote>
+<blockquote>
+<p><strong>Exercise 9.15:</strong> <span class="math inline">\(F(\rho,\sigma)=\max_{|\varphi\rangle}|\langle\psi|\varphi\rangle|\)</span> .</p>
+</blockquote>
+<p>Uhlmann's formula gives: <span class="math inline">\(F(\rho,\sigma)\)</span> is symmetric in its inputs, and ranges <span class="math inline">\(0\le F(\rho,\sigma)\le1\)</span>. <span class="math inline">\(F(\rho,\sigma)=1\)</span> iff <span class="math inline">\(\rho=\sigma\)</span>. <span class="math inline">\(F(\rho,\sigma)=0\)</span> iff <span class="math inline">\(\rho\)</span> and <span class="math inline">\(\sigma\)</span> have support on orthogonal subspaces - perfectly distinguishable. Also <span class="math display">\[
+F(\rho,\sigma)=\min_{\{E_m\}}F(p_m,q_m)
+\]</span> where the minimum is over all POVMS <span class="math inline">\(\{E_m\}\)</span> and <span class="math inline">\(p_m=\mbox{tr}(\rho E_m)\)</span>, <span class="math inline">\(q_m=\mbox{tr}(\sigma E_m)\)</span>. By polar decomposition <span class="math inline">\(\sqrt{\rho^{1/2}\sigma\rho^{1/2}}=\sqrt{\rho}\sqrt{\sigma}U\)</span>, then <span class="math display">\[
+\begin{align}
+F(\rho,\sigma)&amp;=\mbox{tr}(\sqrt{\rho}\sqrt{\sigma}U)=
+\sum_m\mbox{tr}(\sqrt{\rho}\sqrt{E_m}\sqrt{E_m}\sqrt{\sigma}U)\\
+&amp;\le\sum_m\sqrt{\mbox{tr}(\rho E_m)\mbox{tr}(\sigma E_m)}=F(p_m,q_m)
+\end{align}
+\]</span> The equality would require <span class="math inline">\(\sqrt{E_m}\sqrt{\rho}=\alpha_m\sqrt{E_m}\sqrt{\sigma}U\)</span>, for some set of complex numbers <span class="math inline">\(\{\alpha_m\}\)</span>. For invertible <span class="math inline">\(\rho\)</span>, equality condition is <span class="math display">\[
+\sqrt{E_m}(I-\alpha_m\rho^{-1/2}\sqrt{\rho^{1/2}\sigma\rho^{1/2}}\rho^{-1/2})=0
+\]</span> Spectral decomposition <span class="math display">\[
+\rho^{-1/2}\sqrt{\rho^{1/2}\sigma\rho^{1/2}}\rho^{-1/2}=\sum_m\beta_m|m\rangle\langle m|
+\]</span> Then pick <span class="math inline">\(E_m=|m\rangle\langle m|\)</span>, <span class="math inline">\(\alpha_m=1/\beta_m\)</span>.Thus equality is achievable. The case for non-invertible <span class="math inline">\(\rho\)</span> follows from continuity.</p>
+<p>To generalize a metric sense for fidelity, define <em>angle</em> <span class="math display">\[
+A(\rho,\sigma)\equiv \arccos F(\rho,\sigma)
+\]</span> (Should be metric, satisfy triangle inequality)</p>
+<p><strong>Theorem 9.6:</strong> (Monotonicity of fidelity) <span class="math inline">\(\mathcal{E}\)</span> is a trace-preserving quantum operation. Then <span class="math inline">\(F(\mathcal{E}(\rho),\mathcal{E}(\sigma))\ge F(\rho,\sigma)\)</span>.</p>
+<blockquote>
+<p><strong>Proof:</strong> Just note that <span class="math inline">\(U|\psi\rangle|0\rangle\)</span> is purification of <span class="math inline">\(\mathcal{E}(\rho)\)</span> and likewise for <span class="math inline">\(\mathcal{E}(\sigma)\)</span>.</p>
+<p><strong>Remark:</strong> Angle would have contractivity property.</p>
+</blockquote>
+<p><strong>Theorem 9.7:</strong> (Strong concavity of fidelity) Let <span class="math inline">\(p_i\)</span> and <span class="math inline">\(q_i\)</span> be probability distributions over the same index set, and <span class="math inline">\(\rho_i\)</span> and <span class="math inline">\(\sigma_i\)</span> density operators also indexed by the same index set. Then <span class="math display">\[
+F(\sum_ip_i\rho_i,\sum_iq_i\sigma_i)\ge\sum_i\sqrt{p_iq_i}F(\rho_i,\sigma_i)
+\]</span></p>
+<blockquote>
+<p><strong>Proof:</strong> Be <span class="math inline">\(|\psi_i\rangle\)</span> and <span class="math inline">\(|\varphi_i\rangle\)</span> the purifications of <span class="math inline">\(\rho_i\)</span> and <span class="math inline">\(\sigma_i\)</span> such that <span class="math inline">\(F(\rho_i,\sigma_i)=\langle\psi_i|\varphi_i\rangle\)</span>. Introduce <span class="math display">\[
+|\psi\rangle\equiv\sum_i\sqrt{p_i}|\psi_i\rangle|i\rangle;~|\varphi\rangle\equiv\sum_i\sqrt{q_i}|\varphi_i\rangle|i\rangle
+\]</span> Thus <span class="math display">\[
+F(\sum_ip_i\rho_i,\sum_iq_i\sigma_i)\ge|\langle\psi|\varphi\rangle|=\sum_i\sqrt{p_iq_i}F(\rho_i,\sigma_i)
+\]</span></p>
+</blockquote>
+<blockquote>
+<p><strong>Exercise 9.19:</strong> (Joint concavity of fidelity) <span class="math display">\[
+F(\sum_ip_i\rho_i,\sum_ip_i\sigma_i)\ge\sum_ip_iF(\rho_i,\sigma_i)
+\]</span> <strong>Exercise 9.20:</strong> (Concavity of fidelity) <span class="math display">\[
+F(\sum_ip_i\rho_i,\sigma)\ge\sum_ip_iF(\rho_i,\sigma)
+\]</span></p>
+</blockquote>
+<h3 id="relationships-between-distance-measures">Relationships between distance measures</h3>
+<p>In the case of pures states, trace distance is completely equivalent to fidelity <span class="math display">\[
+D(|a\rangle,|b\rangle)=\sqrt{1-F^2(|a\rangle,|b\rangle)}
+\]</span> While generally <span class="math display">\[
+D(\rho,\sigma)\le D(|\psi\rangle,|\varphi\rangle)=\sqrt{1-F^2(\rho,\sigma)}
+\]</span> where <span class="math inline">\(|\psi\rangle\)</span> and <span class="math inline">\(|\varphi\rangle\)</span> are purifications chosen such that <span class="math inline">\(F(\rho,\sigma)=|\langle\psi|\varphi\rangle|=F(|\psi\rangle,|\varphi\rangle)\)</span>.</p>
+<p>Let <span class="math inline">\(\{E_m\}\)</span> be a POVM such <span class="math display">\[
+F(\rho,\sigma)=\sum_m\sqrt{\mbox{tr}(\rho E_m)\mbox{tr}(\sigma E_m)}
+\]</span> Observe first that (<span class="math inline">\(p_m\equiv\mbox{tr}(\rho E_m)\)</span> and <span class="math inline">\(q_m\equiv\mbox{tr}(\sigma E_m)\)</span>) <span class="math display">\[
+\begin{align}
+\sum_m(\sqrt{p_m}-\sqrt{q_m})^2&amp;=\sum_m(p_m+q_m)-2F(\rho,\sigma)=2-2F(\rho,\sigma)
+\\&amp;\le
+\sum_m|\sqrt{p_m}-\sqrt{q_m}|\cdot|\sqrt{p_m}+\sqrt{q_m}|\\
+&amp;=\sum_m|p_m-q_m|=2D(p_m,q_m)\le2D(\rho,\sigma)
+\end{align}
+\]</span> Thus <span class="math display">\[
+1-F(\rho,\sigma)\le D(\rho,\sigma)\le\sqrt{1-F^2(\rho,\sigma)}
+\]</span> Showing that <span class="math inline">\(D\)</span> and <span class="math inline">\(F\)</span> are qualitatively equivalent measures of closeness for quantum states.</p>
+<blockquote>
+<p><strong>Exercise 9.21:</strong> <span class="math inline">\(1-F^2(|\psi\rangle,\sigma)\le D(|\psi\rangle,\sigma)\)</span>.</p>
+</blockquote>
 
       
 
@@ -189,12 +348,18 @@
     </div>
     <div class="article-info article-info-index">
       
-        <div class="article-pop-out tagcloud">
-          <i class="icon-tuding"></i>
-          <a class="article-tag-list-link color3">置顶</a>
-        </div>
       
-      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Quantum Information</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -245,7 +410,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/02/21/This-Website-is-under-Construction-and-Maintenance/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/04/09/Ch9.%20Distance%20measures%20for%20QI/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -259,18 +424,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/02/24/Real-Analysis-0.Preliminaries/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/04/13/Entanglement%20as%20a%20physical%20resource/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Real Analysis - 0.Preliminaries
+          Entanglement as a physical resource
         
       </div>
     </a>
   
   
-    <a href="/2020/04/13/Entanglement%20as%20a%20physical%20resource/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Entanglement as a physical resource</div>
+    <a href="/2020/04/04/Ch2.%20Intro%20to%20QM/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Introduction to Quantum Mechanics</div>
       <i class="icon-circle-right"></i>
     </a>
   
