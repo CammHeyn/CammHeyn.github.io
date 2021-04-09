@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://cammheyn.github.io">
-  <title>Introduction to Quantum Mechanics | SETTLERS</title>
+  <title>Trivia of Group Theory | SETTLERS</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Ch2. Introduction to Quantum Mechanics This note is on the basics of Quantum Mechanics">
+  <meta name="description" content="This note briefly contains main concepts of group theory. Chapter 1 Basics Def 1.1 Group  Collection of elements, with multiplication that satisfies: 1) closure; 2) associativity; guarantees existence">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Introduction to Quantum Mechanics">
-<meta property="og:url" content="http://cammheyn.github.io/2020/04/04/Ch2.%20Intro%20to%20QM/index.html">
+<meta property="og:title" content="Trivia of Group Theory">
+<meta property="og:url" content="http://cammheyn.github.io/2021/02/21/Trivia-of-Group-Theory/index.html">
 <meta property="og:site_name" content="SETTLERS">
-<meta property="og:description" content="Ch2. Introduction to Quantum Mechanics This note is on the basics of Quantum Mechanics">
+<meta property="og:description" content="This note briefly contains main concepts of group theory. Chapter 1 Basics Def 1.1 Group  Collection of elements, with multiplication that satisfies: 1) closure; 2) associativity; guarantees existence">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-04-04T09:14:42.039Z">
-<meta property="article:modified_time" content="2021-04-09T04:23:41.658Z">
+<meta property="article:published_time" content="2021-02-21T03:49:31.296Z">
+<meta property="article:modified_time" content="2021-04-09T04:25:25.660Z">
 <meta property="article:author" content="Qi Camm Huang">
-<meta property="article:tag" content="Quantum Information">
+<meta property="article:tag" content="Algebra">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="SETTLERS" type="application/atom+xml">
@@ -145,7 +145,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Ch2. Intro to QM" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Trivia-of-Group-Theory" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -153,13 +153,13 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Introduction to Quantum Mechanics
+      Trivia of Group Theory
     </h1>
   
 
         
-        <a href="/2020/04/04/Ch2.%20Intro%20to%20QM/" class="archive-article-date">
-  	<time datetime="2020-04-04T09:14:42.039Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-04</time>
+        <a href="/2021/02/21/Trivia-of-Group-Theory/" class="archive-article-date">
+  	<time datetime="2021-02-21T03:49:31.296Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-21</time>
 </a>
 
 
@@ -171,7 +171,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  <strong>Word Count:</strong> </span>
-        <span class="post-count">2.9k <strong>Words</strong></span>
+        <span class="post-count">9.7k <strong>Words</strong></span>
       </span>
     </span>
 
@@ -184,7 +184,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">18分</span>
+        <span class="post-count">60分</span>
       </span>
     </span>
 
@@ -212,192 +212,855 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="ch2.-introduction-to-quantum-mechanics">Ch2. Introduction to Quantum Mechanics</h2>
-<p>This note is on the basics of Quantum Mechanics</p>
+        <p>This note briefly contains main concepts of group theory.</p>
+<h2 id="chapter-1-basics">Chapter 1 Basics</h2>
+<p>Def 1.1 Group</p>
+<blockquote>
+<p>Collection of elements, with multiplication that</p>
+<p>satisfies: 1) closure; 2) associativity;</p>
+<p>guarantees existence of: 3) identity; 4) inverse for any element</p>
+</blockquote>
+<p><u>Ex</u> <span class="math inline">\(\{E,I\}\)</span>, <span class="math inline">\(S_n\)</span>, <span class="math inline">\(D_3\)</span>, <span class="math inline">\(\Z\)</span>, <span class="math inline">\(\R\)</span>, <span class="math inline">\(\C\)</span>.</p>
 <a id="more"></a>
-<h3 id="linear-algebra">Linear Algebra</h3>
-<p><strong>Spectral Decomposition:</strong> Any normal operator <span class="math inline">\(M\)</span> on a vector space <span class="math inline">\(V\)</span> is diagonal w.r.t. some orthonormal basis for <span class="math inline">\(V\)</span>. Conversely, any diagonalizable (w.r.t. some orthonormal basis) operator is normal.</p>
-<blockquote>
-<p><strong>Proof:</strong> The inverse is trivial. Now if <span class="math inline">\(M^\dagger M=MM^\dagger\)</span>, pick eigenvalue <span class="math inline">\(\lambda\)</span> and be <span class="math inline">\(P\)</span> the projector onto its eigenspace, and <span class="math inline">\(Q\)</span> the projector onto its orthogonal complement. Thus <span class="math inline">\(P+Q=I\)</span>, with <span class="math inline">\(M=(P+Q)M(P+Q)\)</span>. <span class="math inline">\(PMP=\lambda P\)</span>, <span class="math inline">\(QMP=0\)</span>, <span class="math inline">\(PMQ=0\)</span> since <span class="math inline">\(\forall |v\rangle\in P, MM^\dagger|v\rangle=\lambda M^\dagger|v\rangle\)</span> which makes <span class="math inline">\(M^\dagger|v\rangle\in P\)</span>, thus <span class="math inline">\(QM^\dagger P=0\)</span>, in turn <span class="math inline">\(PMQ=0\)</span>. Now <span class="math inline">\(M=PMP+QMQ\)</span>, so <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span> subspaces are invariant. Now for the <span class="math inline">\(Q\)</span> subspace, <span class="math display">\[
-\begin{align}
-QMQQM^\dagger Q&amp;=QMQM^\dagger Q=QM(P+Q)M^\dagger Q\\
-&amp;=QMM^\dagger Q=QM^\dagger MQ=QM^\dagger QMQ\\
-&amp;=QM^\dagger QQMQ
-\end{align}
-\]</span> By induction on <span class="math inline">\(\dim V\)</span>, we conclude that <span class="math inline">\(M\)</span> is diagonalizable.</p>
-</blockquote>
-<p><strong>Hilbert-Schmidt Trace Inner Product:</strong> <span class="math inline">\((\cdot,\cdot):L_V\times L_V\longrightarrow\mathbb{C}\)</span> by defining <span class="math inline">\((A,B)\equiv\mbox{tr}(A^\dagger B)\)</span>.</p>
-<p>Pauli-matrices algebra <span class="math display">\[
-[\sigma_j,\sigma_k]=2\mathbf{i}\varepsilon_{jkl}\sigma_l~(j,k,l=1,2,3)
-\]</span></p>
-<p><span class="math display">\[
-\{\sigma_i,\sigma_j\}=0~(i\ne j; i,j=1,2,3)
-\]</span></p>
-<p><span class="math display">\[
-\sigma_i^2=\sigma_0~(i=0,1,2,3)
-\]</span></p>
-<p><span class="math display">\[
-\sigma_j\sigma_k=\delta_{jk}\sigma_0+\mathbf{i}\varepsilon_{jkl}\sigma_l
-\]</span></p>
-<p><strong>Polar Decomposition:</strong> <span class="math inline">\(A\)</span> is linear operator on <span class="math inline">\(V\)</span>. There exists unitary <span class="math inline">\(U\)</span>, positive <span class="math inline">\(J\)</span> and <span class="math inline">\(K\)</span> such <span class="math inline">\(A=UJ=KU\)</span>, where <span class="math inline">\(J\equiv\sqrt{A^\dagger A}\)</span>, <span class="math inline">\(K\equiv\sqrt{AA^\dagger}\)</span>. Moreover, if <span class="math inline">\(A\)</span> is invertible, <span class="math inline">\(U\)</span> is unique.</p>
-<blockquote>
-<p><strong>Proof:</strong> Orthonormal decomposition <span class="math inline">\(J=\sqrt{A^\dagger A}=\sum_i\lambda_i|i\rangle\langle i|\)</span>. Define <span class="math inline">\(|\psi_i\rangle=A|i\rangle\)</span>, then <span class="math inline">\(\langle\psi_i|\psi_j\rangle=\langle i|A^\dagger A|j\rangle=\lambda^2_i\delta_{ij}\)</span>, then normalize <span class="math inline">\(|\psi\rangle\)</span> to <span class="math inline">\(|e\rangle\)</span> and randomly pick orthonormal substitutes for the non-normalizable part. Define <span class="math inline">\(U|i\rangle=|e_i\rangle\)</span>, <span class="math inline">\(UJ=\sum_i\lambda_i|e_i\rangle\langle i|=A\)</span>. Rest is trivial.</p>
-</blockquote>
-<p><strong>Singular Value Decomposition:</strong> <span class="math inline">\(A\)</span> is square matrix, there exists unitary <span class="math inline">\(U,V\)</span>, diagonal <span class="math inline">\(D\)</span> with non-negative entries such <span class="math inline">\(A=UDV\)</span>. Diagonal elements of <span class="math inline">\(D\)</span> are called singular values of <span class="math inline">\(A\)</span>.</p>
-<blockquote>
-<p><strong>Proof:</strong> <span class="math inline">\(A=SJ=STDT^\dagger=UDV\)</span>.</p>
-</blockquote>
-<h3 id="the-postulates-of-quantum-mechanics">The Postulates of Quantum Mechanics</h3>
-<p><strong>Postulate 1:</strong> Associated to any isolated physical system is a complex vector space with inner product (that is, a Hilbert space) known as the <em>state space</em> of the system. The system is completely described by its <em>state vector</em>, which is a unit vector in the system's state space.</p>
-<p><strong>Postulate 2:</strong> The evolution of a <em>closed</em> quantum system is described by a <em>unitary transformation</em>. That is, the state <span class="math inline">\(|\psi\rangle\)</span> of the system at time <span class="math inline">\(t_1\)</span> is related to the state <span class="math inline">\(|\psi&#39;\rangle\)</span> of the system at time <span class="math inline">\(t_2\)</span> by a unitary operator <span class="math inline">\(U\)</span> which depends only on the times <span class="math inline">\(t_1\)</span> and <span class="math inline">\(t_2\)</span>, <span class="math display">\[
-|\psi&#39;\rangle=U|\psi\rangle
-\]</span> <strong>Postulate 2':</strong> The time evolution of the state of a closed quantume system is described by the <em>Schrödinger equation</em>, <span class="math display">\[
-\mathbf{i}\hbar\frac{\mbox{d}|\psi\rangle}{\mbox{d}t}=H|\psi\rangle
-\]</span> In this equation, <span class="math inline">\(\hbar\)</span> is a physical constant known as <em>Planck's constant</em> whose value must be experimentally determined. The exact value is not important to us. In practice, it is common to absorb the factor <span class="math inline">\(\hbar\)</span> into <span class="math inline">\(H\)</span>, effectively setting <span class="math inline">\(\hbar=1\)</span>. <span class="math inline">\(H\)</span> is a fixed Hermitian operator known as the <em>Hamiltonian</em> of the closed system.</p>
-<p><strong>Postulate 3:</strong> Quantum measurements are described by a collection <span class="math inline">\(\{M_m\}\)</span> of <em>measurement operators</em>. These are operators acting on the state space of the system being measured. The index <span class="math inline">\(m\)</span> refers to the measurement outcomes that may occur in the experiment. If the state of the quantum system is <span class="math inline">\(|\psi\rangle\)</span> immediately before the measurement then the probability that result <span class="math inline">\(m\)</span> occurs is given by <span class="math display">\[
-p(m)=\langle\psi|M_m^\dagger M_m|\psi\rangle
-\]</span> and the state of the system after the measurement is <span class="math display">\[
-\frac{M_m|\psi\rangle}{\sqrt{p(m)}}
-\]</span> The measurement operators satisfy the <em>completeness equation</em>, <span class="math display">\[
-\sum_mM_m^\dagger M_m=I
-\]</span> The completeness equation expresses the fact that probabilites sum to one: <span class="math display">\[
-1=\sum_mp(m)
-\]</span></p>
-<blockquote>
-<p>As a special case of <strong>Postulate 3</strong>,</p>
-<p><strong>Projective measurements(PVM):</strong> A projective measurement is described by an <em>observable</em>, <span class="math inline">\(M\)</span>, a Hermitian operator on the state space of the system being observed. The observable has a spectral decomposition, <span class="math display">\[
-M=\sum_mmP_m
-\]</span> where <span class="math inline">\(P_m\)</span> is the projector onto the eigensubspace of <span class="math inline">\(M\)</span> with eigenvalue <span class="math inline">\(m\)</span>. The possible outcomes of the measurement correspond to the eigenvalues, <span class="math inline">\(m\)</span>, of the observable. Upon measuring the state <span class="math inline">\(|\psi\rangle\)</span>, the probability of getting result <span class="math inline">\(m\)</span> is given by <span class="math display">\[
-p(m)=\langle\psi|P_m|\psi\rangle
-\]</span> Given that outcome <span class="math inline">\(m\)</span> occurred, the state of the quantum system immediately after the measurement is <span class="math display">\[
-\frac{P_m|\psi\rangle}{\sqrt{p(m)}}
-\]</span> More generally comes</p>
-<p><strong>Positive Operator-Valued Measurement(POVM):</strong> A set <span class="math inline">\(\{E_m\}\)</span> where <span class="math inline">\(E_m\equiv M_m^\dagger M_m\)</span> and <span class="math inline">\(\sum_mE_m=1\)</span>, <span class="math inline">\(p(m)=\langle\psi|E_m|\psi\rangle\)</span>. The set <span class="math inline">\(\{E_m\}\)</span> is called a POVM of the system. A POVM can be any set such: (1) each <span class="math inline">\(E_m\)</span> is positive (so as to define <span class="math inline">\(M_m\equiv\sqrt{E_m}\)</span>); (2) completeness <span class="math inline">\(\sum_mE_m=I\)</span> is assured.</p>
-</blockquote>
-<p><strong>Postulate 4:</strong> The state space of a composite physical system is the tensor product of the state spaces of the component physical systems. Moreover, if we have systems numbered <span class="math inline">\(1\)</span> through <span class="math inline">\(n\)</span>, and system number <span class="math inline">\(i\)</span> is prepared in the state <span class="math inline">\(|\psi_i\rangle\)</span>, then the joint state of the total system is <span class="math inline">\(|\psi_1\rangle\otimes|\psi_2\rangle\otimes\ldots\otimes|\psi_n\rangle\)</span>.</p>
-<h3 id="the-density-operator">The Density Operator</h3>
-<p><strong>Characterization of density operator:</strong> <span class="math inline">\(\rho\)</span> is density operator to <span class="math inline">\(\{p_i,|\psi_i\rangle\}\)</span> iff</p>
-<ol type="1">
-<li><p>(Trace condition) <span class="math inline">\(\mbox{tr}(\rho)=1\)</span></p></li>
-<li><p>(Positivity condition) <span class="math inline">\(\rho\)</span> is positive.</p></li>
-</ol>
-<p>Thus we can reformulate the postulates of quantum mechanics in the density operator picture.</p>
-<p><strong>Postulate 1:</strong> Associated to any isolated physical system is a complex vector space with inner product (that is, Hilbert space) known as the <em>state space</em> of the system. The system is completely described by its <em>density operator</em>, which is a positive operator <span class="math inline">\(\rho\)</span> with trace one, acting on the state space of the system. If a quantum system is in the state <span class="math inline">\(\rho_i\)</span> with probability <span class="math inline">\(p_i\)</span>, then the density operator for the system is <span class="math inline">\(\sum_ip_i\rho_i\)</span>.</p>
-<p><strong>Postulate 2:</strong> The evolution of a <em>closed</em> quantum system is described by a <em>unitary transformation</em>. That is, the state <span class="math inline">\(\rho\)</span> of the system at time <span class="math inline">\(t_1\)</span> is related to the state <span class="math inline">\(\rho&#39;\)</span> of the system ate time <span class="math inline">\(t_2\)</span> by a unitary operator <span class="math inline">\(U\)</span> which depends only on the times <span class="math inline">\(t_1\)</span> and <span class="math inline">\(t_2\)</span>, <span class="math display">\[
-\rho&#39;=U\rho U^\dagger
-\]</span> <strong>Postulate 3:</strong> Quantum measurements are described by a collection <span class="math inline">\(\{M_m\}\)</span> of <em>measurement operators</em>. These are operators acting on the state space of the system being measured. The index <span class="math inline">\(m\)</span> refers to the measurement outcomes that may occur in the experiment. If the state of the quantum system is <span class="math inline">\(\rho\)</span> immediately before the measurement then the probability that result <span class="math inline">\(m\)</span> occurs is given by $$ <span class="math display">\[\begin{align}
-p(m)&amp;=
-\sum_ip(m|i)\cdot p_i
-\\
-&amp;=\sum_i\langle\psi_i|M_m^\dagger M_m|\psi_i\rangle\cdot p_i
-\\
-
-&amp;=\mbox{tr}(M_m^\dagger M_m\rho)
-\end{align}\]</span> <span class="math display">\[
-and the state of the system after the measurement is
-\]</span>  <span class="math display">\[
-The measurement operators satisfy the *completeness equation*,
-\]</span> _mM_m^M_m=I $$ <strong>Postulate 4:</strong> The state space of a composite physical system is the tensor product of the state spaces of the component physical systems. Moreover, if we have systems numbered <span class="math inline">\(1\)</span> through <span class="math inline">\(n\)</span>, and system number <span class="math inline">\(i\)</span> is prepared in the state <span class="math inline">\(\rho_i\)</span>, then the joint state of the total system is <span class="math inline">\(\rho_1\otimes\rho_2\otimes\ldots\otimes\rho_n\)</span>.</p>
-<p><strong>Unitary freedom in ensemble for density matrices:</strong> Denote <span class="math inline">\(|\tilde{\psi_i}\rangle\equiv\sqrt{p_i}|\psi_i\rangle\)</span>, then a set <span class="math inline">\(\{|\tilde{\psi_i}\rangle\}\)</span> and <span class="math inline">\(\{|\tilde{\varphi_i}\rangle\}\)</span> generates the same density matrix iff <span class="math inline">\(|\tilde{\psi_i}\rangle=\sum_ju_{ij}|\tilde{\varphi_j}\rangle\)</span>, where <span class="math inline">\(u_{ij}\)</span> is unitary matrix.</p>
-<blockquote>
-<p><strong>Proof:</strong> First justify the dimensionality. The two sets can always contain same number of vectors given 0 probability is allowed in the representation. If <span class="math inline">\(|\tilde{\psi_i}\rangle=\sum_ju_{ij}|\tilde{\varphi_j}\rangle\)</span>, <span class="math inline">\(\rho_\psi=\sum_i|\tilde{\psi_i}\rangle\langle\tilde{\psi_i}|=\sum_{ijk}u_{ij}u_{ik}^*|\tilde{\varphi_j}\rangle\langle\tilde{\varphi_k}|=\rho_\varphi\)</span>.</p>
-<p>Conversely, if <span class="math inline">\(\psi\)</span> and <span class="math inline">\(\varphi\)</span> represents the same state <span class="math inline">\(\rho=\sum|\tilde{\psi_i}\rangle\langle\tilde{\psi_i}|=\sum|\tilde{\varphi_j}\rangle\langle\tilde{\varphi_j}|\)</span>, take orthornormal decomposition of the density matrix <span class="math inline">\(\rho=\sum_k\lambda_k|k\rangle\langle k|=\sum_k|\tilde k\rangle\langle\tilde k|\)</span>. If <span class="math inline">\(|\tilde k\rangle\)</span> does not span the entire space, then for any <span class="math inline">\(|\psi\rangle\)</span> orthogonal to the space spanned by <span class="math inline">\(|\tilde k\rangle\)</span>, <span class="math inline">\(0=\langle\psi|\rho|\psi\rangle=\sum_i\langle\psi|\tilde{\psi_i}\rangle\langle\tilde{\psi_i}|\psi\rangle\)</span>, which leads to the result that <span class="math inline">\(|\tilde{\psi_i}\rangle\)</span> can be represented by the non-zero <span class="math inline">\(|\tilde k\rangle\)</span>'s alone. Say <span class="math inline">\(|\tilde\psi_i\rangle=\sum_kc_{ik}|\tilde k\rangle\)</span>, then <span class="math display">\[
-\sum_k|\tilde k\rangle\langle\tilde k|=\sum_{kl}(\sum_ic_{ik}c_{il}^*)|\tilde k\rangle\langle\tilde l|
-\]</span> Then <span class="math inline">\(c_{ik}\)</span> can be expanded to become a unitary matrix.</p>
-</blockquote>
-<p>Bloch sphere for mixed states <span class="math inline">\(\rho=\frac{1}{2}(I+\vec r\cdot\vec \sigma)\)</span>.</p>
-<p>A <em>minimal ensemble</em> for <span class="math inline">\(\rho\)</span> is an ensenmble <span class="math inline">\(\{p_i,|\psi_i\rangle\}\)</span> containing a number of elements equal to the rank of <span class="math inline">\(\rho\)</span>. <span class="math inline">\(\forall |\psi\rangle\)</span> in the support of <span class="math inline">\(\rho\)</span>, there exists a minimal ensemble for <span class="math inline">\(\rho\)</span> that contains <span class="math inline">\(|\psi\rangle\)</span> as <span class="math inline">\(|\psi_i\rangle\)</span> with probability <span class="math inline">\(p_i=1/\langle\psi_i|\rho^{-1}|\psi_i\rangle\)</span>. This is done by explicitly <span class="math inline">\(|\tilde j\rangle\longrightarrow|\tilde\psi_j\rangle\)</span> through unitary matrix.</p>
-<p><strong>Reduced Density Operator</strong>: <span class="math inline">\(\rho^A\equiv\mbox{tr}_B(\rho^{AB})\)</span>. This is done by taking a so-called <em>partial trace</em>. Namely, <span class="math display">\[
-\mbox{tr}_B(\bullet)
-=
-\sum_{i=1}^{\text{dim}B}\left(\bold 1\otimes\langle i|_B\right)(\bullet)\left(\bold 1\otimes|i\rangle_B\right)
-\]</span></p>
-<blockquote>
-<p><strong>Why partial trace?</strong></p>
-<p>Suppose <span class="math inline">\(M\)</span> is any observable on system <span class="math inline">\(A\)</span>, let <span class="math inline">\(\tilde M\)</span> be the corresponding observable for the same measurement on composite system <span class="math inline">\(AB\)</span>. Then <span class="math display">\[
-\tilde M=M\otimes I_B
-\]</span> as seen by special cases when <span class="math inline">\(AB\)</span> is in the state <span class="math inline">\(|m\rangle|\psi\rangle\)</span>. Moreover, <span class="math display">\[
-\tilde M=\sum_mmP_m\otimes I_B=M\otimes I_B
-\]</span> Physical requirement that the measurement averages should be <span class="math display">\[
-\mbox{tr}(M\rho^A)=\mbox{tr}((M\otimes I_B)\rho^{AB})
-\]</span> could be met by choosing <span class="math inline">\(\rho^A\equiv\mbox{tr}_B(\rho^{AB})\)</span>, since $$ <span class="math display">\[\begin{align}
-\text{tr}\left[M
-\sum_{j=1}^{\text{dim}B}\left(\bold 1\otimes\langle j|_B\right)\rho^{AB}\left(\bold 1\otimes|j\rangle_B\right)
-\right]
-&amp;=\sum_{i=1}^{\text{dim}A}\sum_{j=1}^{\text{dim}B}
-\langle i|_A M
-\left[\left(\bold 1\otimes\langle j|_B\right)\rho^{AB}\left(\bold 1\otimes|j\rangle_B\right)\right]|i\rangle_A
-\\
-&amp;=\sum_{i=1}^{\text{dim}A}\sum_{j=1}^{\text{dim}B}
-\left(\langle i|_A\otimes\bold 1\right)
-M
-\left(\bold 1\otimes\langle j|_B\right)\rho^{AB}\left(\bold 1\otimes|j\rangle_B\right)
-\left(|i\rangle_A\otimes\bold 1\right)
-
-\end{align}\]</span> <span class="math display">\[
-while for any linear map $f(\bullet)$, if
-\]</span> (Mf(<sup>{AB}))=((MI_B)</sup>{AB}) <span class="math display">\[
-we could verify by picking orthonormal basis (under Hilber-Schmidt inner product) for Hermitian operator $M_i$, then
-\]</span> f(^{AB})=_iM_i(M_if(^{AB}))=_iM_i((M_iI_B)^{AB}) $$ which uniquely determines <span class="math inline">\(f\)</span>.</p>
-</blockquote>
-<p><strong>Schmidt Decomposition:</strong> <span class="math inline">\(|\psi\rangle\)</span> is pure state of composite system <span class="math inline">\(AB\)</span>. There exists orthonormal basis <span class="math inline">\(\{|i_A\rangle\}\)</span>, <span class="math inline">\(\{|i_B\rangle\}\)</span> such that <span class="math display">\[
-|\psi\rangle=\sum_i\lambda_i|i_A\rangle|i_B\rangle
-\]</span> where <span class="math inline">\(\lambda_i\)</span> are non-negative real numbers called <em>Schmidt coefficients</em> with <span class="math inline">\(\sum_i\lambda_i^2=1\)</span>. (only for 2-partite systems)</p>
-<blockquote>
-<p><strong>Proof:</strong> First the case where <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> have same dimensionality. Generally, <span class="math inline">\(|\psi\rangle=\sum_{jk}a_{jk}|j\rangle|k\rangle\)</span>, where <span class="math inline">\(|j\rangle\)</span> and <span class="math inline">\(|k\rangle\)</span> are orthonormal basis of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> respectively. Using singular value decomposition <span class="math inline">\(a=udv\)</span>, we have <span class="math display">\[
-\begin{align}
-|\psi\rangle&amp;=\sum_{ijk}u_{ji}d_{ii}v_{ik}|j\rangle|k\rangle\\
-&amp;=\sum_id_{ii}(\sum_ju_{ji}|j\rangle)(\sum_kv_{ki}|k\rangle)\\
-&amp;=\sum_id_{ii}|i_A\rangle|i_B\rangle
-\end{align}
-\]</span> For the case where <span class="math inline">\(n=\dim A\ge\dim B=m\)</span>, treat <span class="math inline">\(a_{jk}\)</span> as an <span class="math inline">\(n\times n\)</span> matrix with the rightest <span class="math inline">\((n-m)\)</span> columns empty. Then the singular value decomposition gives <span class="math inline">\(a=udv\)</span> with its block-diagonal form obvious enough to render the above thesis valid. (using <span class="math inline">\(\sqrt{A^\dagger A}\)</span>)</p>
-</blockquote>
-<p>As a consequence, <span class="math inline">\(\rho^A=\sum_i\lambda_i^2|i_A\rangle\langle i_A|\)</span>, and likewise for <span class="math inline">\(\rho^B=\sum_i\lambda_i^2|i_B\rangle\langle i_B|\)</span>.</p>
-<p><span class="math inline">\(|i_A\rangle\)</span> and <span class="math inline">\(|i_B\rangle\)</span> are called Schmidt bases. Schmidt number is defined by the number of non-zero <span class="math inline">\(\lambda_i\)</span>'s in a Schmidt decomposition for <span class="math inline">\(|\psi\rangle\)</span>, it quantifies the amount of entanglement. <u>Given a pure state, its Schmidt number can be immediately determined by taking <span class="math inline">\(\mbox{rank}(\rho^A)\)</span>.</u> Schmidt number is preserved under unitary transformation on system <span class="math inline">\(A\)</span> or system <span class="math inline">\(B\)</span> alone, since under respective evolution entanglement is maintained. Only when there is interaction may the entanglement between the two subsystems be varied.</p>
-<p>Pure state of composite system <span class="math inline">\(AB\)</span> is a product state iff it has Schmidt # 1, iff <span class="math inline">\(\rho^A\)</span> and <span class="math inline">\(\rho^B\)</span> are pure. To elaborate the latter, if <span class="math inline">\(\rho^A\)</span> pure, Schmidt # = 1.</p>
-<p><strong><em>QUESTION:</em></strong> For <span class="math inline">\(\rho^{AB}\)</span>, if <span class="math inline">\(\rho^A\)</span> pure, is <span class="math inline">\(\rho^{AB}\)</span> pure? Even if <span class="math inline">\(\rho^{AB}\)</span> is not pure, we purify it to yield a pure system <span class="math inline">\(ABC\)</span>, in which <span class="math inline">\(\mbox{tr}_{BC}(|ABC\rangle\langle ABC|)=\rho^A\)</span> is pure. Then <span class="math inline">\(\rho^{BC}\)</span> is pure as well. Thus <span class="math inline">\(ABC\)</span> is product state of <span class="math inline">\(A,\{BC\}\)</span>, namely <span class="math inline">\(|a\rangle|\psi\rangle_{BC}\)</span>. The overall effect is that we introduced an ancilla system to purify <span class="math inline">\(B\)</span>, and <span class="math inline">\(AB\)</span> as well. If we have furthermore that <span class="math inline">\(\rho^B\)</span> is pure, we can then conclude that <span class="math inline">\(\rho^C\)</span> is pure and then <span class="math inline">\(\rho^{AB}\)</span> is pure.</p>
-<p><strong>Purification:</strong> Given <span class="math inline">\(\rho^A\)</span>, there exists <span class="math inline">\(R\)</span> (reference system) such that <span class="math inline">\(|AR\rangle\)</span> is pure, with natural reduction <span class="math inline">\(\rho^A=\mbox{tr}_R(|AR\rangle\langle AR|)\)</span>. This can be done by finding orthonormal decomposition of <span class="math inline">\(\rho^A=\sum p_i|i^A\rangle\langle i^A|\)</span> and picking <span class="math inline">\(|AR\rangle=\sum_i\sqrt{p_i}|i^A\rangle|i^R\rangle\)</span>.</p>
-<blockquote>
-<p><span class="math inline">\(|\psi\rangle=(U\otimes V)|\varphi\rangle\)</span> transform pure state to another pure state.</p>
-<p><strong>Freedom in purifications</strong> If <span class="math inline">\(|AR_1\rangle\)</span> and <span class="math inline">\(|AR_2\rangle\)</span> are two purifications of a state <span class="math inline">\(\rho^A\)</span> to a composite system <span class="math inline">\(AR\)</span>. There exists <span class="math inline">\(|AR_1\rangle=(I_A\otimes U_R)|AR_2\rangle\)</span>.</p>
-<p>If we introduce ancilla system <span class="math inline">\(R\)</span> of same dimensionality as <span class="math inline">\(A\)</span>, and set any orthonormal basis <span class="math inline">\(|i_A\rangle\)</span>, <span class="math inline">\(|i_R\rangle\)</span>. Denote maximum entangled state <span class="math inline">\(|m\rangle\equiv\sum_i|i_R\rangle|i_A\rangle\)</span>. Then any purification of the system <span class="math inline">\(\rho^A\)</span> can be written <span class="math display">\[
-|AR\rangle=(U_R\otimes\sqrt{\rho^A}U_A)|m\rangle
-\]</span></p>
-</blockquote>
-<blockquote>
-<p><strong>Properties of Schmidt number</strong> Suppose <span class="math inline">\(|\psi\rangle\)</span> is pure state of <span class="math inline">\(\{A,B\}\)</span>.</p>
-<ol type="a">
-<li><span class="math inline">\(\mbox{Sch}(|\psi\rangle)=\mbox{rank}(\rho^A)\)</span></li>
-</ol>
-<p>Proof: Schmidt decomposition <span class="math inline">\(|\psi\rangle=\sum_i\lambda_i|i_A\rangle|i_B\rangle\)</span>. <span class="math inline">\(\rho^A=\sum_i\lambda_i^2|i_A\rangle\langle i_A|\)</span>.</p>
-<ol start="2" type="a">
-<li>Suppose <span class="math inline">\(|\psi\rangle=\sum_j|\alpha_j\rangle|\beta_j\rangle\)</span> is a representation. The # of terms in such a decomposition <span class="math inline">\(\ge\mbox{Sch}(|\psi\rangle)\)</span>.</li>
-</ol>
-<p>Proof: Schmidt decomposition <span class="math inline">\(|\psi\rangle=\sum_i\lambda_i|i_A\rangle|i_B\rangle=\sum_j\mu_j|\tilde\alpha_j\rangle|\tilde\beta_j\rangle\)</span>, where tilde gives normalized vectors. From this <span class="math inline">\(\rho^A=\sum_i\lambda_i^2|i_A\rangle\langle i_A|=\sum_j\mu_j^2|\tilde\alpha_j\rangle\langle\tilde\alpha_j|\)</span>, we can actually link <span class="math display">\[
-\lambda_i|i_A\rangle=\sum_ju_{ij}\mu_j|\tilde\alpha_j\rangle
-\]</span> If # of terms for <span class="math inline">\(|\alpha_i\rangle\)</span> is smaller than <span class="math inline">\(\mbox{Sch}(|\psi\rangle)\)</span>, it would not be possible for such linear representation to hold.</p>
-<ol start="3" type="a">
-<li>Suppose <span class="math inline">\(|\psi\rangle=\alpha|\varphi\rangle+\beta|\gamma\rangle\)</span>, then <span class="math inline">\(\mbox{Sch}(\psi)\ge|\mbox{Sch}(\varphi)-\mbox{Sch}(\gamma)|\)</span>.</li>
-</ol>
-<p>Proof: Since <span class="math inline">\(|\psi\rangle-\alpha|\varphi\rangle=\beta|\gamma\rangle\)</span>. LHS is a representation, having <span class="math inline">\(\mbox{Sch}(\psi)+\mbox{Sch}(\varphi)\)</span> terms. Thus from (b) we have <span class="math inline">\(\mbox{Sch}(\psi)+\mbox{Sch}(\varphi)\ge\mbox{Sch}(\gamma)\)</span>. And the other way around.</p>
-</blockquote>
-<p>###EPR&amp; Bell Inequality</p>
+<p>Def 1.2 Finite Group &amp; Infinite Group</p>
+<p>Def 1.3 Abel(ian) (Commutative) Group</p>
+<p><strong>Thm 1.1 Re-arrangement Theorem</strong></p>
 <hr />
-<p><strong>Measurement via apparatus analysis</strong></p>
-<p>System <span class="math inline">\(Q\)</span> and ancilla system <span class="math inline">\(M\)</span> interacts to give the outcome of a full measurement. Consider <span class="math inline">\(Q\)</span> in the state <span class="math inline">\(|\psi\rangle\)</span> and <span class="math inline">\(M\)</span> in the state <span class="math inline">\(|0\rangle\)</span> initially. <span class="math inline">\(M\)</span> has a set of orthonormal states as basis <span class="math inline">\(|m\rangle\)</span>. Thus the evolution of the composite system is written <span class="math display">\[
-U|\psi\rangle|0\rangle=\sum_m (M_m\otimes I)|\psi\rangle|m\rangle
-\]</span> The unitary property is reserved iff <span class="math display">\[
+<p>Def 1.4 Subgroup</p>
+<blockquote>
+<p>Subgroup inherits the original group's multiplication rule, so 2) associativity is naturally guaranteed. Also 1) and 4) together leads to 3). So it usually suffices to prove: 1) closure and 4) inverse.</p>
+</blockquote>
+<p>Def 1.5 Order of an element</p>
+<blockquote>
+<p>Consider cyclic group generation.</p>
+</blockquote>
+<p>Def 1.6 Left(Right) Coset (of subgroup) <span class="math inline">\(gH\)</span>, <span class="math inline">\(Hg\)</span></p>
+<p><strong>Thm 1.2 Coset Theorem:</strong> two left (right) cosets of a subgroup are either identical or disjoint.</p>
+<blockquote>
+<p><strong>Proof</strong> <span class="math inline">\(\forall g_1,g_2\in G\)</span> with subgroup <span class="math inline">\(H\sub G\)</span>. If there is <span class="math inline">\(h_1,h_2\in H\)</span> such that <span class="math inline">\(g_1 h_1=g_2 h_2\)</span>, we then have <span class="math inline">\(g_1 H=g_1h_1\cdot h_1^{-1}H=g_2h_2\cdot H=g_2 H\)</span>. Likewise for right cosets. q.e.d.</p>
+</blockquote>
+<p><strong>Thm 1.3 Lagrange Theorem:</strong> Order of subgroup must be factor of that of the group.</p>
+<blockquote>
+<p>Consider all cosets of the subgroup.</p>
+</blockquote>
+<hr />
+<p>Def 1.7 Conjugacy (between elements)</p>
+<blockquote>
+<p>If there exists <span class="math inline">\(g\in G\)</span> such that <span class="math inline">\(gfg^{-1}=h\)</span>, then <span class="math inline">\(f\sim h\)</span>. This is an equivalence relation.</p>
+</blockquote>
+<p>Def 1.8 (Conjugacy) Class</p>
+<blockquote>
+<p><strong>Properties</strong> 1) identity itself constitutes a class. 2) elements of Abelian group each constitutes a class. 3) elements of the same class have the same order (but NOT the other way around).</p>
+</blockquote>
+<p><strong>Thm 1.4</strong> Number of elements in a conjugacy class must be factor of the order of the (finite) group.</p>
+<blockquote>
+<p><strong>Proof</strong> We consider the conjugacy class which <span class="math inline">\(g\in G\)</span> is in. Discover first that the elements that commute with <span class="math inline">\(g\)</span> forms a subgroup <span class="math display">\[
+H_g:=\{h|h\in G, hg=gh\}
+\]</span> To elaborate, for <span class="math inline">\(h_1,h_2\in H_g\)</span>, there is <span class="math inline">\(h_1g=gh_1\)</span>, <span class="math inline">\(h_2g=gh_2\)</span>, thus <span class="math inline">\(h_1h_2g=h_1gh_2=gh_1h_2\)</span>, namely <span class="math inline">\(h_1h_2\in H_g\)</span>, which states closure. Consider <span class="math inline">\(h\in H_g\)</span>, <span class="math inline">\(hg=gh\)</span>, then there is also <span class="math inline">\(g=h^{-1}gh\)</span>, which leads to <span class="math inline">\(gh^{-1}=h^{-1}g\)</span>, thus inverse property is justified. <span class="math inline">\(H_g\)</span> is indeed a subgroup.</p>
+<p>Then consider the equipartition by this subgroup through construction of left cosets, namely <span class="math display">\[
+\{g_0H_g,g_1H_g,\cdots\}
+\]</span> where <span class="math inline">\(g_0,g_1\cdots\in G\)</span>. For any <span class="math inline">\(h\in H_g\)</span>, consider <span class="math inline">\((g_i h)g(g_i h)^{-1}=g_i hgh^{-1}g_i^{-1}=g_igg_i^{-1}\)</span>. This states that for any <span class="math inline">\(f\)</span> in a coset, <span class="math inline">\(fgf^{-1}\)</span> generates the same element. Different cosets generates different element in this way since, if we have <span class="math inline">\(g_i\)</span> and <span class="math inline">\(g_j\)</span> generating different cosets but still with <span class="math inline">\(g_igg_i^{-1}=g_jgg_j^{-1}\)</span>, there is <span class="math inline">\((g_j^{-1}g_i)g=g(g_j^{-1}g_i)\)</span>, which gives <span class="math inline">\(g_j^{-1}g_i\in H_g\)</span>, which gives <span class="math inline">\(g_j^{-1}g_iH_g=H_g\)</span>, which leads to <span class="math inline">\(g_i H_g=g_j H_g\)</span> and that leads to contradiction.</p>
+<p>Thus from the above facts, there are <span class="math inline">\(|G|/|H_g|\)</span> cosets which generate each a conjugate element to <span class="math inline">\(g\)</span> including <span class="math inline">\(g\)</span> itself. Thus the order of the class is <span class="math inline">\(|G|/|H_g|\)</span> which divides <span class="math inline">\(|G|\)</span>.</p>
+</blockquote>
+<p>Def 1.9 Conjugate Subgroups</p>
+<blockquote>
+<p>If there exists an element <span class="math inline">\(g\in G\)</span> such that <span class="math inline">\(K=gHg^{-1}\)</span>, we then say <span class="math inline">\(K\)</span> and <span class="math inline">\(H\)</span> are conjugate to each other</p>
+</blockquote>
+<p>Def 1.10 Invariant (normal) subgroup</p>
+<blockquote>
+<p>If any conjugate class of the subgroup's element stays within the subgroup, the subgroup is invariant.</p>
+</blockquote>
+<p><strong>Thm 1.5</strong> If <span class="math inline">\(H\)</span> is invariant subgroup, <span class="math inline">\(\forall g\in G\)</span>, <span class="math inline">\(\mbox{Ad}_g(\bull)\equiv g\bull g^{-1}\)</span> is a 1-1 map on <span class="math inline">\(H\)</span>. Thus the definition of invariant subgroup can be written <span class="math inline">\(gHg^{-1}=H, \forall g\in G\)</span>.</p>
+<p><u>Prop</u> All subgroups in Abelian group are invariant.</p>
+<p><strong>Thm 1.6</strong> For an invariant subgroup, its left and right cosets coincide and vice versa.</p>
+<blockquote>
+<p><span class="math inline">\((\forall g\in G,gHg^{-1}=H)\Leftrightarrow(\forall g\in G,gH=Hg)\)</span></p>
+</blockquote>
+<p><u>Prop</u> Product of elements from two (not the subgroup) cosets of the invariant subgroup lands in another coset</p>
+<blockquote>
+<p><strong>Proof</strong> Consider equipartition of the group by the invariant subgroup <span class="math inline">\(H\)</span>, namely <span class="math display">\[
+G=\{g_0H,g_1H,g_2H,\cdots\}
+\]</span> For any <span class="math inline">\(h_\alpha,h_\beta\in H\)</span>, consider first <span class="math inline">\((g_0h_\alpha)(g_0h_\beta)=h_\alpha h_\beta\in g_0 H\)</span> and <span class="math inline">\((g_0h_\alpha)(g_i h_\beta)=h_\alpha g_i h_\beta=g_i(g_i^{-1}h_\alpha g_i)h_\beta=g_ih_\alpha&#39;h_\beta\in g_i H\)</span> and <span class="math inline">\((g_ih_\alpha)(g_0h_\beta)=g_ih_\alpha h_\beta\in g_i H\)</span>, where <span class="math inline">\(i\ne 0\)</span>.</p>
+<p>Then consider <span class="math inline">\(i,j\ne 0\)</span>, there is <span class="math inline">\((g_ih_\alpha)(g_jh_\beta)=g_ig_jg_j^{-1}h_\alpha g_jh_\beta=g_ig_jh_\alpha&#39;h_\beta\)</span>, which could be in neither <span class="math inline">\(g_i H\)</span> nor in <span class="math inline">\(g_j H\)</span>, but in <span class="math inline">\((g_ig_j)H\)</span>.</p>
+</blockquote>
+<p>Def 1.11 Quotient Group <span class="math inline">\(G/H\)</span></p>
+<blockquote>
+<p>Suppose <span class="math inline">\(G\)</span> has invariant subgroup <span class="math inline">\(H\)</span>, we can then divide <span class="math inline">\(G=\{g_0H,g_1H,\ldots\}\)</span>, treat each part as a new element in the quotient group <span class="math inline">\(G/H\)</span>.</p>
+</blockquote>
+<hr />
+<p>Def 1.12 Isomorphism <span class="math inline">\(G\simeq F\)</span></p>
+<blockquote>
+<p>Isomorphic mapping <span class="math inline">\(\Phi:G\longrightarrow F\)</span></p>
+</blockquote>
+<p>Def 1.13 Homomorphism <span class="math inline">\(G\sim F~(|G|\geq|F|)\)</span></p>
+<blockquote>
+<p>Homomorphic mapping <span class="math inline">\(\Phi:G\longrightarrow F\)</span></p>
+</blockquote>
+<p>Def 1.14 Kernel of homomorphism</p>
+<blockquote>
+<p>If <span class="math inline">\(G\sim F\)</span>, we call <span class="math inline">\(\Phi^{-1}(e_{F})\)</span> the kernel of homomorphism</p>
+</blockquote>
+<p><strong>Thm 1.7 Kernel Theorem:</strong> If <span class="math inline">\(G\sim F\)</span>, then (1) <span class="math inline">\(\ker{G}\)</span> is invariant subgroup of <span class="math inline">\(G\)</span>; (2) quotient group <span class="math inline">\(G/\ker G\)</span> is isomorphic to <span class="math inline">\(F\)</span>.</p>
+<blockquote>
+<p><strong>Proof</strong> (1) Subgroup: <span class="math inline">\(\forall k_1,k_2\in\ker G\)</span> that are distinct, there is <span class="math inline">\(\Phi(k_1)=\Phi(k_2)=e_F\)</span>. By property of homomorphism, there is <span class="math inline">\(\Phi(k_1k_2)=\Phi(k_1)\Phi(k_2)=e_F\)</span>, thus <span class="math inline">\((k_1k_2)\in \ker G\)</span>, which guarantees closure. Then consider <span class="math inline">\(\forall k\in\ker G\)</span>, then <span class="math inline">\(\Phi(k^{-1})\Phi(k)=\Phi(k^{-1})=\Phi(e_G)=e_F\)</span>, thus <span class="math inline">\(k^{-1}\in\ker G\)</span>.</p>
+<p>Invariance: <span class="math inline">\(\forall g\in G\)</span>, consider <span class="math inline">\(g(\ker G)g^{-1}\)</span>, <span class="math inline">\(\forall k\in\ker G\)</span>, <span class="math inline">\(\Phi(gkg^{-1})=\Phi(g)\Phi(g^{-1})=e_F\)</span>, thus <span class="math inline">\(gkg^{-1}\in\ker G\)</span>.</p>
+<ol start="2" type="1">
+<li>Denote <span class="math inline">\(\ker G= H\)</span>, consider quotient group <span class="math inline">\(G/H=\{g_0H, g_1 H,\cdots\}\)</span>, then <span class="math inline">\(\Phi(g_i H)=\Phi(g_i)\Phi(H)=\Phi(g_i)\)</span>. Together with <span class="math inline">\(\Phi(g_iHg_jH)=\Phi(g_kH)=\Phi(g_k)\)</span>, we could have the isomorphic mapping by combining <span class="math display">\[
+\Psi:G/H\longrightarrow F;~g_iH\mapsto \Phi(g_i)
+\]</span></li>
+</ol>
+</blockquote>
+<p>Def 1.15 Automorphic mapping <span class="math inline">\(v:G\longrightarrow G\)</span></p>
+<blockquote>
+<p>Preserves multiplication <span class="math inline">\(v(g_ig_j)=v(g_i)v(g_j)\)</span>.</p>
+</blockquote>
+<p>Def 1.16 Automorphic group <span class="math inline">\(A(G)\)</span></p>
+<blockquote>
+<p>Define <span class="math inline">\(v_1\cdot v_2\equiv v_1\circ v_2\)</span> acting on <span class="math inline">\(G\)</span> elements. Thus closure is guaranteed. Associativity is obvious. Identity and inverse is superficial.</p>
+</blockquote>
+<p>Def 1.17 Inner-automorphic mapping <span class="math inline">\(\mbox{Ad}_u:g\mapsto ugu^{-1}\)</span>, such maps form a group called the Inner-automorphic group <span class="math inline">\(I(G)\)</span>.</p>
+<p><u>Prop</u> <span class="math inline">\(I(G)\)</span> is an invariant subgroup of <span class="math inline">\(A(G)\)</span></p>
+<blockquote>
+<p>Being a subgroup, there is closure: <span class="math inline">\(\mbox{Ad}_f\circ\mbox{Ad}_h(g)=fhgh^{-1}f^{-1}=\mbox{Ad}_{(fh)}(g)\)</span>; inverse: <span class="math inline">\((\mbox{Ad}_f)^{-1}=\mbox{Ad}_{f^{-1}}\)</span>.</p>
+<p>Being invariant, there is <span class="math display">\[
 \begin{align}
-(U|\varphi\rangle|0\rangle,U|\psi\rangle|0\rangle)&amp;=\sum_m\langle\varphi|M_m^\dagger M_m|\psi\rangle\\
-&amp;=\langle\varphi|\psi\rangle
+v\circ\mbox{Ad}_{f}\circ v^{-1}(g)&amp;=v(f\cdot v^{-1}(g)\cdot f^{-1})
+\\&amp;=
+v(f)\cdot g\cdot v(f^{-1})
+\\&amp;=
+\mbox{Ad}_{v(f)}(g)
 \end{align}
-\]</span> which requires that <span class="math inline">\(\sum_m M_m^\dagger M_m=I\)</span>.</p>
-<p>Exploiting the semi-classical nature of the apparatus, as an outcome of the measurement action, do projection <span class="math inline">\(P_m=I\otimes|m\rangle\langle m|\)</span>, yielding the outcome composite state <span class="math display">\[
-\frac{M_m|\psi\rangle}
-{\sqrt{\langle\psi|M_m^\dagger M_m|\psi\rangle}}\otimes|m\rangle
-\]</span> And the corresponding probablity is given by <span class="math display">\[
-p(m)=\frac{\langle\psi|M_m^\dagger M_m|\psi\rangle}{\sum_m\langle\psi|M_m^\dagger M_m|\psi\rangle}=\langle\psi|M_m^\dagger M_m|\psi\rangle
+\]</span> namely, <span class="math inline">\(v\circ\mbox{Ad}_{f}\circ v^{-1}=\mbox{Ad}_{v(f)}\)</span>. Thus <span class="math inline">\(I(G)\)</span> is invariant.</p>
+</blockquote>
+<hr />
+<p>Def 1.18 Transform <span class="math inline">\(f:X\longrightarrow X\)</span>, a 1-1 mapping; Complete symmetric group (on <span class="math inline">\(X\)</span>) <span class="math inline">\(S_X\)</span>; Transformation (symmetric) group: subgroup of <span class="math inline">\(S_X\)</span></p>
+<p><strong>Thm 1.8 Cayley Theorem:</strong> Group <span class="math inline">\(G\)</span> is isomorphic to a subgroup of <span class="math inline">\(S_G\)</span>.</p>
+<blockquote>
+<p>obvious by picking <span class="math inline">\(g:G\longrightarrow G\)</span> with <span class="math inline">\(h\mapsto gh\)</span>.</p>
+</blockquote>
+<p>Def 1.19 Equivalence</p>
+<blockquote>
+<p>If <span class="math inline">\(G\)</span> is a transformation group on <span class="math inline">\(X\)</span>, and for <span class="math inline">\(x,y\in X,\exist g\in G\)</span> such that <span class="math inline">\(g(x)=y\)</span>, we say that <span class="math inline">\(x,y\)</span> are equivalent, denoted as <span class="math inline">\(x\sim y\)</span> (with reflexivity, transitivity, symmetry).</p>
+</blockquote>
+<p>Def 1.20 Orbit</p>
+<blockquote>
+<p>If <span class="math inline">\(G\)</span> is a transformation group on <span class="math inline">\(X\)</span>, <span class="math inline">\(x\in X\)</span>, then all elements in <span class="math inline">\(X\)</span> that is equivalent to <span class="math inline">\(x\)</span> forms a set, and is call the <em>orbit</em> of <span class="math inline">\(x\)</span> on <span class="math inline">\(G\)</span>.</p>
+</blockquote>
+<p>Def 1.21 Invariant subset</p>
+<blockquote>
+<p><span class="math inline">\(G\)</span> is a transformation group on <span class="math inline">\(X\)</span>, if there is a subset <span class="math inline">\(Y\sub X\)</span> that satisfies <span class="math inline">\(g(Y)\sub Y\)</span> for any <span class="math inline">\(g\)</span>, we call <span class="math inline">\(Y\)</span> an invariant subset of <span class="math inline">\(G\)</span> on <span class="math inline">\(X\)</span>.</p>
+</blockquote>
+<p><u>Prop</u> Every orbit in <span class="math inline">\(X\)</span> is <span class="math inline">\(G\)</span>-invariant, thus all the orbits and their unions are <span class="math inline">\(G\)</span>-invariant; For any subset <span class="math inline">\(Y\sub X\)</span>, we can always find a subgroup <span class="math inline">\(H\)</span> of <span class="math inline">\(G\)</span>, such that <span class="math inline">\(Y\)</span> is <span class="math inline">\(H\)</span>-invariant</p>
+<p>Def 1.22 Isotropy subgroup</p>
+<blockquote>
+<p><span class="math inline">\(G\)</span> is transformation group on <span class="math inline">\(X\)</span>, <span class="math inline">\(x\in X\)</span>, a subgroup <span class="math inline">\(G^x\)</span> of <span class="math inline">\(G\)</span> holds <span class="math inline">\(x\)</span> invariant, namely <span class="math inline">\(G^x=\{h|h\in G,hx=x\}\)</span> and it is called the isotropy subgroup of <span class="math inline">\(G\)</span> on <span class="math inline">\(x\)</span>. It is indeed a subgroup since for</p>
+<p>Closure: <span class="math inline">\(\forall g_1,g_2\in G^x\)</span>, <span class="math inline">\(g_1g_2x=x\)</span>, thus <span class="math inline">\(g_1g_2\in G^x\)</span>.</p>
+<p>Inverse: <span class="math inline">\(\forall g\in G^x\)</span>, since <span class="math inline">\(gx=x\)</span>, there is <span class="math inline">\(x=g^{-1}x\)</span>, thus <span class="math inline">\(g^{-1}\in G^x\)</span></p>
+</blockquote>
+<p><strong>Thm 1.9</strong> <span class="math inline">\(G^x\)</span> is isotropy subgroup of <span class="math inline">\(G\)</span> on <span class="math inline">\(x\in X\)</span>, then every left coset of <span class="math inline">\(G^x\)</span> maps <span class="math inline">\(x\)</span> towards a specific point <span class="math inline">\(y\)</span> in <span class="math inline">\(G\)</span>, with different image points for different cosets, i.e. we can construct a 1-1 mapping between <span class="math inline">\(x\)</span>'s orbit and left cosets of <span class="math inline">\(G^x\)</span>.</p>
+<blockquote>
+<p><strong>Proof</strong> Consider the equipartition of <span class="math inline">\(G\)</span> by <span class="math inline">\(G^x\)</span>, namely <span class="math display">\[
+G=\{g_0G^x,g_1G^x,\cdots\}
+\]</span> we thus have <span class="math inline">\(Gx=\{g_0x,g_1x,\cdots\}\)</span>.</p>
+</blockquote>
+<hr />
+<p>Def 1.23 Direct Product Group</p>
+<blockquote>
+<p><span class="math inline">\(G_1\otimes G_2\equiv\{g_{\alpha\beta}|g_{\alpha\beta}\equiv(g_{1,\alpha},g_{2,\beta}),g_{1,\alpha}\in G_1,g_{2,\beta}\in G_2\}\)</span></p>
+</blockquote>
+<p>Def 1.24 Direct Product Factorization</p>
+<blockquote>
+<p>If a group <span class="math inline">\(G\)</span> has two subgroups <span class="math inline">\(G_1,G_2\)</span> and every element in <span class="math inline">\(G\)</span> can be uniquely written as <span class="math inline">\(g_{\alpha\beta}=g_{1\alpha}g_{2\beta}=g_{2\beta}g_{1\alpha}\)</span> , then <span class="math inline">\(G\)</span> is a direct product of <span class="math inline">\(G_1\)</span> and <span class="math inline">\(G_2\)</span>, and they are called a direct product factorization of <span class="math inline">\(G\)</span></p>
+</blockquote>
+<p><u>Rmk</u> It is not required that <span class="math inline">\(G_1\)</span>, <span class="math inline">\(G_2\)</span> be Abelian, we only require the multiplication between these two groups commute. We can further see that in the case of direct product factorization, <span class="math inline">\(G_1\)</span> and <span class="math inline">\(G_2\)</span> would share only a single element <span class="math inline">\(e\)</span>, and they are both invariant subgroups.</p>
+<p><u>Ex</u> <span class="math inline">\(\mathbb{R}^3=\mathbb{R}^2\otimes\mathbb{R}\)</span>, <span class="math inline">\(\mathbf{Z}_6=\{e,a^3\}\otimes\{e,a^2,a^4\}\)</span>, but not for <span class="math inline">\(D_3\)</span> with <span class="math inline">\(G_1=\{e,d,f\}\)</span> and <span class="math inline">\(G_2=\{e,a\}\)</span>.</p>
+<p>Def 1.25 Semi-Direct Product</p>
+<blockquote>
+<p>For groups <span class="math inline">\(G_1\)</span>, <span class="math inline">\(G_2\)</span>, if there exist an automorphism group <span class="math inline">\(A(G_1)\)</span> which <span class="math inline">\(G_2\)</span> is homomorphic to, namely <span class="math inline">\(\forall g_{2\beta}\in G_2\)</span>, we can have a specific automophism <span class="math inline">\(v_{g_{2\beta}}\)</span> (through homomorphism) on <span class="math inline">\(G_1\)</span>. With this, we construct new element <span class="math inline">\(g_{\alpha,\beta}=\langle g_{1\alpha}g_{2\beta}\rangle\)</span> with multiplication rule <span class="math inline">\(g_{\alpha,\beta}g_{\alpha&#39;,\beta&#39;}=\langle g_{1\alpha}g_{2\beta}\rangle\langle g_{1\alpha&#39;}g_{2\beta&#39;}\rangle=\langle g_{1\alpha}v_{g_{2\beta}}(g_{1\alpha&#39;})g_{2\beta}g_{2\beta&#39;}\rangle\)</span>. This forms the semi-direct product group <span class="math inline">\(G_1\otimes_sG_2\)</span></p>
+</blockquote>
+<p><u>Prop</u> <span class="math inline">\(G_1\)</span> is an invariant subgroup, while <span class="math inline">\(G_2\)</span> is generally not. If otherwise, the semi-direct product levels up to be the direct product</p>
+<p><u>Ex</u> <span class="math inline">\(D_3=\{e,d,f\}\otimes_s\{e,a\}\)</span> group.</p>
+<h2 id="chapter-2-representation">Chapter 2 Representation</h2>
+<p>Def 2.1 Linear Space (Vector Space)</p>
+<p>Def 2.2 Linear (In-)Dependence</p>
+<p>Def 2.3 Dimension</p>
+<p>Def 2.4 Basis</p>
+<blockquote>
+<p>Be sure to differentiate between elements of the linear space and matrices.</p>
+</blockquote>
+<p>Def 2.5 Linear Transform <span class="math inline">\(A:V\longrightarrow V\)</span></p>
+<blockquote>
+<p>This can be written given a basis <span class="math display">\[
+(\bold e_1&#39;, \bold e_2&#39;,\cdots,\bold e_n&#39;)=(A\bold e_1,A\bold e_2,\cdots,A\bold e_n)=(\bold e_1,\bold e_2,\cdots,\bold e_n)[A]
+\]</span> where <span class="math inline">\([A]\)</span> is the matrix under the <span class="math inline">\(\{\bold e\}\)</span> basis, and the transformation of a vector can be written <span class="math display">\[
+\left(\begin{array}{c}
+x_1&#39;\\x_2&#39;\\\vdots\\x_n&#39;
+\end{array}\right)
+=[A\bold x]=[A][\bold x]
+=[A]\left(\begin{array}{c}
+x_1\\x_2\\\vdots\\x_n
+\end{array}\right)
 \]</span></p>
+</blockquote>
+<p>Def 2.6 Linear Transform Group</p>
+<blockquote>
+<p>Define multiplication to be successive action, then all non-singular linear transforms in n-dim'l complex linear space <span class="math inline">\(V\)</span> forms a group, it is called the <em>n-dim'l complex general linear group</em> <span class="math inline">\(GL(V,\C)\)</span>.</p>
+<p>Its subgroup <span class="math inline">\(L(V,\C)\)</span> is called a <em>linear transform group</em> on <span class="math inline">\(V\)</span>.</p>
+</blockquote>
+<p>Def 2.7 Group Representation</p>
+<blockquote>
+<p>For a group <span class="math inline">\(G\)</span>, if there is a homomorphism <span class="math inline">\(A\)</span> from <span class="math inline">\(G\)</span> to an n-dim'l linear transform group <span class="math inline">\(L(V,C)\)</span>, then <span class="math inline">\(A\)</span> is called a <em>linear representation</em> of <span class="math inline">\(G\)</span>, <span class="math inline">\(V\)</span> is the <em>representation space</em>, <span class="math inline">\(n\)</span> is the <em>dimensionality of the representation</em>.</p>
+<p>With <span class="math inline">\(A:G\longrightarrow L(V,\C)\)</span> being a homomorphism, <span class="math inline">\(\forall g_\alpha\in G,A(g_\alpha)\in L\)</span>; <span class="math inline">\(\forall g_\alpha,g_\beta\in G,A(g_\alpha g_\beta)=A(g_\alpha)A(g_\beta)\)</span>. With obvious correspondence for identity and inverse elements.</p>
+<p>For isomorphism case, the representation is <em>faithful</em>.</p>
+</blockquote>
+<p><u>Ex</u> Trivial representation; There are cases when the <em>basis</em> of the <em>representation space</em> are chosen to be <em>functions</em>, i.e. the representation space is a linear function space <span class="math inline">\(V=\{f|f~\text{is function with some property on a set }X\}\)</span>, we can construct a representation scheme in the following fashion. Suppose <span class="math inline">\(G\)</span> is a transformation group on <span class="math inline">\(X\)</span> and we are representing <span class="math inline">\(G\)</span> with linear representation <span class="math inline">\(A\)</span> that is a homomorphism from <span class="math inline">\(G\)</span> to <span class="math inline">\(V\)</span>, which is a linear function space on <span class="math inline">\(X\)</span>. For succintness, we set <span class="math inline">\(X=\R^3\)</span>, while <span class="math inline">\(g_\alpha\in G\)</span> transforms the space <span class="math inline">\(X\)</span> 1-1 into itself. Consider representation given by <span class="math display">\[
+(A(g_\alpha)\Psi)|_{g_\alpha x}\equiv\Psi(x)
+\]</span> ​ for any <span class="math inline">\(\Psi\in V\)</span>. This is indeed a homomorphism since <span class="math display">\[
+(A(g_\alpha g_\beta)\Psi)|_{g_\alpha g_\beta x}=\Psi(x)
+\]</span> ​ while <span class="math display">\[
+(A(g_\alpha)A(g_\beta)\Psi)|_{g_\alpha g_\beta x}=(A(g_\beta)\Psi)|_{g_\alpha^{-1}(g_\alpha g_\beta x)}=(A(g_\beta)\Psi)|_{g_\beta x}=\Psi(x)
+\]</span></p>
+<hr />
+<p>Def 2.8 Equivalent Representation</p>
+<blockquote>
+<p>For <span class="math inline">\(A:G\longrightarrow L(V,\C)\)</span>, and a non-singular linear transformation <span class="math inline">\(P\)</span> on <span class="math inline">\(V\)</span>, then <span class="math inline">\(P^{-1}AP\)</span> also gives a representation. Such representation is said to be <em>equivalent</em> to <span class="math inline">\(A\)</span>.</p>
+</blockquote>
+<p><u>Rmk</u> Representation spaces can be different for equivalent representations as long as their representation matrices can be related in the above fashion. For two representations to be equivalent, they must possess the same dimensionality. c.f. characteristics.</p>
+<p>Def 2.9 Reducible Representation</p>
+<blockquote>
+<p>If <span class="math inline">\(A\)</span> is representation of <span class="math inline">\(G\)</span> on <span class="math inline">\(V\)</span>, and there is a <span class="math inline">\(G\)</span>-invariant non-trivial subspace <span class="math inline">\(W\)</span>, then we say <span class="math inline">\(A\)</span> is <em>reducible</em>. This means that <span class="math inline">\(\forall y\in W\)</span>, <span class="math inline">\(\forall g_\alpha\in G\)</span>, <span class="math inline">\(A(g_\alpha)y\in W\)</span>. Under these conditions, we could easily construct a new representation with smaller dimensionality <span class="math display">\[
+A&#39;:G\longrightarrow L(W,\C)
+\]</span> From this, we could naturally introduce the definition of an <em>irreducible representation</em>, namely if <span class="math inline">\(A\)</span> is representation of <span class="math inline">\(G\)</span> on <span class="math inline">\(V\)</span>, and there is no <span class="math inline">\(G\)</span>-invariant non-trivial subspace so as to generate a new representation of smaller dimensionality, we call the representation <em>irreducible</em>.</p>
+</blockquote>
+<p>Def 2.10 Direct Sum</p>
+<blockquote>
+<p>Representation space <span class="math inline">\(V\)</span> of <span class="math inline">\(G\)</span> has subspace <span class="math inline">\(W\)</span> and <span class="math inline">\(W&#39;\)</span>. If <span class="math inline">\(\forall x\in V\)</span>, <span class="math inline">\(\exist!y\in W,z\in W&#39;,s.t.~x=y+z\)</span>, then we say <span class="math inline">\(V=W\oplus W&#39;\)</span>.</p>
+<p>This is guaranteed by <span class="math inline">\(W+W&#39;=V\)</span> and <span class="math inline">\(W\cap W&#39;=\{0\}\)</span>.</p>
+<p>c.f. Addition of linear space.</p>
+</blockquote>
+<p>Def 2.11 Fully Reducible</p>
+<blockquote>
+<p>If <span class="math inline">\(V=W\oplus W&#39;\)</span> and <span class="math inline">\(W\)</span>, <span class="math inline">\(W&#39;\)</span> are both <span class="math inline">\(G\)</span>-invariant, then we say the representation is fully reducible. A fully reducible representation is of course reducible.</p>
+<p>Fully reducible representation matrices may have the form <span class="math display">\[
+A(g_\alpha)=
+\left(\begin{array}{cc}
+C_\alpha&amp;0\\0&amp;B_\alpha
+\end{array}\right)
+\]</span> We say that <span class="math inline">\(A\)</span> can be reduced to be a direct sum of <span class="math inline">\(C\)</span> and <span class="math inline">\(B\)</span>, denoted as <span class="math inline">\(A(g_\alpha)=C(g_\alpha)\oplus B(g_\alpha)\)</span>.</p>
+<p>Eventually, ANY finite-dim'l representation can be reduced to (denoted as) <span class="math display">\[
+A(g_\alpha)=\sum_p\bigoplus_、{m_p}A^p(g_\alpha)
+\]</span> where <span class="math inline">\(m_p\)</span> is the repetition index of the irreducible representation <span class="math inline">\(A^p\)</span>.</p>
+</blockquote>
+<p><u>Rmk</u> If group <span class="math inline">\(G\)</span> is represented by <span class="math inline">\(A\)</span> on <span class="math inline">\(V\)</span> and there is no <span class="math inline">\(G\)</span>-invariant, non-trivial subspace, then <span class="math inline">\(A\)</span> is said to be <em>irreducible representation</em>.</p>
+<p><u>N.B.</u> THE MAIN TASK OF GROUP REPRESENTATION THEORY IS TO FIND OUT ALL THE <em>INEQUIVALENT</em> AND <em>IRREDUCIBLE</em> REPRESENTATIONS OF <em>ANY GROUP</em>.</p>
+<p><strong>Thm 2.1</strong> For finite group, if a representation is reducible, then it is fully reducible.</p>
+<blockquote>
+<p><strong>Proof</strong> The reducible representation can be written as <span class="math display">\[
+A(g_\alpha)=
+\left(\begin{array}{cc}G_1(g_\alpha)&amp;R(g_\alpha)\\0&amp;G_2(g_\alpha)\end{array}\right)
+\]</span> Consider similar transformation of the form <span class="math display">\[
+P=\left(\begin{array}{cc}I&amp;C\\0&amp;I\end{array}\right)
+\]</span> We claim that we could find a <span class="math inline">\(C\)</span> such that <span class="math inline">\(P^{-1}A(g_\alpha)P=G_0(g_\alpha)\equiv\left(\begin{array}{cc}G_1(g_\alpha)&amp;0\\0&amp;G_2(g_\alpha)\end{array}\right)\)</span>. To show that this is so, consider equation <span class="math inline">\(A(g_\alpha)P=PG_0(g_\alpha)\)</span>, or more explicitly <span class="math display">\[
+\left(\begin{array}{cc}
+G_1(g_\alpha)&amp;R(g_\alpha)
+\\0&amp;G_2(g_\alpha)
+\end{array}\right)
+\left(\begin{array}{cc}
+I&amp;C\\0&amp;I
+\end{array}\right)
+=
+\left(\begin{array}{cc}
+I&amp;C\\0&amp;I
+\end{array}\right)
+\left(\begin{array}{cc}
+G_1(g_\alpha)&amp;0
+\\0&amp;G_2(g_\alpha)
+\end{array}\right)
+\]</span> which is <span class="math display">\[
+\left(\begin{array}{cc}
+G_1(g_\alpha)&amp;G_1(g_\alpha)C+R(g_\alpha)
+\\0&amp;G_2(g_\alpha)
+\end{array}\right)
+=
+\left(\begin{array}{cc}
+G_1(g_\alpha)&amp;CG_2(g_\alpha)
+\\0&amp;G_2(g_\alpha)
+\end{array}\right)
+\]</span> and thus requires only <span class="math inline">\(G_1(g_\alpha)C+R(g_\alpha)=CG_2(g_\alpha)\)</span>.</p>
+<p>From the fact that <span class="math inline">\(A\)</span> is a representation <span class="math display">\[
+A(g_\alpha g)=\left(\begin{array}{cc}G_1(g_\alpha g)&amp;R(g_\alpha g)\\0&amp;G_2(g_\alpha g)\end{array}\right)
+\]</span> equals <span class="math display">\[
+A(g_\alpha)A(g)=
+\left(\begin{array}{cc}G_1(g_\alpha)&amp;R(g_\alpha)\\
+0&amp;G_2(g_\alpha)\end{array}\right)
+\left(\begin{array}{cc}G_1(g)&amp;R(g)\\
+0&amp;G_2(g)\end{array}\right)
+=
+\left(\begin{array}{cc}
+G_1(g_\alpha)G_1(g)&amp;G_1(g_\alpha)R(g)+R(g_\alpha)G_2(g)
+\\0&amp;G_2(g_\alpha)G_2(g)
+\end{array}\right)
+\]</span> Thus we have seen that <span class="math inline">\(G_1\)</span> and <span class="math inline">\(G_2\)</span> are separately representation of <span class="math inline">\(G\)</span> and that <span class="math display">\[
+R(g_\alpha g)=G_1(g_\alpha)R(g)+R(g_\alpha)G_2(g)
+\]</span> Thus the requirement of <span class="math inline">\(C\)</span> can be rewritten as <span class="math display">\[
+G_1(g_\alpha)CG_2(g_\alpha^{-1})+R(g_\alpha)G_2(g_\alpha^{-1})=CG_2(g_\alpha)G_2(g_\alpha^{-1})=C
+\]</span> Consider a direct construction <span class="math display">\[
+C=\frac{1}{|G|}\sum_{g\in G}R(g)G_2(g^{-1})
+\]</span> Thus <span class="math display">\[
+\begin{align}
+G_1(g_\alpha)CG_2(g_\alpha^{-1})
+&amp;=\frac{1}{|G|}\sum_{g\in G}G_1(g_\alpha)R(g)G_2(g^{-1})G_2(g_\alpha^{-1})
+\\&amp;=\frac{1}{|G|}\sum_{g\in G}G_1(g_\alpha)R(g_\alpha^{-1}g)G_2(g^{-1})
+\\&amp;=\frac{1}{|G|}\sum_{g\in G}G_1(g_\alpha)[G_1(g_\alpha^{-1})R(g)+R(g_\alpha^{-1})G_2(g)]G_2(g^{-1})
+\\&amp;=\frac{1}{|G|}\sum_{g\in G}[R(g)G_2(g^{-1})+G_1(g_\alpha)R(g_\alpha^{-1})]
+\\&amp;=C+G_1(g_\alpha)R(g_\alpha^{-1})
+\end{align}
+\]</span> while <span class="math display">\[
+G_1(g_\alpha)R(g_\alpha^{-1})=R(g_0)-R(g_\alpha)G_2(g_\alpha^{-1})=-R(g_\alpha)G_2(g_\alpha^{-1})
+\]</span> where we have exploited that <span class="math inline">\(R(g_0)=0\)</span> and thus, the requirement for <span class="math inline">\(C\)</span> is reached.</p>
+</blockquote>
+<p>Def 2.12 Unitary Representation</p>
+<blockquote>
+<p>Representation that is unitary transformation group</p>
+</blockquote>
+<p><strong>Thm 2.2</strong> If a unitary representation is reducible, then it is fully reducible</p>
+<blockquote>
+<p><strong>Proof</strong> <span class="math inline">\(A\)</span> being a reducible unitary representation on <span class="math inline">\(V\)</span>, we can decompose <span class="math inline">\(V=W\oplus W^\perp\)</span> where <span class="math inline">\(W\)</span> is the <span class="math inline">\(G\)</span>-invariant non-trivial subspace of <span class="math inline">\(V\)</span>. W.T.S. <span class="math inline">\(W^\perp\)</span> is invariant as well.</p>
+<p>For any <span class="math inline">\(g_\alpha\in G\)</span> and <span class="math inline">\(y\in W\)</span>, there is <span class="math inline">\(A(g_\alpha)y\in W\)</span>. Thus for any <span class="math inline">\(z\in W^\perp\)</span> there is <span class="math display">\[
+(A(g_\alpha)y|z)=(y|A(g_\alpha)^\dagger z)=(y|A(g_\alpha^{-1})z)=0
+\]</span> Namely, <span class="math inline">\(A(g_\alpha^{-1})z\in W^\perp\)</span>. Thus <span class="math inline">\(W^\perp\)</span> is also <span class="math inline">\(G\)</span>-invariant.</p>
+</blockquote>
+<p><u>Rmk</u> ANY finite-dim'l unitary representation can always be divided into direct sums of irreducible representations.</p>
+<hr />
+<p>Def 2.13 Algebra</p>
+<blockquote>
+<p>If <span class="math inline">\(R\)</span> is linear space on field <span class="math inline">\(K\)</span>, and there is multiplication on <span class="math inline">\(R\)</span> such that <span class="math inline">\(\forall x,y,z\in R, \forall\alpha\in K\)</span></p>
+<ol type="1">
+<li><p><span class="math inline">\(xy\in R\)</span> (closure)</p></li>
+<li><p><span class="math inline">\(x(y+z)=xy+xz\)</span>, <span class="math inline">\((x+y)z=xz+yz\)</span> (associativity/compatibility with addition)</p></li>
+<li><p><span class="math inline">\(\alpha(xy)=(\alpha x)y=x(\alpha y)\)</span> (compatibility with number multiplication)</p></li>
+</ol>
+<p>Then we say <span class="math inline">\(R\)</span> is a linear algebra (or an algebra).</p>
+</blockquote>
+<p><u>Rmk</u> If we further require <span class="math inline">\((xy)z=x(yz)\)</span>, the algebra is associative algebra. And if we further require <span class="math inline">\(xy=yx\)</span>, the algebra is commutative algebra.</p>
+<p>Def 2.14 Group Space</p>
+<blockquote>
+<p><span class="math inline">\(G\)</span> is a group. If we further define linear combination of those elements to be vectors, by treating the <span class="math inline">\(g_\alpha\)</span>'s as basis, on the field <span class="math inline">\(\C\)</span>. Then this linear space is called <em>Group Space</em>, <span class="math inline">\(V_G\)</span>.</p>
+<p>We can see that group space is a constructed object out of thin air.</p>
+</blockquote>
+<p>Def 2.15 Group Algebra</p>
+<blockquote>
+<p>Define on <span class="math inline">\(V_G\)</span> the multiplication <span class="math display">\[
+xy\equiv(\sum_\alpha x_\alpha g_\alpha)(\sum_\beta y_\beta g_\beta)=\sum_{\alpha,\beta}(x_\alpha y_\beta)(g_\alpha g_\beta)
+\]</span> It is easily verified that (1) closure; (2) compatibility of vector multiplication with addition; (3) compatibility of vector multiplication with scalar multiplication are satisfied, so it is an algebra.</p>
+<p>Further more, this algebra is associative. We call this algebra the <em>group algebra</em> <span class="math inline">\(R_G\)</span>.</p>
+</blockquote>
+<p><u>Rmk</u> With the definition of <span class="math inline">\(V_G\)</span> and <span class="math inline">\(R_G\)</span>, we can generate a linear transformation on <span class="math inline">\(V_G\)</span> from any group element <span class="math inline">\(g_i\)</span> by the definition of <span class="math inline">\(R_G\)</span>, namely <span class="math display">\[
+L(g_i)x\equiv g_ix=\sum_j x_jg_ig_j
+\]</span> Def 2.16 Left Canonical Representation</p>
+<blockquote>
+<p>From the construction of the above linear transformation on <span class="math inline">\(V_G\)</span>, there is a homomorphism <span class="math inline">\(A:G\longrightarrow\{L(g_i)\}\)</span> on which the multiplication of the <span class="math inline">\(\{L(g_i)\}\)</span> are defined by successive action. The homomorphism is now a representation of the group.</p>
+<p>We call this representation the <em>left canonical representation</em>.</p>
+</blockquote>
+<p><u>Rmk</u> Left canonical representation is furthermore a faithful representation (easily proven), not necessarily irreducible. Similarly we can define the right canonical representation <span class="math inline">\(R(g_i)x\equiv x g_i^{-1}=\sum_jx_jg_jg_i^{-1}\)</span>. And the right canonical representation is also a faithful representation of <span class="math inline">\(G\)</span> with the proper definition of multiplication of <span class="math inline">\(\{R(g_i)\}\)</span>. Altogether they are called <em>canonical representation</em> or <em>regular representation</em>.</p>
+<hr />
+<p><strong>Thm 2.3 Schur's Lemma I</strong></p>
+<p>​ If group <span class="math inline">\(G\)</span> has irreducible representation <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> on finite-dim'l vector spaces <span class="math inline">\(V_A\)</span> and <span class="math inline">\(V_B\)</span>, respectively.</p>
+<p>​ And if <span class="math inline">\(\exist\)</span> linear transform <span class="math inline">\(M:V_A\longrightarrow V_B\)</span>, such that <span class="math inline">\(\forall g_\alpha\in G\)</span>, <span class="math inline">\(B(g_\alpha)M=MA(g_\alpha)\)</span>, then</p>
+<ol type="1">
+<li><p>If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are inequivalent, <span class="math inline">\(M\equiv 0\)</span>.</p></li>
+<li><p>If <span class="math inline">\(M\ne 0\)</span>, <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are equivalent. (Equivalent to (1))</p></li>
+</ol>
+<blockquote>
+<p><strong>Proof</strong> Check (1) only.</p>
+<p>Take <span class="math inline">\(\ker(M)\sub V_A\)</span>, such subspace is <span class="math inline">\(G\)</span>-invariant since <span class="math inline">\(\forall g_\alpha\in G\)</span>, <span class="math inline">\(\forall x\in\ker(M)\)</span>, <span class="math inline">\(MA(g_\alpha)x=B(g_\alpha)Mx=0\)</span>, thus <span class="math inline">\(A(g_\alpha)x\in\ker(M)\)</span>. But since <span class="math inline">\(A\)</span> is irreducible, <span class="math inline">\(\ker(M)\)</span> can only be trivial subspace of <span class="math inline">\(V_A\)</span>, otherwise <span class="math inline">\(\ker(M)\)</span> would be a non-trivial, <span class="math inline">\(G\)</span>-invariant subspace, rendering <span class="math inline">\(A\)</span> reducible.</p>
+<p>If <span class="math inline">\(\ker(M)=V_A\)</span>, <span class="math inline">\(M=0\)</span> by definition.</p>
+<p>If <span class="math inline">\(\ker(M)=0\)</span>, we can see that <span class="math inline">\(M\)</span> must be injective (obvious), and surjective</p>
+<blockquote>
+<p>(if not, <span class="math inline">\(M[V_A]\)</span> would be a non-trivial, <span class="math inline">\(G\)</span>-invariant subspace of <span class="math inline">\(V_B\)</span>, since <span class="math inline">\(B(g_\alpha)Mx=MA(g_\alpha)x\in M[V_A]\)</span>, and since <span class="math inline">\(B\)</span> is irreducible, <span class="math inline">\(M[V_A]\)</span> must be trivial, namely <span class="math inline">\(V_B\)</span>)</p>
+</blockquote>
+<p>and thus bijective. Thus <span class="math inline">\(A(g_\alpha)=M^{-1}B(g_\alpha)M\)</span>, claiming equivalence, contradictory.</p>
+<p>So <span class="math inline">\(\ker(M)=V_A\)</span> and <span class="math inline">\(M\equiv 0\)</span>.</p>
+</blockquote>
+<p><u>Rmk</u> Two inequivalent irreducible representations of a group cannot be linked by non-zero linear transformation <span class="math inline">\(M\)</span>, through <span class="math inline">\(MA(g_\alpha)=B(g_\alpha)M\)</span>.</p>
+<p><strong>Thm 2.4 Schur's Lemma II</strong></p>
+<p>​ If <span class="math inline">\(A\)</span> is an irreducible representation of group <span class="math inline">\(G\)</span> on a finite-dim'l complex linear space <span class="math inline">\(V\)</span>.</p>
+<p>​ And if there is a linear transform <span class="math inline">\(M:V\longrightarrow V\)</span> such that <span class="math inline">\(MA(g_\alpha)=A(g_\alpha)M\)</span>, <span class="math inline">\(\forall g_\alpha\in G\)</span>, then <span class="math display">\[
+M=\lambda E
+\]</span> ​ where <span class="math inline">\(\lambda\in\C\)</span> and <span class="math inline">\(E\)</span> is identity.</p>
+<blockquote>
+<p><strong>Proof</strong> The linear transform <span class="math inline">\(M\)</span> must have an eigenvector <span class="math inline">\(y\ne 0\)</span> such that <span class="math inline">\(My=\lambda y\)</span>, where <span class="math inline">\(\lambda\in \C\)</span>. Denote the <span class="math inline">\(\lambda\)</span> eigenspace as <span class="math inline">\(R\equiv\{y\in V|My=\lambda y\}\)</span>. Then for any <span class="math inline">\(y\in R\)</span>, from <span class="math inline">\(MA(g_\alpha)=A(g_\alpha)M\)</span>, there is <span class="math display">\[
+MA(g_\alpha)y=A(g_\alpha)My=\lambda A(g_\alpha)y
+\]</span> Thus <span class="math inline">\(A(g_\alpha)y\in R\)</span>, namely <span class="math inline">\(R\)</span> is a <span class="math inline">\(G\)</span>-invariant subspace.</p>
+<p>By the fact that <span class="math inline">\(A\)</span> is an irreducible representation, <span class="math inline">\(R\)</span> must be trivial subspace. With the existence of <span class="math inline">\(0\ne y\in R\)</span>, <span class="math inline">\(R\)</span> must span the entire <span class="math inline">\(V\)</span>. Namely <span class="math inline">\(M=\lambda E\)</span>.</p>
+</blockquote>
+<p><u>Rmk</u> Any matrix that is commutative with an irreducible representation of finite dimensionality must be a constant matrix.</p>
+<p><strong>Thm 2.5</strong> For every representation of a finite group on an inner product space, there is an equivalent unitary representation.</p>
+<blockquote>
+<p><strong>Proof</strong> If <span class="math inline">\(A\)</span> is a representation of a finite group <span class="math inline">\(G\)</span> on a linear space <span class="math inline">\(V\)</span> with inner product structure <span class="math inline">\((\cdot|\cdot)\)</span>, while <span class="math inline">\(A\)</span> is generally not unitary, we seek to find a non-singular linear transform <span class="math inline">\(X\)</span> such that <span class="math inline">\(X^{-1}AX\)</span> is unitary.</p>
+<p>Imagine a different inner product scheme defined as <span class="math display">\[
+\lang x|y\rang\equiv\frac1n\sum_{j=1}^n(A(g_j)x|A(g_j)y)
+\]</span> This is indeed an inner product since it satisfies:</p>
+<ol type="1">
+<li><p>linearity in second operand;</p></li>
+<li><p>anti-linearity in first operand;</p></li>
+<li><p>adjoint symmetry/Hermiticity;</p></li>
+<li><p>Positive definiteness</p></li>
+</ol>
+<p>Under this new scheme, there is <span class="math display">\[
+\begin{align}
+\lang A(g_i)x|A(g_i)y\rang&amp;=\frac1n\sum_{j=1}^n(A(g_j)A(g_i)x|A(g_j)A(g_i)y)
+\\&amp;=\frac1n\sum_{j=1}^n(A(g_j)x|A(g_j)y)=\lang x|y\rang
+\end{align}
+\]</span> Namely, that the representation <span class="math inline">\(A\)</span> is unitary in this new inner product regime. We take orthonormal basis <span class="math inline">\(\{\bold e\}\)</span> under the <span class="math inline">\((\cdot|\cdot)\)</span> regime and <span class="math inline">\(\{\bold f\}\)</span> under the <span class="math inline">\(\lang\cdot|\cdot\rang\)</span> regime. And they can be related by <span class="math display">\[
+(\bold f_1,\cdots,\bold f_{\dim V})=(\bold e_1,\cdots,\bold e_{\dim V})X
+\]</span> where <span class="math inline">\(X\)</span> is a non-singular transformation matrix. We also use the same symbol <span class="math inline">\(X\)</span> to denote a linear transformation that takes <span class="math inline">\(\bold e\)</span> to <span class="math inline">\(\bold f\)</span>. Thus we obtain <span class="math display">\[
+\begin{align}
+\lang Xx|Xy\rang&amp;=[Xx]_{\bold f}^\dagger[Xy]_{\bold f}=([X]_\bold e^{-1}[Xx]_\bold e)^\dagger([X]_\bold e^{-1}[Xy]_\bold e)
+\\&amp;=[x]_\bold e^\dagger[y]_\bold e=(x|y)
+\end{align}
+\]</span> From this we finally yield <span class="math display">\[
+\begin{align}
+(X^{-1}A(g_i)Xx|X^{-1}A(g_i)Xy)
+&amp;=\lang A(g_i)Xx|A(g_i)Xy\rang=\lang Xx|Xy\rang
+\\=(x|y)
+\end{align}
+\]</span> Thus under a similarity transformation <span class="math inline">\(X\)</span>, we actually generate a new representation <span class="math inline">\(X^{-1}AX\)</span> that is equivalent to the original <span class="math inline">\(A\)</span> and unitary as well.</p>
+</blockquote>
+<p><u>Rmk</u> We know that a reducible representation of a finite group is fully reducible, by a similarity transformation. Thus we can see that any representation of a finite group in an inner product space, we can first reduce it so that it has the form of direct sum of irreducible representations. Then those irreducible representations can be transformed to unitary representations separately. We can further make those unitary representations inequivalent by dividing them into classes and discarding the redundant representations. So we are finally left with <em>inequivalent</em>, <em>irreducible</em>, <em>unitary</em> representations.</p>
+<blockquote>
+<p>Group space is constructed by treating the <span class="math inline">\(\{g_i\}\)</span> as basis.</p>
+<p>Group function space is an identical construct with repect to group algebra, think of it as the dual vector space of group space firstly <span class="math display">\[
+\hat{}:V_G\longrightarrow\hat{V_G},~x=\sum_{i=1}^nx_ig_i\longmapsto\hat{x}\equiv\sum_{i=1}^nx_i\hat{g_i}
+\]</span> Where the basis are defined to be linear maps <span class="math display">\[
+\hat{g_i}:G\longrightarrow\C,~g_j\longmapsto\delta_{ij}
+\]</span> Correspondingly define, as is the case with group space</p>
+<ul>
+<li><p><span class="math inline">\((a\hat{x})(g_i)=a\cdot\hat{x}(g_i)\)</span> (scalar product)</p></li>
+<li><p><span class="math inline">\((\hat x+\hat y)(g_i)=\hat x(g_i)+\hat y(g_i)\)</span> (vector sum)</p></li>
+</ul>
+<p>And introducing algebra property in correspondence with the group algebra</p>
+<ul>
+<li><span class="math inline">\((\hat x\hat y)(g_i)=\sum_{j=1}^n\hat x(g_j)\hat y(g_j^{-1}g_i)\)</span> (vector multiplication)</li>
+</ul>
+<p>There is <span class="math display">\[
+(\hat{g_i}\hat{g_j})(g_k)=\sum_l\hat{g_i}(g_l)\hat{g_j}(g_l^{-1}g_k)=\sum_l\delta_{il}\hat{g_j}(g_l^{-1}g_k)=\hat{g_j}(g_i^{-1}g_k)
+\]</span> Or equivalently <span class="math display">\[
+\hat{g_i}\hat{g_j}=\widehat{g_ig_j}
+\]</span> In this sense, the group function space (&amp; algebra) is still an isomorphic reconstruction of the group algebra structure.</p>
+<p>We then define inner product, cutting loose of the hat signatures, <span class="math display">\[
+(x|y)\equiv\frac1n\sum_{i=1}^nx^*(g_i)y(g_i)
+\]</span> And thus <span class="math display">\[
+(g_i|g_j)=\frac1n\delta_{ij}
+\]</span> <u>Under this convention, the canonical representation is unitary.</u> <span class="math display">\[
+\begin{align}
+(L(g)x|L(g)y)&amp;=(gx|gy)
+\\&amp;=\frac1n\sum_ix^*(g^{-1}g_i)y(g^{-1}g_i)=(x|y)
+\end{align}
+\]</span></p>
+</blockquote>
+<p><strong>Thm 2.6 Orthogonality Theorem</strong></p>
+<p>If a finite group <span class="math inline">\(G\)</span> has inequivalent, irreducible unitary representations <span class="math inline">\(A^1,A^2,\cdots,A^p,\cdots,A^r,\cdots\)</span>, with respective dimensionalities <span class="math inline">\(S_1,S_2,\cdots,S_p,\cdots,S_r,\cdots\)</span>. Then <span class="math display">\[
+(A_{\mu\nu}^p|A_{\mu&#39;\nu&#39;}^r)=\frac{1}{S_p}\delta_{pr}\delta_{\mu\mu&#39;}\delta_{\nu\nu&#39;}
+\]</span> Or <span class="math display">\[
+\sum_{i=1}^n[A_{\mu\nu}^p(g_i)]^*A_{\mu&#39;\nu&#39;}^r(g_i)=\frac{n}{S_p}\delta_{pr}\delta_{\mu\mu&#39;}\delta_{\nu\nu&#39;}
+\]</span> Thus the group function <span class="math inline">\(A^p_{\mu\nu}\)</span> has inner product with itself the value <span class="math inline">\(1/S_p\)</span>.</p>
+<blockquote>
+<p><strong>Proof</strong> We prove the first orthogonality first. Consider inequivalent, irreducible unitary representations <span class="math inline">\(A^p\)</span> and <span class="math inline">\(A^r\)</span>. Construct a <span class="math inline">\(S_r\times S_p\)</span> matrix <span class="math inline">\(C\)</span> from any <span class="math inline">\(S_r\times S_p\)</span> matrix <span class="math inline">\(D\)</span>, <span class="math display">\[
+C(D)\equiv\frac1n\sum_{i=1}^n A^r(g_i)DA^p(g_i^{-1})
+\]</span> We can easily see that <span class="math display">\[
+\begin{align}
+CA^p(g_j)&amp;=\frac1n\sum_iA^r(g_i)DA^p(g_i^{-1})A^p(g_j)
+\\&amp;=
+\frac{A^r(g_j)}{n}\sum_iA^r(g_j^{-1}g_i)DA^p((g_j^{-1}g_i)^{-1})
+\\&amp;=
+A^r(g_j)C
+\end{align}
+\]</span> By Schur's Lemma I, we conclude that such <span class="math inline">\(C_{S_r\times S_p}(D)=0\)</span>. We substitute special <span class="math inline">\(D\)</span>, such that its elements are given by <span class="math display">\[
+D_{\mu_1\mu_2}=\delta_{\mu_1,\nu&#39;}\delta_{\mu_2,\nu}
+\]</span> Then elements of <span class="math inline">\(C\)</span> is given by <span class="math display">\[
+\begin{align}
+C_{\mu&#39;\mu}&amp;=\frac1n\sum_{i=1}^n\sum_{\mu_1\mu_2}A^r_{\mu&#39;\mu_1}(g_i)D_{\mu_1\mu_2}A^p_{\mu_2\mu}(g_i^{-1})
+\\&amp;=
+\frac1n\sum_{i=1}^nA^r_{\mu&#39;\nu&#39;}(g_i)A^p_{\nu\mu}(g_i^{-1})
+\\&amp;=
+\frac1n\sum_{i=1}^n[A^p_{\mu\nu}(g_i)]^*A^r_{\mu&#39;\nu&#39;}(g_i)=0
+\end{align}
+\]</span> The equation is true for any <span class="math inline">\((\mu\nu),(\mu&#39;\nu&#39;)\)</span>, which gives the first orthogonality.</p>
+<p>Now consider a similar construction generated by <span class="math display">\[
+C(D)\equiv \frac1n\sum_{i=1}^nA^p(g_i)DA^p(g_i^{-1})
+\]</span> And there is <span class="math display">\[
+CA^p(g_j)=A^p(g_j)C
+\]</span> By Schur's Lemma II, we conclude that such <span class="math inline">\(C=\lambda(D)I_{S_p\times S_p}\)</span>. We still use <span class="math display">\[
+D_{\mu_1\mu_2}=\delta_{\mu_1,\nu&#39;}\delta_{\mu_2,\nu}
+\]</span> And elements of <span class="math inline">\(C\)</span> is given by <span class="math display">\[
+\begin{align}
+C_{\mu&#39;\mu}&amp;=\frac1n\sum_{i=1}^n\sum_{\mu_1\mu_2}A^p_{\mu&#39;\mu_1}(g_i)D_{\mu_1\mu_2}A^p_{\mu_2\mu}(g_i^{-1})
+\\&amp;=
+\frac1n\sum_{i=1}^nA^p_{\mu&#39;\nu&#39;}(g_i)A^p_{\nu\mu}(g_i^{-1})
+\\&amp;=
+\frac1n\sum_{i=1}^n[A^p_{\mu\nu}(g_i)]^*A^p_{\mu&#39;\nu&#39;}(g_i)=\lambda(D)\delta_{\mu&#39;,\mu}
+\end{align}
+\]</span> And furthermore, there is <span class="math display">\[
+\begin{align}
+\mbox{tr}(C)&amp;=\sum_{\mu=1}^{S_p}C_{\mu\mu}=
+\frac1n\sum_{i=1}^n\sum_\mu A^p_{\mu\nu&#39;}(g_i)A^p_{\nu\mu}(g_i^{-1})
+\\
+&amp;=\frac1n\sum_iA^p_{\nu\nu&#39;}(g_i^{-1}g_i)=\frac1n\sum_i\delta_{\nu&#39;,\nu}
+\\
+&amp;=\delta_{\nu&#39;\nu}
+=\lambda(D)\cdot S_p
+\end{align}
+\]</span> Which finally leads to <span class="math display">\[
+(A_{\mu\nu}^p|A_{\mu&#39;\nu&#39;}^r)=\frac{1}{S_p}\delta_{pr}\delta_{\mu\mu&#39;}\delta_{\nu\nu&#39;}
+\]</span></p>
+</blockquote>
+<p><strong>Thm 2.7 Completeness Theorem</strong></p>
+<p>If <span class="math inline">\(A^p~(p=1,2,\cdots,q)\)</span> are all the inequivalent, irreducible unitary representations of the finite group <span class="math inline">\(G\)</span>, then <span class="math inline">\(A^p_{\mu\nu}(g_i)\)</span> is complete on the group function space <span class="math inline">\(R_G=\text{Span}_\C\{g\}\)</span>.</p>
+<blockquote>
+<p><strong>Proof</strong> Consider the right-canonical representation of <span class="math inline">\(G\)</span>, namely <span class="math inline">\(R(g_i)\)</span>, which are linear operations on the group space <span class="math inline">\(R_G\)</span>, given by <span class="math display">\[
+R(g_j)g_i=g_ig_j^{-1}
+\]</span> Each <span class="math inline">\(A^p_{\mu\nu}\)</span> is a group function and they are mutually orthogonal. Consider the entire group function space <span class="math inline">\(R_G\)</span> and the space spanned by <span class="math inline">\(V=\text{Span}_\C\{A^p_{\mu\nu}\}\)</span>. We first claim that the group functions <span class="math display">\[
+A^p_{\mu1},A^p_{\mu2},\cdots,A^p_{\mu S_p}
+\]</span> Span a <span class="math inline">\(S_p\)</span>-dim'l <span class="math inline">\(G\)</span>-invariant subspace. The <span class="math inline">\(G\)</span>-invariance actually implies here that, as a representation of the group <span class="math inline">\(G\)</span>, any <span class="math inline">\(R(g_i)\)</span> takes the subspace into itself. This is seen by <span class="math display">\[
+\begin{align}
+R(g_j)A^p_{\mu\nu}&amp;=R(g_j)\sum_{i=1}^nA^p_{\mu\nu}(g_i)g_i=\sum_{i=1}^nA^p_{\mu\nu}(g_i)(g_ig_j^{-1})
+\\&amp;=
+\sum_{k=1}^nA^p_{\mu\nu}(g_kg_j)g_k=\sum_{k=1}^n\sum_{\lambda=1}^{S_p}A^p_{\mu\lambda}(g_k)A^p_{\lambda\nu}(g_j)g_k
+\\
+&amp;=\sum_{\lambda=1}^{S_p}A^p_{\lambda\nu}(g_j)[\sum_{k=1}^nA^p_{\mu\lambda}(g_k)g_k]
+=\sum_{\lambda=1}^{S_p}A^p_{\lambda\nu}(g_j)A^p_{\mu\lambda}
+\end{align}
+\]</span> which suggests that the action <span class="math inline">\(R(g_j)\)</span> takes <span class="math inline">\(A^p_{\mu\nu}\)</span> for any <span class="math inline">\(\nu\)</span> into a linear combination of the basis above. And thus the <span class="math inline">\(S_p\)</span>-dim'l subspace forms a smaller representation subspace, with the relation <span class="math display">\[
+R(g_j)(A^p_{\mu1},A^p_{\mu2},\cdots,A^p_{\mu S_p})
+=(A^p_{\mu1},A^p_{\mu2},\cdots,A^p_{\mu S_p})
+\left(\begin{array}{c}
+A^p_{11}(g_j)&amp;A^p_{12}(g_j)&amp;\cdots&amp;A^p_{1S_p}(g_j)\\
+A^p_{21}(g_j)&amp;A^p_{22}(g_j)&amp;\cdots&amp;A^p_{2S_p}(g_j)\\
+\vdots&amp;\vdots&amp;~&amp;\vdots\\
+A^p_{S_p1}(g_j)&amp;A^p_{S_p2}(g_j)&amp;\cdots&amp;A^p_{S_pS_p}(g_j)
+\end{array}\right)
+\]</span> the transformation is just the matrix <span class="math inline">\(A^p_{\mu\nu}(g_i)\)</span>, which just is the representation matrix itself.</p>
+<p>In order to prove that <span class="math inline">\(V=R_G\)</span>, we construct <span class="math inline">\(V^\perp\)</span> as its orthogonal complement. Since <span class="math inline">\(R(g_j)\)</span> is a unitary representation on <span class="math inline">\(R_G\)</span>, and it is reducible as there is a nontrivial <span class="math inline">\(G\)</span>-invariant (assumed) subspace <span class="math inline">\(V\)</span>. By properties of unitary representations, <span class="math inline">\(V^\perp\)</span> must also be <span class="math inline">\(G\)</span>-invariant. Let <span class="math display">\[
+X_1,X_2,\cdots,X_{S_r}
+\]</span> be an orthonormal basis of <span class="math inline">\(V^\perp\)</span>. It is also a representation subspace for the right canonical representation.</p>
+<p>If we assume that the representation on <span class="math inline">\(V^\perp\)</span> is irreducible, which makes sense, since if it is reducible, we can divide the subspace into smaller subspaces. Then by its unitary property, and that <span class="math inline">\(A^p\)</span> are all the inequivalent, irreducible unitary representations of <span class="math inline">\(G\)</span>, such representation must be equivalent to some <span class="math inline">\(A^r\)</span> with dimension <span class="math inline">\(S_r\)</span>. Consider, by definition <span class="math display">\[
+R(g_j)\sum_{i=1}^nX_\alpha(g_i)g_i=\sum_{k=1}^nX_\alpha(g_kg_j)g_k
+\]</span> And by properly choosing the basis, we could have the correspondence with the representation matrix <span class="math display">\[
+R(g_j)X_\alpha=\sum_\beta A^r_{\beta\alpha}(g_j)X_\beta
+\]</span> Componentwise, there is <span class="math display">\[
+X_\alpha(g_ig_j)=\sum_\beta A^r_{\beta\alpha}(g_j)X_\beta(g_i)
+\]</span> for any <span class="math inline">\(g_i,g_j\)</span>. And by setting <span class="math inline">\(g_i=g_0\)</span>, there is <span class="math display">\[
+X_\alpha(g_j)=\sum_\beta A^r_{\beta\alpha}(g_j)X_\beta(g_0)
+\]</span> Thus <span class="math display">\[
+\sum_{j=1}^n X_\alpha(g_j)g_j=\sum_{j=1}^n\sum_\beta A^r_{\beta\alpha}(g_j)X_\beta(g_0)g_j=\sum_\beta X_\beta(g_0)(\sum_{j=1}^nA^r_{\beta\alpha}(g_j)g_j)
+\]</span> Where the LHS gives a vector in <span class="math inline">\(V^\perp\)</span> and the RHS gives a vector in <span class="math inline">\(V\)</span>, contradictory.</p>
+<p>Thus the completeness is guaranteed.</p>
+</blockquote>
+<p><u>Rmk</u> Since <span class="math inline">\((A^p_{\mu\nu}|A^r_{\mu&#39;\nu&#39;})=\frac1{S_p}\delta_{pr}\delta_{\mu\mu&#39;}\delta_{\nu\nu&#39;}\)</span>, <span class="math inline">\(\sqrt{S_p}\sum_iA^p_{\mu\nu}(g_i)g_i\)</span> forms a orthonormal basis.</p>
+<blockquote>
+<p><strong>Prop 1: Burnside Theorem</strong> <span class="math display">\[
+S_1^2+S_2^2+\cdots+S_p^2=n
+\]</span> <strong>Prop 2</strong></p>
+<p>Since <span class="math display">\[
+R(g_j)A^p_{\mu\nu}=\sum_\lambda A^p_{\mu\lambda} A^p_{\lambda\nu}(g_j)
+\]</span> The <span class="math inline">\(S_p\)</span> subspaces gives equivalent representation of <span class="math inline">\(R\)</span>. Thus <span class="math display">\[
+R(g_j)=\sum_{p=1}^q\bigoplus S_p A^p(g_j)
+\]</span> <strong>Rmk</strong> If we use left canonical representation for the previous deduction, we need to note that <span class="math display">\[
+\begin{align}
+L(g_j)(\sum_{i=1}^n A^{p*}_{\mu\nu}(g_i)g_i)
+&amp;=\sum_i A^{p*}_{\mu\nu}(g_i)g_jg_i
+=
+\sum_kA^{p*}_{\mu\nu}(g_j^{-1}g_k)g_k
+\\&amp;=
+\sum_k\sum_\lambda A^{p*}_{\mu\lambda}(g_j^{-1})A^{p*}_{\lambda\nu}(g_k)g_k
+\\&amp;=
+\sum_\lambda A^{p*}_{\mu\lambda}(g_j^{-1}) \sum_k A^{p*}_{\lambda\nu}(g_k)g_k
+\\&amp;=
+\sum_\lambda A^{p}_{\lambda\mu}(g_j) \sum_k A^{p*}_{\lambda\nu}(g_k)g_k
+\end{align}
+\]</span> And the rest is quite similar to the previous discussion</p>
+</blockquote>
+<hr />
+<p><strong>Def 2.17</strong> Characteristics</p>
+<blockquote>
+<p>If <span class="math inline">\(A=\{A(g_\alpha)\}\)</span> is a representation of <span class="math inline">\(G=\{g_\alpha\}\)</span>, the characteristics of the representation <span class="math inline">\(\{\chi(g_\alpha)\}\)</span> is defined <span class="math display">\[
+\chi(g_\alpha)\equiv\mbox{tr}(A(g_\alpha))=\sum_\mu A_{\mu\mu}(g_\alpha)
+\]</span> <em>Prop 1</em> Similarity transformation does not alter characteristics. Namely, equivalent representations have the same characteristics.</p>
+<p><em>Prop 2</em> In a representation, conjugate elements have same characteristic <span class="math display">\[
+A(f)=A(hgh^{-1})=A(h)A(g)A(h^{-1})
+\]</span> <em>Prop 3</em> Characteristics is a function of conjugation classes. Different classes may have same characteristic, but not the other way around.</p>
+<p><em>Prop 4</em> Characteristic of identity element is the dimensionality of the representation.</p>
+<p>The above props apply to all groups, not just the finite ones.</p>
+</blockquote>
+<p><strong>Thm 2.8 First Orthogonality Theorem for Characteristics</strong></p>
+<p>Irreducible representations of a finite group has characteristics that satisfy <span class="math display">\[
+(\chi^p|\chi^r)\equiv\frac1n\sum_{i=1}^n\chi^{p*}(g_i)\chi^r(g_i)=\delta_{pr}
+\]</span></p>
+<blockquote>
+<p><strong>Proof</strong> Since similarity transformation does not alter characteristics, we could simply show that the unitary representations satisfiy the orthogonality requirement. We know that for inequivalent, irreducible representations <span class="math display">\[
+\sum_{i=1}^n(A^p_{\mu\nu}(g_i))^*A^r_{\mu&#39;\nu&#39;}(g_i)=\frac{n}{S_p}\delta_{pr}\delta_{\mu\mu&#39;}\delta_{\nu\nu&#39;}
+\]</span> And correspondingly, <span class="math display">\[
+\begin{align}
+(\chi^p|\chi^r)&amp;=\frac1n\sum_i[\sum_\mu A^p_{\mu\mu}(g_i)]^*[\sum_\nu A^r_{\nu\nu}(g_i)]
+\\&amp;=
+\sum_\mu\sum_\nu(\frac1n\sum_iA^{p*}_{\mu\mu}(g_i)A^r_{\nu\nu}(g_i))
+\\&amp;=
+\sum_\mu\sum_\nu(\frac{1}{S_p}\delta_{pr}\delta_{\mu\nu})=\delta_{pr}
+\end{align}
+\]</span> <strong>N.B.</strong> The sum can be written with respect to the conjugation classes <span class="math display">\[
+(\chi^p|\chi^r)=\frac1n\sum_{i=1}^{q&#39;}n_i\chi^{p*}(K_i)\chi^r(K_i)=\delta_{pr}
+\]</span> where <span class="math inline">\(q&#39;\)</span> is the number of classes in <span class="math inline">\(G\)</span>, <span class="math inline">\(K_i\)</span> are the classes and <span class="math inline">\(n_i\equiv |K_i|\)</span>.</p>
+</blockquote>
+<p><u>Rmk</u></p>
+<ol type="1">
+<li><p><span class="math inline">\((\chi^r|\chi^r)=1\)</span>.</p></li>
+<li><p>A reducible representation can always be decomposed as the direct sum of a series of inequivalent, irreducible representations <span class="math inline">\(B=\sum_{p=1}^q\bigoplus m_p A^p\)</span>, where for every inequivalent, irreducible representation, there is an equivalent unitary representation. Thus <span class="math display">\[
+(\chi^{A^p}|\chi^B)=(\chi^{A^p}|\sum_{p&#39;=1}^qm_{p&#39;}\chi^{A^{p&#39;}})=m_p
+\]</span> where we have exploited the fact that <span class="math display">\[
+\chi(\sum_{p=1}^q\bigoplus m_p A^p)=\sum_{p=1}^qm_p\chi(A^p)
+\]</span></p></li>
+<li><p>According to 2, for reducible representation <span class="math inline">\(B\)</span>, there is <span class="math display">\[
+(\chi^B|\chi^B)=\sum_{p=1}^q m_p^2&gt;1
+\]</span></p></li>
+<li><p>Be sure to differentiate for now that <span class="math inline">\(q\)</span> is the number of inequivalent irreducible representations and <span class="math inline">\(q&#39;\)</span> the number of classes.</p></li>
+</ol>
+<p><strong>Thm 2.9</strong> For a finite group, characteristics of all inequivalent, irreducible representations are complete in <em>Class function space</em>.</p>
+<blockquote>
+<p><strong>Proof</strong> Suppose that for the finite group <span class="math inline">\(G\)</span>, <span class="math inline">\(A^p\)</span> is its inequivalent, irreducible representations. And correspondingly, there is a set of inequivalent, irreducible unitary representations <span class="math inline">\(U^p\)</span>.</p>
+<p>We know that any group function can be expanded as <span class="math display">\[
+f(g_i)=\sum_{p,\mu,\nu}a^p_{\mu\nu}U^p_{\mu\nu}(g_i)
+\]</span> While a class function can be generated by <span class="math display">\[
+h(g_i)=\frac1n\sum_{j=1}^nf(g_j^{-1}g_ig_j)
+\]</span> And if <span class="math inline">\(f(g_i)\)</span> is already class function, <span class="math inline">\(h(g_i)\)</span> would be equal to <span class="math inline">\(f(g_i)\)</span>. Thus any class function would have the above form. By expansion, <span class="math display">\[
+\begin{align}
+h(g_i)&amp;=\frac1n\sum_{j=1}^n\sum_{p,\mu,\nu}a^p_{\mu\nu}U^p_{\mu\nu}(g_j^{-1}g_ig_j)
+\\&amp;=
+\frac1n\sum_j\sum_{p,\mu,\nu}\sum_{\lambda.\sigma}a^p_{\mu\nu}U^p_{\mu\lambda}(g_j^{-1})U^p_{\lambda\sigma}(g_i)U^p_{\sigma\nu}(g_j)
+\\&amp;=
+\sum_{p,\mu,\nu}\sum_{\lambda,\sigma}a^p_{\mu\nu}U^p_{\lambda\sigma}(g_i)
+(\frac1n\sum_jU^p_{\mu\lambda}(g_j^{-1})U^p_{\sigma\nu}(g_j))
+\\&amp;=
+\sum_{p,\mu,\nu}\sum_{\lambda,\sigma}a^p_{\mu\nu}U^p_{\lambda\sigma}(g_i)(\frac{1}{S_p}\delta_{\lambda\sigma}\delta_{\mu\nu})
+\\&amp;=
+\sum_p(\frac1{S_p}\sum_\mu a_{\mu\mu}^p)\sum_\lambda U^p_{\lambda\lambda}(g_i)
+\\&amp;=
+\sum_pa^p\chi^p(g_i)
+\end{align}
+\]</span> Thus any class function can be expanded using the above formula. While on the other hand, any linear superposition of characteristics is a class function.</p>
+</blockquote>
+<blockquote>
+<p><strong>Corollary</strong> The # of inequivalent, irreducible representations of a finite group = The # of conjugation classes in this group. Namely <span class="math inline">\(q=q&#39;\)</span>.</p>
+</blockquote>
+<p><strong>Thm 2.10 Second Orthogonality Theorem for Characteristics</strong> <span class="math display">\[
+\frac1n\sum_{p=1}^q n_i\chi^{p*}(K_i)\chi^p(K_j)=\delta_{ij}
+\]</span></p>
+<blockquote>
+<p><strong>Proof</strong> Construct a matrix <span class="math display">\[
+F_{ri}\equiv\sqrt{\frac{n_i}{n}}\chi^r(K_i)
+\]</span> which is <span class="math inline">\(q\times q\)</span> in size. There is <span class="math inline">\(F_{pi}^*=\sqrt{\frac{n_i}{n}}\chi^{p*}(K_i)=(F^\dagger)_{ip}\)</span>. The first orthogonality can be written <span class="math display">\[
+\sum_{i=1}^q F_{ri}(F^\dagger)_{ip}=(FF^\dagger)_{rp}=\delta_{pr}
+\]</span> And thus <span class="math inline">\(F\)</span> is unitary. Which gives <span class="math display">\[
+(F^\dagger F)_{ij}=\sum_r(F^\dagger)_{ir}F_{rj}=\sum_r\sqrt{\frac{n_i}{n}}\chi^{r*}(K_i)\sqrt{\frac{n_j}{n}}\chi^r(K_j)=\frac1n\sum_rn_i\chi^{r*}(K_i)\chi^r(K_j)=\delta_{ij}
+\]</span></p>
+</blockquote>
+<ul>
+<li>Characteristic Table</li>
+</ul>
+<blockquote>
+<p>We expand the entry characteristics of a finite group by two axes. The first axis as index of classes and the second axis as the index of irreducible, inequivalent representations.</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th><span class="math inline">\(n_1\{K_1\}\)</span></th>
+<th><span class="math inline">\(n_2\{K_2\}\)</span></th>
+<th><span class="math inline">\(\cdots\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(n_q\{K_q\}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(A^1\)</span></td>
+<td><span class="math inline">\(\chi^1(K_1)\)</span></td>
+<td><span class="math inline">\(\chi^1(K_2)\)</span></td>
+<td><span class="math inline">\(\cdots\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\chi^1(K_q)\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(A^2\)</span></td>
+<td><span class="math inline">\(\chi^2(K_1)\)</span></td>
+<td><span class="math inline">\(\chi^2(K_2)\)</span></td>
+<td><span class="math inline">\(\cdots\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\chi^2(K_q)\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\vdots\)</span></td>
+<td><span class="math inline">\(\vdots\)</span></td>
+<td><span class="math inline">\(\vdots\)</span></td>
+<td><span class="math inline">\(\ddots\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\vdots\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(A^q\)</span></td>
+<td><span class="math inline">\(\chi^q(K_1)\)</span></td>
+<td><span class="math inline">\(\chi^q(K_2)\)</span></td>
+<td><span class="math inline">\(\cdots\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\chi^q(K_q)\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Namely, we reserve <span class="math inline">\(\chi^i(K_j)\)</span> for the <span class="math inline">\(i\)</span>-th row and <span class="math inline">\(j\)</span>-th column.</p>
+</blockquote>
+<p><strong>Prop</strong> Two representations are equivalent <span class="math inline">\(\Leftrightarrow\)</span> They have the same characteristics.</p>
+<blockquote>
+<p><strong>Proof</strong> The "<span class="math inline">\(\Rightarrow\)</span>" is trivial. We now show "<span class="math inline">\(\Leftarrow\)</span>".</p>
+<p>If two representations (not necessarily irreducible) <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> have same characteristics <span class="math inline">\(\chi(g_i)\)</span>, we first pick a set of irreducible, inequivalent representations <span class="math inline">\(A^p\)</span>. By completeness, we can uniquely decompose orthonormally <span class="math display">\[
+\chi=\sum_p a^p\chi^p
+\]</span> Since <span class="math inline">\(A\)</span> can be decomposed as <span class="math inline">\(A=\sum_p\bigoplus m_p^{(A)}A^p\)</span> and likewise for <span class="math inline">\(B\)</span>, while this leads to <span class="math display">\[
+\chi^A=\sum_pm_p^{(A)}\chi^p
+\]</span> We easily obtain <span class="math inline">\(m_p^{(A)}=m_p^{(B)}\)</span>, suggesting equivalence.</p>
+</blockquote>
+<hr />
+<p>Def 2.18 Direct product of representation <span class="math inline">\(C(g)=A(g)\otimes B(g)\)</span></p>
+<blockquote>
+<p>Characteristics relation: <span class="math inline">\(\chi^C(g)=\chi^A(g)\cdot\chi^B(g)\)</span></p>
+<p>If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are inequivalent, irreducible representations of <span class="math inline">\(G\)</span>, we have <span class="math inline">\((\chi^A|\chi^A)=(\chi^B|\chi^B)=1\)</span> and <span class="math inline">\((\chi^A|\chi^B)=0\)</span>.</p>
+<p>The outcome is not necessarily irreducible.</p>
+</blockquote>
+<p>Def 2.19 Representation of direct product group</p>
+<blockquote>
+<p>Use direct product of respective representations. The outcome is irreducible if respective representations are irreducible.</p>
+</blockquote>
+<p><strong>Induced representation</strong></p>
+<blockquote>
+<p><span class="math inline">\(H\)</span> is subgroup of <span class="math inline">\(G\)</span>, and <span class="math inline">\(H\)</span> has a representation <span class="math inline">\(B(h)\)</span> on representation space <span class="math inline">\(W\)</span>. <span class="math display">\[
+G\supseteq H,~B:H\longrightarrow GL(W,\C)
+\]</span> Aim to construct a representation <span class="math inline">\(U(g)\)</span> on representation space <span class="math inline">\(V\)</span>. Propose the following constraints</p>
+<ul>
+<li><p><span class="math inline">\(V\)</span> is space of linear functionals <span class="math inline">\(f:V_G\longrightarrow W\)</span> with restriction <span class="math inline">\(f(hg)=B(h)f(g)\)</span></p></li>
+<li><p>Demand <span class="math inline">\([U(g)f](g&#39;&#39;)=f(g&#39;&#39;g)\)</span></p>
+<p>It is easily noted that with the restriction on <span class="math inline">\(U\)</span> being done, <span class="math inline">\(U(g)f\)</span> automatically satisfies the first restriction, namely <span class="math display">\[
+[U(g)f](hg&#39;&#39;)=f(hg&#39;&#39;g)=B(h)f(g&#39;&#39;g)=B(h)[U(g)f](g&#39;&#39;)
+\]</span> which gives <span class="math inline">\([U(g)f](hg&#39;&#39;)=B(h)[U(g)f](g&#39;&#39;)\)</span></p></li>
+<li><p>The representation <span class="math inline">\(U\)</span> preserves the original group law.</p>
+<p>It is also easily noted that the group homomorphism criteria is met through the criteria above. Since <span class="math display">\[
+[U(g&#39;)U(g)f](g&#39;&#39;)=[U(g)f](g&#39;&#39;g&#39;)=f(g&#39;&#39;g&#39;g)=[U(g&#39;g)f](g&#39;&#39;)
+\]</span> And <span class="math inline">\(U(g)\)</span> forms a group.</p></li>
+</ul>
+</blockquote>
+<p>Denote <span class="math inline">\(n\equiv |G|\)</span>, <span class="math inline">\(m\equiv|H|\)</span> and <span class="math inline">\(l\equiv\frac{n}{m}\)</span> and the dimensionality of <span class="math inline">\(W\)</span> by <span class="math inline">\(d\)</span>. The dimensionality of <span class="math inline">\(V\)</span> is thus <span class="math inline">\(\frac{n}{m}\times d=l\times d\)</span> since not every linear functional within <span class="math inline">\(\text{Hom}(V_G,W)\)</span> is allowed in <span class="math inline">\(V\)</span>. Take coset decomposition of <span class="math inline">\(G\)</span> against <span class="math inline">\(H\)</span>, <span class="math display">\[
+G=\{Hg_1,Hg_2,\cdots,H g_l\}
+\]</span> where the <span class="math inline">\(g_1,g_2,\cdots,g_l\)</span> are the representitive elements of the cosets and <span class="math inline">\(g_1\)</span> is the identity element. The restriction on <span class="math inline">\(f\)</span> can be written as, <span class="math inline">\(\forall g\in G\)</span>, <span class="math inline">\(\exist! h\in H, i\in\{1,2,\cdots,l\}\)</span> such that <span class="math inline">\(g=hg_i\)</span>, and <span class="math display">\[
+f(g)=f(hg_i)=B(h)f(g_i)
+\]</span> So the only DOF for <span class="math inline">\(f\)</span> in <span class="math inline">\(V\)</span> is given as a quotient group functional <span class="math inline">\(f(g_i)\)</span>. Thus <span class="math inline">\(\dim V=l\times d\)</span>. We have effectively taken <span class="math inline">\(V\)</span> to be a narrowing homomorphism of <span class="math inline">\(\text{Hom}(V_G,W)\)</span> in the first place.</p>
+<p>Define a set of basic functionals for <span class="math inline">\(V\)</span> as <span class="math display">\[
+\bold e_{rj}:G\longrightarrow GL(V,\C), g_k\longmapsto\delta_{jk}e_r
+\]</span> where <span class="math inline">\(j,k\in\{1,2,\cdots,n\}\)</span> and <span class="math inline">\(r\in\{1,2,\cdots,d\}\)</span> with <span class="math inline">\(e_r\)</span> being a basis for <span class="math inline">\(W\)</span>. But as basis for the reduced <span class="math inline">\(V\)</span>, we pick only those with <span class="math inline">\(j\in\{1,2,\cdots,l\}\)</span>. Now we have <span class="math display">\[
+[U(g)\bold e_{rj}](g_s)\stackrel{\text{definition of }U}=\bold e_{rj}(g_s g)\stackrel{\text{coset repr.}}=\bold e_{rj}(hg_i)\stackrel{\text{restriction on }V}=B(h)\bold e_{rj}(g_i)=\delta_{ij}B(h)e_r
+\]</span> where <span class="math inline">\(g_s\in G\)</span> and we looked for unique <span class="math inline">\(h,g_i\)</span> for every <span class="math inline">\(g_s\)</span> as variable, since for every <span class="math inline">\(g_s g\)</span>, we could first pin down the coset index <span class="math inline">\(g_i\)</span> where <span class="math inline">\(i\in\{1,\cdots,l\}\)</span> and then <span class="math inline">\(h=g_s g g_i^{-1}\)</span>. Furthermore, there is symbolically <span class="math display">\[
+\bold e_{rj}(g_i)\equiv\bold e_{r(j+s-i)}(g_s)
+\]</span> The transform relation now writes <span class="math display">\[
+[U(g)\bold e_{rj}](g_s)=B(h)\bold e_{rj}(g_i)=B(g_s g g_i^{-1})\bold e_{r(j+s-i)}(g_s)
+\]</span> with attention to the restriction <span class="math inline">\(g_s g=hg_i\)</span>. The above is actually an equation of transformation relation componentwise, we could have as well extract the information contained by noting that the equation is nonzero iff <span class="math inline">\(i=j\)</span> is met, meaning only those <span class="math inline">\(g_s\in\{g_s|g_sgg_j^{-1}\in H\}\)</span> have nonzero components. We thus have, for those <span class="math inline">\(g_s\)</span>'s, <span class="math display">\[
+U(g)\bold e_{rj}(g_s)=B(g_sg g_j^{-1})e_r
+\]</span> while for the other <span class="math inline">\(g_s\)</span>'s, we have <span class="math display">\[
+U(g)\bold e_{rj}(g_s)=0
+\]</span> Define <span class="math display">\[
+\dot{B}(h)=
+\left\{\begin{array}{}
+B(h)&amp;h\in H\\
+0&amp;h\notin H
+\end{array}\right.
+\]</span> Thus we could write succinctly <span class="math display">\[
+U(g)\bold e_{rj}(g_s)=\dot{B}(g_s gg_j^{-1})e_r=\dot{B}(g_s gg_j^{-1})\bold e_{rs}(g_s)=[\sum_{t=1}^n\dot{B}(g_tgg_j^{-1})\bold e_{rt}](g_s)
+\]</span> With the functionals outside of <span class="math inline">\(V\)</span> given by <span class="math display">\[
+\bold e_{rt}(hg_\alpha)=B(h)\bold e_{rt}(g_\alpha)=0
+\]</span> if <span class="math inline">\(t&gt;l\)</span>. Namely those <span class="math inline">\(\bold e_{rt}\)</span> are not allowed in <span class="math inline">\(V\)</span> by the restriction. Thus we have <span class="math display">\[
+U(g)\bold e_{rj}=\sum_{t=1}^l\dot{B}(g_t g g_j^{-1})\bold e_{rt}
+\]</span> or in short, <span class="math display">\[
+U(g)
+\left(\begin{array}{c}
+\bold e_{11}&amp;\bold e_{12}&amp;\cdots&amp;\bold e_{1l}\\
+\bold e_{21}&amp;\bold e_{22}&amp;\cdots&amp;\bold e_{2l}\\
+\vdots&amp;\vdots&amp;\ddots&amp;\vdots\\
+\bold e_{d1}&amp;\bold e_{d2}&amp;\cdots&amp;\bold e_{dl}
+\end{array}\right)
+=
+\left(\begin{array}{c}
+\bold e_{11}&amp;\bold e_{12}&amp;\cdots&amp;\bold e_{1l}\\
+\bold e_{21}&amp;\bold e_{22}&amp;\cdots&amp;\bold e_{2l}\\
+\vdots&amp;\vdots&amp;\ddots&amp;\vdots\\
+\bold e_{d1}&amp;\bold e_{d2}&amp;\cdots&amp;\bold e_{dl}
+\end{array}\right)
+\left(\begin{array}{c}
+\dot{B}(g_1gg_1^{-1})&amp;\dot{B}(g_1gg_2^{-1})&amp;\cdots&amp;\dot{B}(g_1gg_l^{-1})\\
+\dot{B}(g_2gg_1^{-1})&amp;\dot{B}(g_2gg_2^{-1})&amp;\cdots&amp;\dot{B}(g_2gg_l^{-1})\\
+\vdots&amp;\vdots&amp;\ddots&amp;\vdots\\
+\dot{B}(g_lgg_1^{-1})&amp;\dot{B}(g_lgg_2^{-1})&amp;\cdots&amp;\dot{B}(g_lgg_l^{-1})
+\end{array}\right)
+\]</span> where we symbolically decided that the <span class="math inline">\(\dot B\)</span> should be acting on the <span class="math inline">\(\bold e\)</span> from the left in the notational matrix multiplication. We should note that the matrix <span class="math inline">\(\dot{B}(g_t g g_j^{-1})\)</span> is not that monstrous, since for <span class="math inline">\(g_t gg_j^{-1}\)</span> to be in <span class="math inline">\(H\)</span> is a strict case. For each <span class="math inline">\(g_t\)</span>, we could uniquely decompose <span class="math inline">\(g_tg=h_tg_t&#39;\)</span> and for <span class="math inline">\(h_t g_t&#39;g_j^{-1}\)</span> to be in <span class="math inline">\(H\)</span> would require <span class="math inline">\(g_t&#39;=g_j\)</span>, because if we have <span class="math inline">\(g_t&#39;\ne g_j\)</span> while <span class="math inline">\(h_tg_t&#39;=h_t&#39;g_j\)</span>, there is contradiction. Thus the matrix <span class="math inline">\(\dot{B}(g_t g g_j^{-1})\)</span> has only one nontrivial entry per row. And likewise, there would only be one nontrivial entry per column, since for <span class="math inline">\(g_tg g_j^{-1}\)</span> to be within <span class="math inline">\(H\)</span> is to require that <span class="math inline">\(g_j g^{-1}g_t^{-1}\in H\)</span>. And for every <span class="math inline">\(g_j\)</span> there is only one unique <span class="math inline">\(g_t\)</span> for the job. Thus the transformation is de facto simple, having the form <span class="math display">\[
+U(g)\bold e_{rj}=B(g_{(\text{some entry decided by }j\text{ ofc lmfao) }}g g_j^{-1})\bold e_{r(\text{the same dull entry})}
+\]</span> Thus the actual basis transformation would look like, with the basis listed in lexicographical order, <span class="math display">\[
+U(g)(\bold e_{11},\cdots,\bold e_{1l},\bold e_{21},\cdots,\bold e_{d1},\cdots,\bold e_{dl})
+=
+(\bold e_{11},\cdots,\bold e_{dl})
+\left(\begin{array}{c}
+\dot B_{l\times l}&amp;~&amp;~&amp;~\\
+~&amp;\dot B_{l\times l}&amp;~&amp;~\\
+~&amp;~&amp;\ddots&amp;~\\
+~&amp;~&amp;~&amp;\dot B_{l\times l}
+\end{array}\right)_{(dl)\times(dl)}
+\]</span> where <span class="math display">\[
+\dot B_{l\times l}\equiv\left(\begin{array}{c}
+\dot{B}(g_1gg_1^{-1})&amp;\dot{B}(g_1gg_2^{-1})&amp;\cdots&amp;\dot{B}(g_1gg_l^{-1})\\
+\dot{B}(g_2gg_1^{-1})&amp;\dot{B}(g_2gg_2^{-1})&amp;\cdots&amp;\dot{B}(g_2gg_l^{-1})\\
+\vdots&amp;\vdots&amp;\ddots&amp;\vdots\\
+\dot{B}(g_lgg_1^{-1})&amp;\dot{B}(g_lgg_2^{-1})&amp;\cdots&amp;\dot{B}(g_lgg_l^{-1})
+\end{array}\right)=[B(g_igg_j^{-1})\delta_{i,\sigma(j)}]
+\]</span> where <span class="math inline">\(\sigma\)</span> is some permutation of <span class="math inline">\(\{1,\cdots,l\}\)</span> and the <span class="math inline">\(i,j\)</span> stand for some row and column indices.</p>
+<p>Moreover, the matrix <span class="math inline">\(\dot{B}_{(dl)\times (dl)}\)</span> may look as if it is block diagonal if we divide the matrix to <span class="math inline">\(l\times l\)</span> blocks. But keep in mind that the <span class="math inline">\(B\)</span>'s are also maps, so <span class="math inline">\(B\bold e\)</span> would generally yield a linear combination of <span class="math inline">\(\bold e\)</span>'s. If we look at some <span class="math inline">\(l\times l\)</span> block directly, there is, as an example <span class="math display">\[
+U(g)(\bold e_{r1},\cdots\bold e_{rl})=(\bold e_{r1},\cdots,\bold e_{rl})
+(B_{ij}\delta_{i,\sigma(j)})_{l\times l}
+\]</span> Typically there is <span class="math display">\[
+U(g)\bold e_{rj}=B(g_{\sigma(j)}g g_j^{-1})\bold e_{r,\sigma(j)}=\sum_{t=1}^d b_{tr}(j)\bold e_{t,\sigma(j)}
+\]</span> as a linear combination, where there is <span class="math display">\[
+B(h)e_r=\sum_{t=1}^de_tb_{tr}(h)
+\]</span> since <span class="math inline">\(B(h)\)</span> is a linear transformation taking a vector in <span class="math inline">\(W\)</span> like <span class="math inline">\(e_r\)</span> to combinations depending on <span class="math inline">\(B(h)\)</span> itself. So genearally the map <span class="math inline">\(B\)</span> in some column would distribute its numeric-representation along the column entries with a fix vertical spacing, namely once every <span class="math inline">\(l\)</span> rows. So generally the transformation looks like <span class="math display">\[
+U(g)(\bold e_{r1},\cdots\bold e_{rl})=(\bold e_{r1},\cdots,\bold e_{rl})
+(\mathcal{B}_{ij})_{l\times l}
+\]</span> where <span class="math inline">\(\mathcal{B}_{ij}\)</span> are numbers and the matrix <span class="math inline">\([\mathcal{B}_{ij}]\)</span> is generally not block-diagonal. It can further be seen that <span class="math display">\[
+\dot{B}_{(dl)\times (dl)}=\sum_{j=1}^l [B(g_{\sigma(j)}g g_j^{-1}) ]^e_{d\times d}\otimes[E_{\sigma(j),j}]_{l\times l}
+\]</span> where <span class="math inline">\(E_{ij}\)</span> stands for the standard matrix with only the <span class="math inline">\((ij)\)</span>-entry being 1 and other entries being set to zero.</p>
+<p>The characteristics of induced representation is <span class="math display">\[
+\begin{align}
+\chi^U(g)&amp;=\sum_{j=1}^l\mbox{tr}[B(g_{\sigma(j)}gg_j^{-1})]\cdot\mbox{tr}[E_{\sigma(j),j}]
+\\&amp;=\sum_{j=1}^l\mbox{tr}[B(g_{\sigma(j)}gg_j^{-1})]\cdot\delta_{j,\sigma(j)}
+\\&amp;=\sum_{j=1}^l\mbox{tr}[\dot{B}(g_{j}gg_j^{-1})]^e
+\end{align}
+\]</span> By noting that <span class="math inline">\(\forall h\in H\)</span>, <span class="math inline">\(g_jgg_j^{-1}\in H\Leftrightarrow hg_jgg_j^{-1}h^{-1}\in H\)</span>, and <span class="math inline">\(g_j g g_j^{-1}\notin H\Leftrightarrow hg_jgg_j^{-1}h^{-1}\notin H\)</span>, we can further write <span class="math display">\[
+\chi^U(g)=\frac1m \sum_{j=1}^l\sum_{h\in H}\mbox{tr}\dot B(hg_jgg_j^{-1}h)=\frac1m\sum_{t\in G}\mbox{tr}\dot{B}(tgt^{-1})
+\]</span> The above matrix expansion is viewed from taking lexicographical order of the basis. If we reverse the role of <span class="math inline">\(r\lrarr j\)</span>, we would yield a simpler form as shown in the textbook.</p>
+<p><strong>Restriction of representation</strong></p>
+<blockquote>
+<p>If <span class="math inline">\(A\)</span> is a representation of <span class="math inline">\(G\)</span>, then <span class="math inline">\(A\)</span> is a representation of a subgroup <span class="math inline">\(H\)</span>, but denoted as <span class="math inline">\(A|_H\)</span>.</p>
+<p><strong>Rmk</strong> The restriction of an irreducible representation is not necessarily irreducible any longer. For example, restrict the 2-dim'l irreducible representation of <span class="math inline">\(D_3\)</span> to the subgroup <span class="math inline">\(\{e,d,f\}\)</span>. c.f. von Neumann entropy for a composite pure state</p>
+</blockquote>
+<p><strong>Frobenius Theorem</strong></p>
+<blockquote>
+<p>If group <span class="math inline">\(G\)</span> has subgroup <span class="math inline">\(H\)</span>, with <span class="math inline">\(A\)</span> being an irreducible representation of <span class="math inline">\(G\)</span> and <span class="math inline">\(B\)</span> an irreducible representation on <span class="math inline">\(H\)</span>. We denote the induced representation by <span class="math inline">\(U\)</span> and the restriction of <span class="math inline">\(A\)</span> by <span class="math inline">\(A|_H\)</span>. There is <span class="math display">\[
+(\chi^A|\chi^U)=(\chi^B|\chi^{A|_H})
+\]</span> or namely, the repetition index of <span class="math inline">\(A\)</span> in <span class="math inline">\(U\)</span> is the same as the repetition index of <span class="math inline">\(B\)</span> in <span class="math inline">\(A|_H\)</span>.</p>
+<p><strong>Proof</strong> There is <span class="math display">\[
+\begin{align}
+(\chi^A|\chi^U)&amp;=\frac1n\sum_{g\in G}\chi^{A*}(g)\chi^U(g)=\frac1n\sum_{g\in G}\chi^{A*}(g)[\frac1m\sum_{t\in G}\mbox{tr}\dot{B}(tgt^{-1})]
+\\&amp;=\frac{1}{nm}\sum_{g,t\in G}\chi^{A*}(g)\cdot\mbox{tr}\dot{B}(tgt^{-1})
+\\&amp;=\frac{1}{nm}\sum_{s,t\in G}\chi^{A*}(t^{-1}st)\cdot\mbox{tr}\dot{B}(s)
+\\&amp;=\frac{1}{m}\sum_{s\in H}[\frac1n\sum_{t\in G}\chi^{A*}(s)]\cdot\mbox{tr}B(s)
+\\&amp;=\frac1m\sum_{s\in H}\chi^{A*}(s)\chi^B(s)=(\chi^{A|_H}|\chi^B)
+\end{align}
+\]</span> And since the repetition numbers are real, the desired equality is reached.</p>
+</blockquote>
 
       
 
@@ -414,7 +1077,7 @@ p(m)=\frac{\langle\psi|M_m^\dagger M_m|\psi\rangle}{\sum_m\langle\psi|M_m^\dagge
           
           <br>
           <strong>Link：</strong>
-          <a rel="license" href="http://cammheyn.github.io/2020/04/04/Ch2.%20Intro%20to%20QM/">http://cammheyn.github.io/2020/04/04/Ch2.%20Intro%20to%20QM/</a>
+          <a rel="license" href="http://cammheyn.github.io/2021/02/21/Trivia-of-Group-Theory/">http://cammheyn.github.io/2021/02/21/Trivia-of-Group-Theory/</a>
           <br>
           <!-- <strong>Copyright：</strong> -->
           <em>This work is licensed under
@@ -437,7 +1100,7 @@ p(m)=\frac{\langle\psi|M_m^\dagger M_m|\psi\rangle}{\sum_m\langle\psi|M_m^\dagge
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Quantum Information</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Algebra</a>
         		</li>
       		
 		</ul>
@@ -493,7 +1156,7 @@ p(m)=\frac{\langle\psi|M_m^\dagger M_m|\psi\rangle}{\sum_m\langle\psi|M_m^\dagge
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://cammheyn.github.io/2020/04/04/Ch2.%20Intro%20to%20QM/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://cammheyn.github.io/2021/02/21/Trivia-of-Group-Theory/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -507,18 +1170,18 @@ p(m)=\frac{\langle\psi|M_m^\dagger M_m|\psi\rangle}{\sum_m\langle\psi|M_m^\dagge
   
 <nav id="article-nav">
   
-    <a href="/2020/04/09/Ch9.%20Distance%20measures%20for%20QI/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/02/21/This-Website-is-under-Construction-and-Maintenance/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Distance Measures for Quantum Information
+          This Website is under Constant Construction and Maintenance
         
       </div>
     </a>
   
   
-    <a href="/2020/03/27/Defs%20&%20Thms%20for%20Group%20Theory%20Chapter%201%20Basics/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Trivia of Finite Group Theory - Chapter 1 Basics</div>
+    <a href="/2021/02/19/My-First-Blog/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">My First Blog</div>
       <i class="icon-circle-right"></i>
     </a>
   
