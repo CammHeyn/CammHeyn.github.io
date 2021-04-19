@@ -8,19 +8,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://cammheyn.github.io">
-  <title>Distance Measures for Quantum Information | SETTLERS</title>
+  <title>Finite Group Theory - 1.Basics | SETTLERS</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Ch9. Distance measures for QI Classical information Hamming distance: number of places at which two bit strings are not equal. No direct generalization to the quantum case. Trace distance (\(L_1\)dist">
+  <meta name="description" content="Trivia of Finite Group Theory This series of note briefly contains main concepts of finite group theory. The notes are based on the Group Theory course given by Dr. Xinzheng Li in the Fall of 2020. Th">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Distance Measures for Quantum Information">
-<meta property="og:url" content="http://cammheyn.github.io/2020/04/09/Ch9.%20Distance%20measures%20for%20QI/index.html">
+<meta property="og:title" content="Finite Group Theory - 1.Basics">
+<meta property="og:url" content="http://cammheyn.github.io/2020/03/27/Finite-Group-Theory-1.Basics/index.html">
 <meta property="og:site_name" content="SETTLERS">
-<meta property="og:description" content="Ch9. Distance measures for QI Classical information Hamming distance: number of places at which two bit strings are not equal. No direct generalization to the quantum case. Trace distance (\(L_1\)dist">
+<meta property="og:description" content="Trivia of Finite Group Theory This series of note briefly contains main concepts of finite group theory. The notes are based on the Group Theory course given by Dr. Xinzheng Li in the Fall of 2020. Th">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-04-08T16:35:09.477Z">
-<meta property="article:modified_time" content="2021-04-09T04:24:01.613Z">
+<meta property="article:published_time" content="2020-03-27T07:36:01.511Z">
+<meta property="article:modified_time" content="2021-04-19T11:37:43.706Z">
 <meta property="article:author" content="Qi Camm Huang">
-<meta property="article:tag" content="Quantum Information">
+<meta property="article:tag" content="Algebra">
+<meta property="article:tag" content="Group Theory">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="SETTLERS" type="application/atom+xml">
@@ -149,7 +150,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Ch9. Distance measures for QI" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Finite-Group-Theory-1.Basics" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -157,13 +158,13 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Distance Measures for Quantum Information
+      Finite Group Theory - 1.Basics
     </h1>
   
 
         
-        <a href="/2020/04/09/Ch9.%20Distance%20measures%20for%20QI/" class="archive-article-date">
-  	<time datetime="2020-04-08T16:35:09.477Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-09</time>
+        <a href="/2020/03/27/Finite-Group-Theory-1.Basics/" class="archive-article-date">
+  	<time datetime="2020-03-27T07:36:01.511Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-27</time>
 </a>
 
 
@@ -175,7 +176,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  <strong>Word Count:</strong> </span>
-        <span class="post-count">1.9k <strong>Words</strong></span>
+        <span class="post-count">2k <strong>Words</strong></span>
       </span>
     </span>
 
@@ -188,7 +189,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">11分</span>
+        <span class="post-count">12分</span>
       </span>
     </span>
 
@@ -216,169 +217,180 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="ch9.-distance-measures-for-qi">Ch9. Distance measures for QI</h2>
-<h3 id="classical-information">Classical information</h3>
-<p><em>Hamming distance:</em> number of places at which two bit strings are not equal. No direct generalization to the quantum case.</p>
-<p><em>Trace distance (</em><span class="math inline">\(L_1\)</span><em>distance/ Kolmogorov distance):</em> <span class="math display">\[
-D(p_x,q_x)\equiv\frac{1}{2}\sum_x|p_x-q_x|
-\]</span> symmetric, and satisfies the triangle inequality, has property (abs sign can be removed) <span class="math display">\[
-D(p_x,q_x)=\max_{S}|p(S)-q(S)|
-\]</span> <em>Fidelity:</em> <span class="math display">\[
-F(p_x,q_x)\equiv\sum_x\sqrt{p_xq_x}
-\]</span> <a id="more"></a></p>
-<p><em>Dynamic measure:</em> A random variable <span class="math inline">\(X\)</span> is sent through a noisy channel, giving as output another random variable <span class="math inline">\(Y\)</span>, to form a Markov process <span class="math inline">\(X\longrightarrow Y\)</span>. Make a copy of <span class="math inline">\(X\)</span>, creating new random variable <span class="math inline">\(\tilde X=X\)</span>. <span class="math display">\[
+        <h1 id="trivia-of-finite-group-theory">Trivia of Finite Group Theory</h1>
+<p>This series of note briefly contains main concepts of finite group theory. The notes are based on the <em>Group Theory</em> course given by Dr. Xinzheng Li in the Fall of 2020.</p>
+<p>This note covers the basic definitions and related theorems of finite groups.</p>
+<h2 id="basics">1. Basics</h2>
+<p>Def 1.1 Group</p>
+<blockquote>
+<p>Collection of elements, with multiplication that</p>
+<p>satisfies: 1) closure; 2) associativity;</p>
+<p>guarantees existence of: 3) identity; 4) inverse for any element</p>
+</blockquote>
+<p><u>Ex</u> <span class="math inline">\(\{E,I\}\)</span>, <span class="math inline">\(S_n\)</span>, <span class="math inline">\(D_3\)</span>, <span class="math inline">\(\mathbb{Z}\)</span>, <span class="math inline">\(\mathbb R\)</span>, <span class="math inline">\(\mathbb C\)</span>.</p>
+<p>Def 1.2 Finite Group &amp; Infinite Group</p>
+<p>Def 1.3 Abel(ian) (Commutative) Group</p>
+<a id="more"></a>
+<p><strong>Thm 1.1 Re-arrangement Theorem</strong></p>
+<hr />
+<p>Def 1.4 Subgroup</p>
+<blockquote>
+<p>Subgroup inherits the original group's multiplication rule, so 2) associativity is naturally guaranteed. Also 1) and 4) together leads to 3). So it usually suffices to prove: 1) closure and 4) inverse.</p>
+</blockquote>
+<p>Def 1.5 Order of an element</p>
+<blockquote>
+<p>Consider cyclic group generation.</p>
+</blockquote>
+<p>Def 1.6 Left(Right) Coset (of subgroup) <span class="math inline">\(gH\)</span>, <span class="math inline">\(Hg\)</span></p>
+<p><strong>Thm 1.2 Coset Theorem:</strong> two left (right) cosets of a subgroup are either identical or disjoint.</p>
+<blockquote>
+<p><strong>Proof</strong> <span class="math inline">\(\forall g_1,g_2\in G\)</span> with subgroup <span class="math inline">\(H\subset G\)</span>. If there is <span class="math inline">\(h_1,h_2\in H\)</span> such that <span class="math inline">\(g_1 h_1=g_2 h_2\)</span>, we then have <span class="math inline">\(g_1 H=g_1h_1\cdot h_1^{-1}H=g_2h_2\cdot H=g_2 H\)</span>. Likewise for right cosets. q.e.d.</p>
+</blockquote>
+<p><strong>Thm 1.3 Lagrange Theorem:</strong> Order of subgroup must be factor of that of the group.</p>
+<blockquote>
+<p>Consider all cosets of the subgroup.</p>
+</blockquote>
+<hr />
+<p>Def 1.7 Conjugacy (between elements)</p>
+<blockquote>
+<p>If there exists <span class="math inline">\(g\in G\)</span> such that <span class="math inline">\(gfg^{-1}=h\)</span>, then <span class="math inline">\(f\sim h\)</span>. This is an equivalence relation.</p>
+</blockquote>
+<p>Def 1.8 (Conjugacy) Class</p>
+<blockquote>
+<p><strong>Properties</strong> 1) identity itself constitutes a class. 2) elements of Abelian group each constitutes a class. 3) elements of the same class have the same order (but NOT the other way around).</p>
+</blockquote>
+<p><strong>Thm 1.4</strong> Number of elements in a conjugacy class must be factor of the order of the (finite) group.</p>
+<blockquote>
+<p><strong>Proof</strong> We consider the conjugacy class which <span class="math inline">\(g\in G\)</span> is in. Discover first that the elements that commute with <span class="math inline">\(g\)</span> forms a subgroup <span class="math display">\[
+H_g:=\{h|h\in G, hg=gh\}
+\]</span> To elaborate, for <span class="math inline">\(h_1,h_2\in H_g\)</span>, there is <span class="math inline">\(h_1g=gh_1\)</span>, <span class="math inline">\(h_2g=gh_2\)</span>, thus <span class="math inline">\(h_1h_2g=h_1gh_2=gh_1h_2\)</span>, namely <span class="math inline">\(h_1h_2\in H_g\)</span>, which states closure. Consider <span class="math inline">\(h\in H_g\)</span>, <span class="math inline">\(hg=gh\)</span>, then there is also <span class="math inline">\(g=h^{-1}gh\)</span>, which leads to <span class="math inline">\(gh^{-1}=h^{-1}g\)</span>, thus inverse property is justified. <span class="math inline">\(H_g\)</span> is indeed a subgroup.</p>
+<p>Then consider the equipartition by this subgroup through construction of left cosets, namely <span class="math display">\[
+\{g_0H_g,g_1H_g,\cdots\}
+\]</span> where <span class="math inline">\(g_0,g_1\cdots\in G\)</span>. For any <span class="math inline">\(h\in H_g\)</span>, consider <span class="math inline">\((g_i h)g(g_i h)^{-1}=g_i hgh^{-1}g_i^{-1}=g_igg_i^{-1}\)</span>. This states that for any <span class="math inline">\(f\)</span> in a coset, <span class="math inline">\(fgf^{-1}\)</span> generates the same element. Different cosets generates different element in this way since, if we have <span class="math inline">\(g_i\)</span> and <span class="math inline">\(g_j\)</span> generating different cosets but still with <span class="math inline">\(g_igg_i^{-1}=g_jgg_j^{-1}\)</span>, there is <span class="math inline">\((g_j^{-1}g_i)g=g(g_j^{-1}g_i)\)</span>, which gives <span class="math inline">\(g_j^{-1}g_i\in H_g\)</span>, which gives <span class="math inline">\(g_j^{-1}g_iH_g=H_g\)</span>, which leads to <span class="math inline">\(g_i H_g=g_j H_g\)</span> and that leads to contradiction.</p>
+<p>Thus from the above facts, there are <span class="math inline">\(|G|/|H_g|\)</span> cosets which generate each a conjugate element to <span class="math inline">\(g\)</span> including <span class="math inline">\(g\)</span> itself. Thus the order of the class is <span class="math inline">\(|G|/|H_g|\)</span> which divides <span class="math inline">\(|G|\)</span>.</p>
+</blockquote>
+<p>Def 1.9 Conjugate Subgroups</p>
+<blockquote>
+<p>If there exists an element <span class="math inline">\(g\in G\)</span> such that <span class="math inline">\(K=gHg^{-1}\)</span>, we then say <span class="math inline">\(K\)</span> and <span class="math inline">\(H\)</span> are conjugate to each other</p>
+</blockquote>
+<p>Def 1.10 Invariant (normal) subgroup</p>
+<blockquote>
+<p>If any conjugate class of the subgroup's element stays within the subgroup, the subgroup is invariant.</p>
+</blockquote>
+<p><strong>Thm 1.5</strong> If <span class="math inline">\(H\)</span> is invariant subgroup, <span class="math inline">\(\forall g\in G\)</span>, <span class="math inline">\(\mbox{Ad}_g(\bullet)\equiv g\bullet g^{-1}\)</span> is a 1-1 map on <span class="math inline">\(H\)</span>. Thus the definition of invariant subgroup can be written <span class="math inline">\(gHg^{-1}=H, \forall g\in G\)</span>.</p>
+<p><u>Prop</u> All subgroups in Abelian group are invariant.</p>
+<p><strong>Thm 1.6</strong> For an invariant subgroup, its left and right cosets coincide and vice versa.</p>
+<blockquote>
+<p><span class="math inline">\((\forall g\in G,gHg^{-1}=H)\Leftrightarrow(\forall g\in G,gH=Hg)\)</span></p>
+</blockquote>
+<p><u>Prop</u> Product of elements from two (not the subgroup) cosets of the invariant subgroup lands in another coset</p>
+<blockquote>
+<p><strong>Proof</strong> Consider equipartition of the group by the invariant subgroup <span class="math inline">\(H\)</span>, namely <span class="math display">\[
+G=\{g_0H,g_1H,g_2H,\cdots\}
+\]</span> For any <span class="math inline">\(h_\alpha,h_\beta\in H\)</span>, consider first <span class="math inline">\((g_0h_\alpha)(g_0h_\beta)=h_\alpha h_\beta\in g_0 H\)</span> and <span class="math inline">\((g_0h_\alpha)(g_i h_\beta)=h_\alpha g_i h_\beta=g_i(g_i^{-1}h_\alpha g_i)h_\beta=g_ih_\alpha&#39;h_\beta\in g_i H\)</span> and <span class="math inline">\((g_ih_\alpha)(g_0h_\beta)=g_ih_\alpha h_\beta\in g_i H\)</span>, where <span class="math inline">\(i\ne 0\)</span>.</p>
+<p>Then consider <span class="math inline">\(i,j\ne 0\)</span>, there is <span class="math inline">\((g_ih_\alpha)(g_jh_\beta)=g_ig_jg_j^{-1}h_\alpha g_jh_\beta=g_ig_jh_\alpha&#39;h_\beta\)</span>, which could be in neither <span class="math inline">\(g_i H\)</span> nor in <span class="math inline">\(g_j H\)</span>, but in <span class="math inline">\((g_ig_j)H\)</span>.</p>
+</blockquote>
+<p>Def 1.11 Quotient Group <span class="math inline">\(G/H\)</span></p>
+<blockquote>
+<p>Suppose <span class="math inline">\(G\)</span> has invariant subgroup <span class="math inline">\(H\)</span>, we can then divide <span class="math inline">\(G=\{g_0H,g_1H,\ldots\}\)</span>, treat each part as a new element in the quotient group <span class="math inline">\(G/H\)</span>.</p>
+</blockquote>
+<hr />
+<p>Def 1.12 Isomorphism <span class="math inline">\(G\simeq F\)</span></p>
+<blockquote>
+<p>Isomorphic mapping <span class="math inline">\(\Phi:G\longrightarrow F\)</span></p>
+</blockquote>
+<p>Def 1.13 Homomorphism <span class="math inline">\(G\sim F~(|G|\geq|F|)\)</span></p>
+<blockquote>
+<p>Homomorphic mapping <span class="math inline">\(\Phi:G\longrightarrow F\)</span></p>
+</blockquote>
+<p>Def 1.14 Kernel of homomorphism</p>
+<blockquote>
+<p>If <span class="math inline">\(G\sim F\)</span>, we call <span class="math inline">\(\Phi^{-1}(e_{F})\)</span> the kernel of homomorphism</p>
+</blockquote>
+<p><strong>Thm 1.7 Kernel Theorem:</strong> If <span class="math inline">\(G\sim F\)</span>, then (1) <span class="math inline">\(\ker{G}\)</span> is invariant subgroup of <span class="math inline">\(G\)</span>; (2) quotient group <span class="math inline">\(G/\ker G\)</span> is isomorphic to <span class="math inline">\(F\)</span>.</p>
+<blockquote>
+<p><strong>Proof</strong> (1) Subgroup: <span class="math inline">\(\forall k_1,k_2\in\ker G\)</span> that are distinct, there is <span class="math inline">\(\Phi(k_1)=\Phi(k_2)=e_F\)</span>. By property of homomorphism, there is <span class="math inline">\(\Phi(k_1k_2)=\Phi(k_1)\Phi(k_2)=e_F\)</span>, thus <span class="math inline">\((k_1k_2)\in \ker G\)</span>, which guarantees closure. Then consider <span class="math inline">\(\forall k\in\ker G\)</span>, then <span class="math inline">\(\Phi(k^{-1})\Phi(k)=\Phi(k^{-1})=\Phi(e_G)=e_F\)</span>, thus <span class="math inline">\(k^{-1}\in\ker G\)</span>.</p>
+<p>Invariance: <span class="math inline">\(\forall g\in G\)</span>, consider <span class="math inline">\(g(\ker G)g^{-1}\)</span>, <span class="math inline">\(\forall k\in\ker G\)</span>, <span class="math inline">\(\Phi(gkg^{-1})=\Phi(g)\Phi(g^{-1})=e_F\)</span>, thus <span class="math inline">\(gkg^{-1}\in\ker G\)</span>.</p>
+<ol start="2" type="1">
+<li>Denote <span class="math inline">\(\ker G= H\)</span>, consider quotient group <span class="math inline">\(G/H=\{g_0H, g_1 H,\cdots\}\)</span>, then <span class="math inline">\(\Phi(g_i H)=\Phi(g_i)\Phi(H)=\Phi(g_i)\)</span>. Together with <span class="math inline">\(\Phi(g_iHg_jH)=\Phi(g_kH)=\Phi(g_k)\)</span>, we could have the isomorphic mapping by combining <span class="math display">\[
+\Psi:G/H\longrightarrow F;~g_iH\mapsto \Phi(g_i)
+\]</span></li>
+</ol>
+</blockquote>
+<p>Def 1.15 Automorphic mapping <span class="math inline">\(v:G\longrightarrow G\)</span></p>
+<blockquote>
+<p>Preserves multiplication <span class="math inline">\(v(g_ig_j)=v(g_i)v(g_j)\)</span>.</p>
+</blockquote>
+<p>Def 1.16 Automorphic group <span class="math inline">\(A(G)\)</span></p>
+<blockquote>
+<p>Define <span class="math inline">\(v_1\cdot v_2\equiv v_1\circ v_2\)</span> acting on <span class="math inline">\(G\)</span> elements. Thus closure is guaranteed. Associativity is obvious. Identity and inverse is superficial.</p>
+</blockquote>
+<p>Def 1.17 Inner-automorphic mapping <span class="math inline">\(\mbox{Ad}_u:g\mapsto ugu^{-1}\)</span>, such maps form a group called the Inner-automorphic group <span class="math inline">\(I(G)\)</span>.</p>
+<p><u>Prop</u> <span class="math inline">\(I(G)\)</span> is an invariant subgroup of <span class="math inline">\(A(G)\)</span></p>
+<blockquote>
+<p>Being a subgroup, there is closure: <span class="math inline">\(\mbox{Ad}_f\circ\mbox{Ad}_h(g)=fhgh^{-1}f^{-1}=\mbox{Ad}_{(fh)}(g)\)</span>; inverse: <span class="math inline">\((\mbox{Ad}_f)^{-1}=\mbox{Ad}_{f^{-1}}\)</span>.</p>
+<p>Being invariant, there is <span class="math display">\[
 \begin{align}
-D((\tilde X,X),(\tilde X, Y))&amp;=\frac{1}{2}\sum_{xx&#39;}|p(\tilde X=x,X=x&#39;)-p(\tilde X=x, Y=x&#39;)|\\
-&amp;=\frac{1}{2}\sum_{xx&#39;}|\delta_{xx&#39;}p(X=x)-p(\tilde X=x,Y=x&#39;)|
-\\
-&amp;=\frac{1}{2}\sum_{x\ne x&#39;}p(\tilde X=x,Y=x&#39;)+\frac{1}{2}
-\sum_x(p(X=x)-p(X=x,Y=x))
-\\
-&amp;=\frac{p(X\ne Y)+1-p(X=Y)}{2}\\
-&amp;=p(X\ne Y)
+v\circ\mbox{Ad}_{f}\circ v^{-1}(g)&amp;=v(f\cdot v^{-1}(g)\cdot f^{-1})
+\\&amp;=
+v(f)\cdot g\cdot v(f^{-1})
+\\&amp;=
+\mbox{Ad}_{v(f)}(g)
 \end{align}
-\]</span></p>
-<p>###Quantum information</p>
-<p><em>Trace distance:</em> <span class="math display">\[
-D(\rho,\sigma)\equiv\frac12\mbox{tr}|\rho-\sigma|
-\]</span> where <span class="math inline">\(|A|\equiv\sqrt{A^\dagger A}\)</span>, degenerates to the classical case when <span class="math inline">\(\rho\)</span> and <span class="math inline">\(\sigma\)</span> commutes.</p>
-<p>Bloch sphere representation gives <span class="math inline">\(D(\vec r, \vec s)=\frac{|\vec r- \vec s|}{2}\)</span>.</p>
-<p>Trace distance is preserved under unitary transformations <span class="math display">\[
-D(U\rho U^\dagger, U\sigma U^\dagger)=\frac{1}{2}\mbox{tr}|U(\rho-\sigma)U^\dagger|=D(\rho,\sigma)
-\]</span> Also <span class="math display">\[
-D(\rho,\sigma)=\max_P\mbox{tr}(P(\rho-\sigma))
-\]</span> where the maximization may be taken over all projectors <span class="math inline">\(P\)</span>, or, alternately, over all positive operators which <span class="math inline">\(P\le I\)</span>. To verify, take <span class="math inline">\(\rho-\sigma=Q-S\)</span> where <span class="math inline">\(Q\)</span> and <span class="math inline">\(S\)</span> are positive operators with orthogonal support, thus <span class="math inline">\(|\rho-\sigma|=Q+S\)</span>. So <span class="math inline">\(D(\rho,\sigma)=\frac12\mbox{tr}(Q+S)\)</span>, <span class="math inline">\(\mbox{tr}(Q-S)=\mbox{tr}(\rho-\sigma)=0\)</span>. Therefore <span class="math inline">\(D(\rho,\sigma)=\mbox{tr}(Q)=\mbox{tr}(S)\)</span>. Let <span class="math inline">\(P\)</span> be projector onto support of <span class="math inline">\(Q\)</span>, then <span class="math inline">\(\mbox{tr}(P(Q-S))=\mbox{tr}(PQ)=\mbox{tr}(Q)=D(\rho,\sigma)\)</span>, while for any positive operator which <span class="math inline">\(P\le I\)</span>, it can be shown that <span class="math inline">\(\mbox{tr}(P(Q-S))\le\mbox{tr}(PQ)\le\mbox{tr}(Q)=D(\rho,\sigma)\)</span>.</p>
-<p><strong>Theorem 9.1:</strong> Let <span class="math inline">\(\{E_m\}\)</span> be a POVM, with <span class="math inline">\(p_m\equiv\mbox{tr}(\rho E_m)\)</span> and <span class="math inline">\(q_m\equiv\mbox{tr}(\rho E_m)\)</span> as the probabilities of obtaining a measurement outcome labeled by <span class="math inline">\(m\)</span>. Then <span class="math display">\[
-D(\rho,\sigma)=\max_{\{E_m\}}D(p_m,q_m)
-\]</span> where the maximization is over all POVMs <span class="math inline">\(\{E_m\}\)</span>.</p>
-<blockquote>
-<p><strong>Proof:</strong> <span class="math inline">\(D(p_m,q_m)=\frac12\sum_m|\mbox{tr}(E_m(\rho-\sigma))|\)</span>. Where <span class="math inline">\(|\mbox{tr}(E_m(\rho-\sigma))|=|\mbox{tr}(E_m(Q-S))|\le\mbox{tr}(E_m(Q+S))\le\mbox{tr}(E_m|\rho-\sigma|)\)</span>. Thus <span class="math inline">\(D(p_m,q_m)\le D(\rho,\sigma)\)</span>.</p>
+\]</span> namely, <span class="math inline">\(v\circ\mbox{Ad}_{f}\circ v^{-1}=\mbox{Ad}_{v(f)}\)</span>. Thus <span class="math inline">\(I(G)\)</span> is invariant.</p>
 </blockquote>
-<p><span class="math inline">\(D(\rho,\sigma)\)</span> is symmetric and gives <span class="math inline">\(0\)</span> if and only if <span class="math inline">\(\rho=\sigma\)</span>. Triangle inequality also holds <span class="math inline">\(D(\rho,\tau)\le D(\rho,\sigma)+D(\tau,\sigma)\)</span> using the achievable upper bound property. Thus the trace distance is a metric.</p>
-<p><strong>Theorem 9.2:</strong> (Trace-preserving quantum operations are contractive). Suppose <span class="math inline">\(\mathcal{E}\)</span> is a trace-preserving quantum operation. Let <span class="math inline">\(\rho\)</span> and <span class="math inline">\(\sigma\)</span> be density operators. Then <span class="math display">\[
-D(\mathcal{E}(\rho),\mathcal{E}(\sigma))\le D(\rho,\sigma)
-\]</span></p>
+<hr />
+<p>Def 1.18 Transform <span class="math inline">\(f:X\longrightarrow X\)</span>, a 1-1 mapping; Complete symmetric group (on <span class="math inline">\(X\)</span>) <span class="math inline">\(S_X\)</span>; Transformation (symmetric) group: subgroup of <span class="math inline">\(S_X\)</span></p>
+<p><strong>Thm 1.8 Cayley Theorem:</strong> Group <span class="math inline">\(G\)</span> is isomorphic to a subgroup of <span class="math inline">\(S_G\)</span>.</p>
 <blockquote>
-<p><strong>Proof:</strong> Decompose <span class="math inline">\(\rho-\sigma=Q-S\)</span> and let <span class="math inline">\(D(\mathcal{E}(\rho),\mathcal{E}(\sigma))=\mbox{tr}(P(\mathcal{E}(\rho)-\mathcal{E}(\sigma)))\)</span>. With <span class="math inline">\(\mbox{tr}(Q)-\mbox{tr}(S)=\mbox{tr}(\rho)-\mbox{tr}(\sigma)=0\)</span> and thus <span class="math inline">\(\mbox{tr}(\mathcal{E}(Q))=\mbox{tr}(\mathcal{E}(S))\)</span> due to the trace-preserving nature of the operation. We then have <span class="math display">\[
-\begin{align}
-D(\rho,\sigma)&amp;=\frac12\mbox{tr}|\rho-\sigma|=\mbox{tr}(\mathcal{E}(Q))\\
-&amp;\ge\mbox{tr}(P\mathcal{E}(Q))\ge\mbox{tr}(P(\mathcal E(Q)-\mathcal E(S)))=D(\mathcal E(\rho), \mathcal E(\sigma))
-\end{align}
-\]</span> <strong>Remark:</strong> Partial trace is a trace-preserving quantum operation. So <span class="math display">\[
-D(\rho^A,\sigma^A)\le D(\rho^{AB},\sigma^{AB})
-\]</span></p>
+<p>obvious by picking <span class="math inline">\(g:G\longrightarrow G\)</span> with <span class="math inline">\(h\mapsto gh\)</span>.</p>
 </blockquote>
-<p><strong>Theorem 9.3:</strong> (Strong convexity of the trace distance). Let <span class="math inline">\(\{p_i\}\)</span> and <span class="math inline">\(\{q_i\}\)</span> be probability distributions over the same index set, and <span class="math inline">\(\rho_i\)</span> and <span class="math inline">\(\sigma_i\)</span> be density operators, also with indices from the same index set. Then <span class="math display">\[
-D(\sum_ip_i\rho_i,\sum_iq_i\sigma_i)\le D(p_i,q_i)+\sum_ip_iD(\rho_i,\sigma_i)
-\]</span> where <span class="math inline">\(D(p_i,q_i)\)</span> is the classical trace distance between the probability distribution <span class="math inline">\(\{p_i\}\)</span> and <span class="math inline">\(\{q_i\}\)</span>.</p>
+<p>Def 1.19 Equivalence</p>
 <blockquote>
-<p><strong>Proof:</strong> There exists <span class="math display">\[
-\begin{align}
-D(\sum_ip_i\rho_i,\sum_iq_i\sigma_i)&amp;=\sum_ip_i\mbox{tr}(P\rho_i)-\sum_iq_i\mbox{tr}(P\sigma_i)\\
-&amp;=\sum_ip_i\mbox{tr}(P(\rho_i-\sigma_i))+\sum_i(p_i-q_i)\mbox{tr}(P\sigma_i)\\
-&amp;\le\sum_ip_iD(\rho_i,\sigma_i)+D(p_i,q_i)
-\end{align}
-\]</span> Where we have used <span class="math inline">\(\sum_i(p_i-q_i)\mbox{tr}(P\sigma_i)\le\max_S(p(S)-q(S))\)</span>.</p>
+<p>If <span class="math inline">\(G\)</span> is a transformation group on <span class="math inline">\(X\)</span>, and for <span class="math inline">\(x,y\in X,\exists g\in G\)</span> such that <span class="math inline">\(g(x)=y\)</span>, we say that <span class="math inline">\(x,y\)</span> are equivalent, denoted as <span class="math inline">\(x\sim y\)</span> (with reflexivity, transitivity, symmetry).</p>
 </blockquote>
-<p>As a special case, joint convexity says <span class="math display">\[
-D(\sum_ip_i\rho_i,\sum_ip_i\sigma_i)\le\sum_ip_iD(\rho_i,\sigma_i)
-\]</span></p>
+<p>Def 1.20 Orbit</p>
 <blockquote>
-<p><strong>Exercise 9.8</strong> Take <span class="math inline">\(q_i\equiv p_i\)</span>, trivial.</p>
-<p><strong>Exercise 9.9</strong> <em>Schauder's fixed point theorem:</em> any continuous map on a convex, compact subset of a Hilbert Space has a fixed point.</p>
+<p>If <span class="math inline">\(G\)</span> is a transformation group on <span class="math inline">\(X\)</span>, <span class="math inline">\(x\in X\)</span>, then all elements in <span class="math inline">\(X\)</span> that is equivalent to <span class="math inline">\(x\)</span> forms a set, and is call the <em>orbit</em> of <span class="math inline">\(x\)</span> on <span class="math inline">\(G\)</span>.</p>
 </blockquote>
-<p><em>Fidelity:</em> <span class="math display">\[
-F(\rho,\sigma)\equiv\mbox{tr}\sqrt{\rho^{1/2}\sigma\rho^{1/2}}
-\]</span> when <span class="math inline">\(\rho\)</span> and <span class="math inline">\(\sigma\)</span> commute, it degenerates to the classical case. <span class="math display">\[
-F(|\psi\rangle,\rho)=\sqrt{\langle\psi|\sigma|\psi\rangle}
-\]</span> No similar clear geometric interpretation is known for fidelity between two states of a qubit. <span class="math display">\[
-F(U\rho U^\dagger,U\sigma U^\dagger)=F(\rho,\sigma)
-\]</span> Note that for any positive <span class="math inline">\(A\)</span> and unitary <span class="math inline">\(U\)</span>, <span class="math inline">\(\sqrt{UAU^\dagger}=U\sqrt A U^\dagger\)</span>.</p>
-<p><strong>Theorem 9.4 (Uhlmann's thm):</strong> <span class="math inline">\(\rho\)</span> and <span class="math inline">\(\sigma\)</span> are states of system <span class="math inline">\(Q\)</span>. Introduce a second system <span class="math inline">\(R\)</span> which is a copy of <span class="math inline">\(Q\)</span>. Then <span class="math display">\[
-F(\rho,\sigma)=\max_{|\psi\rangle,|\varphi\rangle}|\langle\psi|\varphi\rangle|
-\]</span> where the maximization is over all purifications <span class="math inline">\(|\psi\rangle\)</span> of <span class="math inline">\(\rho\)</span> and <span class="math inline">\(|\varphi\rangle\)</span> of <span class="math inline">\(\sigma\)</span> into <span class="math inline">\(RQ\)</span>.</p>
+<p>Def 1.21 Invariant subset</p>
 <blockquote>
-<p><strong>Proof:</strong> (Lemma 9.5) For any operator <span class="math inline">\(A\)</span>, unitary <span class="math inline">\(U\)</span>, then <span class="math display">\[
-|\mbox{tr}(AU)|\le\mbox{tr}|A|
-\]</span> with equality being attained by choosing <span class="math inline">\(U=V^\dagger\)</span>, where <span class="math inline">\(A=V|A|\)</span> is the polar decomposition of <span class="math inline">\(A\)</span>. This can be seen by <span class="math display">\[
-|\mbox{tr}(AU)|=|\mbox{tr}(V|A|U)|=|\mbox{tr}(|A|^{1/2}|A|^{1/2}UV)|
-\]</span> Then exploit Cauchy-Schwarz inequality, <span class="math display">\[
-|\mbox{tr}(AU)|\le\sqrt{
-\mbox{tr}(|A|)
-\mbox{tr}(V^\dagger U^\dagger|A|UV)
-}=\mbox{tr}(|A|)
-\]</span> Back to Uhlmann's theorem, define <span class="math inline">\(|m\rangle=\sum_i|i_R\rangle|i_Q\rangle\)</span>, where the basis for <span class="math inline">\(R\)</span> and <span class="math inline">\(Q\)</span> are fixed. Let <span class="math inline">\(|\psi\rangle\)</span> be any purification of <span class="math inline">\(\rho\)</span>, then <span class="math display">\[
-|\psi\rangle=(U_R\otimes\sqrt{\rho}U_Q)|m\rangle
-\]</span> And <span class="math display">\[
-|\varphi\rangle=(V_R\otimes\sqrt{\rho}V_Q)|m\rangle
-\]</span> Inner product <span class="math display">\[
-\begin{align}|\langle\varphi|\psi\rangle|&amp;=|\langle m|U_R^\dagger V_R\otimes U_Q^\dagger\sqrt{\rho}\sqrt{\sigma}U_Q|m\rangle|\\&amp;=|\mbox{tr}(V^\dagger_RU_RU^\dagger_Q\sqrt{\rho}\sqrt{\sigma}V_Q)|\\&amp;=|\mbox{tr}(\sqrt{\rho}\sqrt{\sigma}V_QV_R^\dagger U_RU_Q^\dagger)|\\&amp;\le\mbox{tr}|\sqrt{\rho}\sqrt{\sigma}|=\mbox{tr}\sqrt{\sigma^{1/2}\rho\sigma^{1/2}}\end{align}
-\]</span> The equality is attained when, for example, <span class="math inline">\(U_Q=U_R=V_R=I\)</span> and <span class="math inline">\(V_Q=V^\dagger\)</span> where <span class="math display">\[
-\sqrt{\rho}\sqrt{\sigma}=V|\sqrt{\rho}\sqrt{\sigma}|
-\]</span> is the polar decomposition.</p>
+<p><span class="math inline">\(G\)</span> is a transformation group on <span class="math inline">\(X\)</span>, if there is a subset <span class="math inline">\(Y\subset X\)</span> that satisfies <span class="math inline">\(g(Y)\subset Y\)</span> for any <span class="math inline">\(g\)</span>, we call <span class="math inline">\(Y\)</span> an invariant subset of <span class="math inline">\(G\)</span> on <span class="math inline">\(X\)</span>.</p>
 </blockquote>
+<p><u>Prop</u> Every orbit in <span class="math inline">\(X\)</span> is <span class="math inline">\(G\)</span>-invariant, thus all the orbits and their unions are <span class="math inline">\(G\)</span>-invariant; For any subset <span class="math inline">\(Y\subset X\)</span>, we can always find a subgroup <span class="math inline">\(H\)</span> of <span class="math inline">\(G\)</span>, such that <span class="math inline">\(Y\)</span> is <span class="math inline">\(H\)</span>-invariant</p>
+<p>Def 1.22 Isotropy subgroup</p>
 <blockquote>
-<p><strong>Exercise 9.15:</strong> <span class="math inline">\(F(\rho,\sigma)=\max_{|\varphi\rangle}|\langle\psi|\varphi\rangle|\)</span> .</p>
+<p><span class="math inline">\(G\)</span> is transformation group on <span class="math inline">\(X\)</span>, <span class="math inline">\(x\in X\)</span>, a subgroup <span class="math inline">\(G^x\)</span> of <span class="math inline">\(G\)</span> holds <span class="math inline">\(x\)</span> invariant, namely <span class="math inline">\(G^x=\{h|h\in G,hx=x\}\)</span> and it is called the isotropy subgroup of <span class="math inline">\(G\)</span> on <span class="math inline">\(x\)</span>. It is indeed a subgroup since for</p>
+<p>Closure: <span class="math inline">\(\forall g_1,g_2\in G^x\)</span>, <span class="math inline">\(g_1g_2x=x\)</span>, thus <span class="math inline">\(g_1g_2\in G^x\)</span>.</p>
+<p>Inverse: <span class="math inline">\(\forall g\in G^x\)</span>, since <span class="math inline">\(gx=x\)</span>, there is <span class="math inline">\(x=g^{-1}x\)</span>, thus <span class="math inline">\(g^{-1}\in G^x\)</span></p>
 </blockquote>
-<p>Uhlmann's formula gives: <span class="math inline">\(F(\rho,\sigma)\)</span> is symmetric in its inputs, and ranges <span class="math inline">\(0\le F(\rho,\sigma)\le1\)</span>. <span class="math inline">\(F(\rho,\sigma)=1\)</span> iff <span class="math inline">\(\rho=\sigma\)</span>. <span class="math inline">\(F(\rho,\sigma)=0\)</span> iff <span class="math inline">\(\rho\)</span> and <span class="math inline">\(\sigma\)</span> have support on orthogonal subspaces - perfectly distinguishable. Also <span class="math display">\[
-F(\rho,\sigma)=\min_{\{E_m\}}F(p_m,q_m)
-\]</span> where the minimum is over all POVMS <span class="math inline">\(\{E_m\}\)</span> and <span class="math inline">\(p_m=\mbox{tr}(\rho E_m)\)</span>, <span class="math inline">\(q_m=\mbox{tr}(\sigma E_m)\)</span>. By polar decomposition <span class="math inline">\(\sqrt{\rho^{1/2}\sigma\rho^{1/2}}=\sqrt{\rho}\sqrt{\sigma}U\)</span>, then <span class="math display">\[
-\begin{align}
-F(\rho,\sigma)&amp;=\mbox{tr}(\sqrt{\rho}\sqrt{\sigma}U)=
-\sum_m\mbox{tr}(\sqrt{\rho}\sqrt{E_m}\sqrt{E_m}\sqrt{\sigma}U)\\
-&amp;\le\sum_m\sqrt{\mbox{tr}(\rho E_m)\mbox{tr}(\sigma E_m)}=F(p_m,q_m)
-\end{align}
-\]</span> The equality would require <span class="math inline">\(\sqrt{E_m}\sqrt{\rho}=\alpha_m\sqrt{E_m}\sqrt{\sigma}U\)</span>, for some set of complex numbers <span class="math inline">\(\{\alpha_m\}\)</span>. For invertible <span class="math inline">\(\rho\)</span>, equality condition is <span class="math display">\[
-\sqrt{E_m}(I-\alpha_m\rho^{-1/2}\sqrt{\rho^{1/2}\sigma\rho^{1/2}}\rho^{-1/2})=0
-\]</span> Spectral decomposition <span class="math display">\[
-\rho^{-1/2}\sqrt{\rho^{1/2}\sigma\rho^{1/2}}\rho^{-1/2}=\sum_m\beta_m|m\rangle\langle m|
-\]</span> Then pick <span class="math inline">\(E_m=|m\rangle\langle m|\)</span>, <span class="math inline">\(\alpha_m=1/\beta_m\)</span>.Thus equality is achievable. The case for non-invertible <span class="math inline">\(\rho\)</span> follows from continuity.</p>
-<p>To generalize a metric sense for fidelity, define <em>angle</em> <span class="math display">\[
-A(\rho,\sigma)\equiv \arccos F(\rho,\sigma)
-\]</span> (Should be metric, satisfy triangle inequality)</p>
-<p><strong>Theorem 9.6:</strong> (Monotonicity of fidelity) <span class="math inline">\(\mathcal{E}\)</span> is a trace-preserving quantum operation. Then <span class="math inline">\(F(\mathcal{E}(\rho),\mathcal{E}(\sigma))\ge F(\rho,\sigma)\)</span>.</p>
+<p><strong>Thm 1.9</strong> <span class="math inline">\(G^x\)</span> is isotropy subgroup of <span class="math inline">\(G\)</span> on <span class="math inline">\(x\in X\)</span>, then every left coset of <span class="math inline">\(G^x\)</span> maps <span class="math inline">\(x\)</span> towards a specific point <span class="math inline">\(y\)</span> in <span class="math inline">\(G\)</span>, with different image points for different cosets, i.e. we can construct a 1-1 mapping between <span class="math inline">\(x\)</span>'s orbit and left cosets of <span class="math inline">\(G^x\)</span>.</p>
 <blockquote>
-<p><strong>Proof:</strong> Just note that <span class="math inline">\(U|\psi\rangle|0\rangle\)</span> is purification of <span class="math inline">\(\mathcal{E}(\rho)\)</span> and likewise for <span class="math inline">\(\mathcal{E}(\sigma)\)</span>.</p>
-<p><strong>Remark:</strong> Angle would have contractivity property.</p>
+<p><strong>Proof</strong> Consider the equipartition of <span class="math inline">\(G\)</span> by <span class="math inline">\(G^x\)</span>, namely <span class="math display">\[
+G=\{g_0G^x,g_1G^x,\cdots\}
+\]</span> we thus have <span class="math inline">\(Gx=\{g_0x,g_1x,\cdots\}\)</span>.</p>
 </blockquote>
-<p><strong>Theorem 9.7:</strong> (Strong concavity of fidelity) Let <span class="math inline">\(p_i\)</span> and <span class="math inline">\(q_i\)</span> be probability distributions over the same index set, and <span class="math inline">\(\rho_i\)</span> and <span class="math inline">\(\sigma_i\)</span> density operators also indexed by the same index set. Then <span class="math display">\[
-F(\sum_ip_i\rho_i,\sum_iq_i\sigma_i)\ge\sum_i\sqrt{p_iq_i}F(\rho_i,\sigma_i)
-\]</span></p>
+<hr />
+<p>Def 1.23 Direct Product Group</p>
 <blockquote>
-<p><strong>Proof:</strong> Be <span class="math inline">\(|\psi_i\rangle\)</span> and <span class="math inline">\(|\varphi_i\rangle\)</span> the purifications of <span class="math inline">\(\rho_i\)</span> and <span class="math inline">\(\sigma_i\)</span> such that <span class="math inline">\(F(\rho_i,\sigma_i)=\langle\psi_i|\varphi_i\rangle\)</span>. Introduce <span class="math display">\[
-|\psi\rangle\equiv\sum_i\sqrt{p_i}|\psi_i\rangle|i\rangle;~|\varphi\rangle\equiv\sum_i\sqrt{q_i}|\varphi_i\rangle|i\rangle
-\]</span> Thus <span class="math display">\[
-F(\sum_ip_i\rho_i,\sum_iq_i\sigma_i)\ge|\langle\psi|\varphi\rangle|=\sum_i\sqrt{p_iq_i}F(\rho_i,\sigma_i)
-\]</span></p>
+<p><span class="math inline">\(G_1\otimes G_2\equiv\{g_{\alpha\beta}|g_{\alpha\beta}\equiv(g_{1,\alpha},g_{2,\beta}),g_{1,\alpha}\in G_1,g_{2,\beta}\in G_2\}\)</span></p>
 </blockquote>
+<p>Def 1.24 Direct Product Factorization</p>
 <blockquote>
-<p><strong>Exercise 9.19:</strong> (Joint concavity of fidelity) <span class="math display">\[
-F(\sum_ip_i\rho_i,\sum_ip_i\sigma_i)\ge\sum_ip_iF(\rho_i,\sigma_i)
-\]</span> <strong>Exercise 9.20:</strong> (Concavity of fidelity) <span class="math display">\[
-F(\sum_ip_i\rho_i,\sigma)\ge\sum_ip_iF(\rho_i,\sigma)
-\]</span></p>
+<p>If a group <span class="math inline">\(G\)</span> has two subgroups <span class="math inline">\(G_1,G_2\)</span> and every element in <span class="math inline">\(G\)</span> can be uniquely written as <span class="math inline">\(g_{\alpha\beta}=g_{1\alpha}g_{2\beta}=g_{2\beta}g_{1\alpha}\)</span> , then <span class="math inline">\(G\)</span> is a direct product of <span class="math inline">\(G_1\)</span> and <span class="math inline">\(G_2\)</span>, and they are called a direct product factorization of <span class="math inline">\(G\)</span></p>
 </blockquote>
-<h3 id="relationships-between-distance-measures">Relationships between distance measures</h3>
-<p>In the case of pures states, trace distance is completely equivalent to fidelity <span class="math display">\[
-D(|a\rangle,|b\rangle)=\sqrt{1-F^2(|a\rangle,|b\rangle)}
-\]</span> While generally <span class="math display">\[
-D(\rho,\sigma)\le D(|\psi\rangle,|\varphi\rangle)=\sqrt{1-F^2(\rho,\sigma)}
-\]</span> where <span class="math inline">\(|\psi\rangle\)</span> and <span class="math inline">\(|\varphi\rangle\)</span> are purifications chosen such that <span class="math inline">\(F(\rho,\sigma)=|\langle\psi|\varphi\rangle|=F(|\psi\rangle,|\varphi\rangle)\)</span>.</p>
-<p>Let <span class="math inline">\(\{E_m\}\)</span> be a POVM such <span class="math display">\[
-F(\rho,\sigma)=\sum_m\sqrt{\mbox{tr}(\rho E_m)\mbox{tr}(\sigma E_m)}
-\]</span> Observe first that (<span class="math inline">\(p_m\equiv\mbox{tr}(\rho E_m)\)</span> and <span class="math inline">\(q_m\equiv\mbox{tr}(\sigma E_m)\)</span>) <span class="math display">\[
-\begin{align}
-\sum_m(\sqrt{p_m}-\sqrt{q_m})^2&amp;=\sum_m(p_m+q_m)-2F(\rho,\sigma)=2-2F(\rho,\sigma)
-\\&amp;\le
-\sum_m|\sqrt{p_m}-\sqrt{q_m}|\cdot|\sqrt{p_m}+\sqrt{q_m}|\\
-&amp;=\sum_m|p_m-q_m|=2D(p_m,q_m)\le2D(\rho,\sigma)
-\end{align}
-\]</span> Thus <span class="math display">\[
-1-F(\rho,\sigma)\le D(\rho,\sigma)\le\sqrt{1-F^2(\rho,\sigma)}
-\]</span> Showing that <span class="math inline">\(D\)</span> and <span class="math inline">\(F\)</span> are qualitatively equivalent measures of closeness for quantum states.</p>
+<p><u>Rmk</u> It is not required that <span class="math inline">\(G_1\)</span>, <span class="math inline">\(G_2\)</span> be Abelian, we only require the multiplication between these two groups commute. We can further see that in the case of direct product factorization, <span class="math inline">\(G_1\)</span> and <span class="math inline">\(G_2\)</span> would share only a single element <span class="math inline">\(e\)</span>, and they are both invariant subgroups.</p>
+<p><u>Ex</u> <span class="math inline">\(\mathbb{R}^3=\mathbb{R}^2\otimes\mathbb{R}\)</span>, <span class="math inline">\(\mathbf{Z}_6=\{e,a^3\}\otimes\{e,a^2,a^4\}\)</span>, but not for <span class="math inline">\(D_3\)</span> with <span class="math inline">\(G_1=\{e,d,f\}\)</span> and <span class="math inline">\(G_2=\{e,a\}\)</span>.</p>
+<p>Def 1.25 Semi-Direct Product</p>
 <blockquote>
-<p><strong>Exercise 9.21:</strong> <span class="math inline">\(1-F^2(|\psi\rangle,\sigma)\le D(|\psi\rangle,\sigma)\)</span>.</p>
+<p>For groups <span class="math inline">\(G_1\)</span>, <span class="math inline">\(G_2\)</span>, if there exist an automorphism group <span class="math inline">\(A(G_1)\)</span> which <span class="math inline">\(G_2\)</span> is homomorphic to, namely <span class="math inline">\(\forall g_{2\beta}\in G_2\)</span>, we can have a specific automophism <span class="math inline">\(v_{g_{2\beta}}\)</span> (through homomorphism) on <span class="math inline">\(G_1\)</span>. With this, we construct new element <span class="math inline">\(g_{\alpha,\beta}=\langle g_{1\alpha}g_{2\beta}\rangle\)</span> with multiplication rule <span class="math inline">\(g_{\alpha,\beta}g_{\alpha&#39;,\beta&#39;}=\langle g_{1\alpha}g_{2\beta}\rangle\langle g_{1\alpha&#39;}g_{2\beta&#39;}\rangle=\langle g_{1\alpha}v_{g_{2\beta}}(g_{1\alpha&#39;})g_{2\beta}g_{2\beta&#39;}\rangle\)</span>. This forms the semi-direct product group <span class="math inline">\(G_1\otimes_sG_2\)</span></p>
 </blockquote>
+<p><u>Prop</u> <span class="math inline">\(G_1\)</span> is an invariant subgroup, while <span class="math inline">\(G_2\)</span> is generally not. If otherwise, the semi-direct product levels up to be the direct product</p>
+<p><u>Ex</u> <span class="math inline">\(D_3=\{e,d,f\}\otimes_s\{e,a\}\)</span> group.</p>
+<hr />
+<p><strong>Reference:</strong></p>
+<p>[1] Xinzheng Li, Group Theory and its Applications to Condensed Matter Physics.</p>
+<p>[2] Daniel Bump, Group Representation Theory.</p>
 
       
 
@@ -395,7 +407,7 @@ F(\rho,\sigma)=\sum_m\sqrt{\mbox{tr}(\rho E_m)\mbox{tr}(\sigma E_m)}
           
           <br>
           <strong>Link：</strong>
-          <a rel="license" href="http://cammheyn.github.io/2020/04/09/Ch9.%20Distance%20measures%20for%20QI/">http://cammheyn.github.io/2020/04/09/Ch9.%20Distance%20measures%20for%20QI/</a>
+          <a rel="license" href="http://cammheyn.github.io/2020/03/27/Finite-Group-Theory-1.Basics/">http://cammheyn.github.io/2020/03/27/Finite-Group-Theory-1.Basics/</a>
           <br>
           <!-- <strong>Copyright：</strong> -->
           <em>This work is licensed under
@@ -418,7 +430,11 @@ F(\rho,\sigma)=\sum_m\sqrt{\mbox{tr}(\rho E_m)\mbox{tr}(\sigma E_m)}
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Quantum Information</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Algebra</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Group Theory</a>
         		</li>
       		
 		</ul>
@@ -474,7 +490,7 @@ F(\rho,\sigma)=\sum_m\sqrt{\mbox{tr}(\rho E_m)\mbox{tr}(\sigma E_m)}
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://cammheyn.github.io/2020/04/09/Ch9.%20Distance%20measures%20for%20QI/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://cammheyn.github.io/2020/03/27/Finite-Group-Theory-1.Basics/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -488,20 +504,15 @@ F(\rho,\sigma)=\sum_m\sqrt{\mbox{tr}(\rho E_m)\mbox{tr}(\sigma E_m)}
   
 <nav id="article-nav">
   
-    <a href="/2020/04/13/Entanglement%20as%20a%20physical%20resource/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/04/04/Introduction-to-Quantum-Mechanics/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Entanglement as a physical resource
+          Introduction to Quantum Mechanics
         
       </div>
     </a>
   
-  
-    <a href="/2020/04/04/Ch2.%20Intro%20to%20QM/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Introduction to Quantum Mechanics</div>
-      <i class="icon-circle-right"></i>
-    </a>
   
 </nav>
 
@@ -694,6 +705,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Entanglement</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Algebra</a>
               </li>
              
@@ -702,19 +717,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Quantum Information, Entanglement</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Analysis</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Real Analysis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Groceries</a>
               </li>
             
             <div class="clearfix"></div>
@@ -766,7 +773,7 @@ MathJax.Hub.Queue(function() {
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
+              <a href="https://stardustlu.github.io" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Yipeng Lu</a>
             </li>
           
         </ul>

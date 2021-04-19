@@ -8,19 +8,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://cammheyn.github.io">
-  <title>Entanglement as a physical resource | SETTLERS</title>
+  <title>Distance Measures for Quantum Information | SETTLERS</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Entanglement as a physical resource To characterize Majorization Two \(d\)-dimensional real vectors \(x,y\). Use notation \(x^\downarrow\) to mean \(x\) re-ordered in descending sequence. Say \(x\) is">
+  <meta name="description" content="Various distance measures are introduced as metrics for the Hilbert space of quantum states. Such quantities are useful in evaluation of realistic quantum evolutions. Classical information Hamming dis">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Entanglement as a physical resource">
-<meta property="og:url" content="http://cammheyn.github.io/2020/04/13/Entanglement%20as%20a%20physical%20resource/index.html">
+<meta property="og:title" content="Distance Measures for Quantum Information">
+<meta property="og:url" content="http://cammheyn.github.io/2020/04/09/Distance-Measures-for-Quantum-Information/index.html">
 <meta property="og:site_name" content="SETTLERS">
-<meta property="og:description" content="Entanglement as a physical resource To characterize Majorization Two \(d\)-dimensional real vectors \(x,y\). Use notation \(x^\downarrow\) to mean \(x\) re-ordered in descending sequence. Say \(x\) is">
+<meta property="og:description" content="Various distance measures are introduced as metrics for the Hilbert space of quantum states. Such quantities are useful in evaluation of realistic quantum evolutions. Classical information Hamming dis">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-04-13T15:52:52.295Z">
-<meta property="article:modified_time" content="2021-04-09T04:24:33.732Z">
+<meta property="article:published_time" content="2020-04-08T16:35:09.477Z">
+<meta property="article:modified_time" content="2021-04-19T11:55:11.227Z">
 <meta property="article:author" content="Qi Camm Huang">
-<meta property="article:tag" content="Quantum Information, Entanglement">
+<meta property="article:tag" content="Quantum Information">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="SETTLERS" type="application/atom+xml">
@@ -149,7 +149,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Entanglement as a physical resource" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Distance-Measures-for-Quantum-Information" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -157,13 +157,13 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Entanglement as a physical resource
+      Distance Measures for Quantum Information
     </h1>
   
 
         
-        <a href="/2020/04/13/Entanglement%20as%20a%20physical%20resource/" class="archive-article-date">
-  	<time datetime="2020-04-13T15:52:52.295Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-13</time>
+        <a href="/2020/04/09/Distance-Measures-for-Quantum-Information/" class="archive-article-date">
+  	<time datetime="2020-04-08T16:35:09.477Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-09</time>
 </a>
 
 
@@ -175,7 +175,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  <strong>Word Count:</strong> </span>
-        <span class="post-count">1.8k <strong>Words</strong></span>
+        <span class="post-count">1.9k <strong>Words</strong></span>
       </span>
     </span>
 
@@ -216,116 +216,172 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="entanglement-as-a-physical-resource">Entanglement as a physical resource</h2>
-<p>To characterize</p>
-<h3 id="majorization">Majorization</h3>
-<p>Two <span class="math inline">\(d\)</span>-dimensional real vectors <span class="math inline">\(x,y\)</span>. Use notation <span class="math inline">\(x^\downarrow\)</span> to mean <span class="math inline">\(x\)</span> re-ordered in descending sequence. Say <span class="math inline">\(x\)</span> is <em>majorized</em> by <span class="math inline">\(y\)</span>, written <span class="math inline">\(x\prec y\)</span>, iff <span class="math display">\[
-\sum_{j=1}^kx_j^\downarrow\le\sum_{j=1}^ky_j^\downarrow,~~~~(k=1,2,\ldots,d-1)
-\]</span> And <span class="math display">\[
-\sum_{j=1}^dx_j^\downarrow=\sum_{j=1}^dy_j^\downarrow
+        <p>Various distance measures are introduced as metrics for the Hilbert space of quantum states. Such quantities are useful in evaluation of realistic quantum evolutions.</p>
+<h2 id="classical-information">Classical information</h2>
+<p><em>Hamming distance:</em> number of places at which two bit strings are not equal. No direct generalization to the quantum case.</p>
+<p><em>Trace distance (</em><span class="math inline">\(L_1\)</span><em>distance/ Kolmogorov distance):</em> <span class="math display">\[
+D(p_x,q_x)\equiv\frac{1}{2}\sum_x|p_x-q_x|
+\]</span> symmetric, and satisfies the triangle inequality, has property (abs sign can be removed) <span class="math display">\[
+D(p_x,q_x)=\max_{S}|p(S)-q(S)|
+\]</span> <em>Fidelity:</em> <span class="math display">\[
+F(p_x,q_x)\equiv\sum_x\sqrt{p_xq_x}
+\]</span> <a id="more"></a></p>
+<p><em>Dynamic measure:</em> A random variable <span class="math inline">\(X\)</span> is sent through a noisy channel, giving as output another random variable <span class="math inline">\(Y\)</span>, to form a Markov process <span class="math inline">\(X\longrightarrow Y\)</span>. Make a copy of <span class="math inline">\(X\)</span>, creating new random variable <span class="math inline">\(\tilde X=X\)</span>. <span class="math display">\[
+\begin{align}
+D((\tilde X,X),(\tilde X, Y))&amp;=\frac{1}{2}\sum_{xx&#39;}|p(\tilde X=x,X=x&#39;)-p(\tilde X=x, Y=x&#39;)|\\
+&amp;=\frac{1}{2}\sum_{xx&#39;}|\delta_{xx&#39;}p(X=x)-p(\tilde X=x,Y=x&#39;)|
+\\
+&amp;=\frac{1}{2}\sum_{x\ne x&#39;}p(\tilde X=x,Y=x&#39;)+\frac{1}{2}
+\sum_x(p(X=x)-p(X=x,Y=x))
+\\
+&amp;=\frac{p(X\ne Y)+1-p(X=Y)}{2}\\
+&amp;=p(X\ne Y)
+\end{align}
 \]</span></p>
-<a id="more"></a>
+<h2 id="quantum-information">Quantum information</h2>
+<p><em>Trace distance:</em> <span class="math display">\[
+D(\rho,\sigma)\equiv\frac12\mbox{tr}|\rho-\sigma|
+\]</span> where <span class="math inline">\(|A|\equiv\sqrt{A^\dagger A}\)</span>, degenerates to the classical case when <span class="math inline">\(\rho\)</span> and <span class="math inline">\(\sigma\)</span> commutes.</p>
+<p>Bloch sphere representation gives <span class="math inline">\(D(\vec r, \vec s)=\frac{|\vec r- \vec s|}{2}\)</span>.</p>
+<p>Trace distance is preserved under unitary transformations <span class="math display">\[
+D(U\rho U^\dagger, U\sigma U^\dagger)=\frac{1}{2}\mbox{tr}|U(\rho-\sigma)U^\dagger|=D(\rho,\sigma)
+\]</span> Also <span class="math display">\[
+D(\rho,\sigma)=\max_P\mbox{tr}(P(\rho-\sigma))
+\]</span> where the maximization may be taken over all projectors <span class="math inline">\(P\)</span>, or, alternately, over all positive operators which <span class="math inline">\(P\le I\)</span>. To verify, take <span class="math inline">\(\rho-\sigma=Q-S\)</span> where <span class="math inline">\(Q\)</span> and <span class="math inline">\(S\)</span> are positive operators with orthogonal support, thus <span class="math inline">\(|\rho-\sigma|=Q+S\)</span>. So <span class="math inline">\(D(\rho,\sigma)=\frac12\mbox{tr}(Q+S)\)</span>, <span class="math inline">\(\mbox{tr}(Q-S)=\mbox{tr}(\rho-\sigma)=0\)</span>. Therefore <span class="math inline">\(D(\rho,\sigma)=\mbox{tr}(Q)=\mbox{tr}(S)\)</span>. Let <span class="math inline">\(P\)</span> be projector onto support of <span class="math inline">\(Q\)</span>, then <span class="math inline">\(\mbox{tr}(P(Q-S))=\mbox{tr}(PQ)=\mbox{tr}(Q)=D(\rho,\sigma)\)</span>, while for any positive operator which <span class="math inline">\(P\le I\)</span>, it can be shown that <span class="math inline">\(\mbox{tr}(P(Q-S))\le\mbox{tr}(PQ)\le\mbox{tr}(Q)=D(\rho,\sigma)\)</span>.</p>
+<p><strong>Theorem 9.1:</strong> Let <span class="math inline">\(\{E_m\}\)</span> be a POVM, with <span class="math inline">\(p_m\equiv\mbox{tr}(\rho E_m)\)</span> and <span class="math inline">\(q_m\equiv\mbox{tr}(\rho E_m)\)</span> as the probabilities of obtaining a measurement outcome labeled by <span class="math inline">\(m\)</span>. Then <span class="math display">\[
+D(\rho,\sigma)=\max_{\{E_m\}}D(p_m,q_m)
+\]</span> where the maximization is over all POVMs <span class="math inline">\(\{E_m\}\)</span>.</p>
 <blockquote>
-<p><strong>Prop</strong> <span class="math inline">\(x\prec y\)</span> iff <span class="math inline">\(\forall t\in\R\)</span>, <span class="math inline">\(\sum_{j=1}^d\max(x_j-t,0)\le\sum^d_{j=1}\max(y_j-t,0)\)</span> and <span class="math inline">\(\sum x_j=\sum y_j\)</span>.</p>
-<p><strong>Proof</strong> If <span class="math inline">\(x\prec y\)</span>, we first try proving <span class="math inline">\(\sum\max(x_j,0)\le\sum\max(y_j,0)\)</span>. Find <span class="math inline">\(d(x)\)</span> such <span class="math inline">\(x_{d(x)}^\downarrow\)</span> is the smallest element above 0 and likewise for <span class="math inline">\(y\)</span> (there are cases when <span class="math inline">\(d(x)=0\)</span> or <span class="math inline">\(d\)</span> ). Then $$ <span class="math display">\[\begin{align}
-\sum\max(x_j,0)&amp;=\sum_{j=1}^{d(x)}\max(x_j^\downarrow,0)
-=\sum_{j=1}^{d(x)}x_j^\downarrow
-\\
-&amp;\le\sum_{j=1}^{d(x)}y_j^\downarrow\le\sum_{j=1}^{d(y)}y_j^\downarrow
-\\
-&amp;=\sum_{j=1}^{d(y)}\max(y_j^\downarrow,0)=\sum\max(y_j,0)
-
-\end{align}\]</span> $$ Forwards. Since if <span class="math inline">\(x\prec y\)</span>, then <span class="math inline">\((x-t)\prec(y-t)\)</span>. Rest is trivial.</p>
-<p>Backwards. Since <span class="math inline">\(\forall k&lt;d\)</span> there is <span class="math inline">\(t\)</span> such that <span class="math inline">\(y_k^\downarrow\ge t\ge y_{k+1}^\downarrow\)</span>. <span class="math display">\[
+<p><strong>Proof:</strong> <span class="math inline">\(D(p_m,q_m)=\frac12\sum_m|\mbox{tr}(E_m(\rho-\sigma))|\)</span>. Where <span class="math inline">\(|\mbox{tr}(E_m(\rho-\sigma))|=|\mbox{tr}(E_m(Q-S))|\le\mbox{tr}(E_m(Q+S))\le\mbox{tr}(E_m|\rho-\sigma|)\)</span>. Thus <span class="math inline">\(D(p_m,q_m)\le D(\rho,\sigma)\)</span>.</p>
+</blockquote>
+<p><span class="math inline">\(D(\rho,\sigma)\)</span> is symmetric and gives <span class="math inline">\(0\)</span> if and only if <span class="math inline">\(\rho=\sigma\)</span>. Triangle inequality also holds <span class="math inline">\(D(\rho,\tau)\le D(\rho,\sigma)+D(\tau,\sigma)\)</span> using the achievable upper bound property. Thus the trace distance is a metric.</p>
+<p><strong>Theorem 9.2:</strong> (Trace-preserving quantum operations are contractive). Suppose <span class="math inline">\(\mathcal{E}\)</span> is a trace-preserving quantum operation. Let <span class="math inline">\(\rho\)</span> and <span class="math inline">\(\sigma\)</span> be density operators. Then <span class="math display">\[
+D(\mathcal{E}(\rho),\mathcal{E}(\sigma))\le D(\rho,\sigma)
+\]</span></p>
+<blockquote>
+<p><strong>Proof:</strong> Decompose <span class="math inline">\(\rho-\sigma=Q-S\)</span> and let <span class="math inline">\(D(\mathcal{E}(\rho),\mathcal{E}(\sigma))=\mbox{tr}(P(\mathcal{E}(\rho)-\mathcal{E}(\sigma)))\)</span>. With <span class="math inline">\(\mbox{tr}(Q)-\mbox{tr}(S)=\mbox{tr}(\rho)-\mbox{tr}(\sigma)=0\)</span> and thus <span class="math inline">\(\mbox{tr}(\mathcal{E}(Q))=\mbox{tr}(\mathcal{E}(S))\)</span> due to the trace-preserving nature of the operation. We then have <span class="math display">\[
 \begin{align}
-\sum_{j=1}^{k}x_j^\downarrow&amp;=\sum_{j=1}^k(x_j^\downarrow-t)+kt
-\\
-&amp;\le\sum\max(x_j-t,0)+kt
-\\
-&amp;\le\sum\max(y_j-t,0)+kt=\sum_{j=1}^{k}(y_j^\downarrow-t)+kt\\
-&amp;=\sum_{j=1}^ky_j^\downarrow
+D(\rho,\sigma)&amp;=\frac12\mbox{tr}|\rho-\sigma|=\mbox{tr}(\mathcal{E}(Q))\\
+&amp;\ge\mbox{tr}(P\mathcal{E}(Q))\ge\mbox{tr}(P(\mathcal E(Q)-\mathcal E(S)))=D(\mathcal E(\rho), \mathcal E(\sigma))
 \end{align}
-\]</span> q.e.d.</p>
+\]</span> <strong>Remark:</strong> Partial trace is a trace-preserving quantum operation. So <span class="math display">\[
+D(\rho^A,\sigma^A)\le D(\rho^{AB},\sigma^{AB})
+\]</span></p>
+</blockquote>
+<p><strong>Theorem 9.3:</strong> (Strong convexity of the trace distance). Let <span class="math inline">\(\{p_i\}\)</span> and <span class="math inline">\(\{q_i\}\)</span> be probability distributions over the same index set, and <span class="math inline">\(\rho_i\)</span> and <span class="math inline">\(\sigma_i\)</span> be density operators, also with indices from the same index set. Then <span class="math display">\[
+D(\sum_ip_i\rho_i,\sum_iq_i\sigma_i)\le D(p_i,q_i)+\sum_ip_iD(\rho_i,\sigma_i)
+\]</span> where <span class="math inline">\(D(p_i,q_i)\)</span> is the classical trace distance between the probability distribution <span class="math inline">\(\{p_i\}\)</span> and <span class="math inline">\(\{q_i\}\)</span>.</p>
+<blockquote>
+<p><strong>Proof:</strong> There exists <span class="math display">\[
+\begin{align}
+D(\sum_ip_i\rho_i,\sum_iq_i\sigma_i)&amp;=\sum_ip_i\mbox{tr}(P\rho_i)-\sum_iq_i\mbox{tr}(P\sigma_i)\\
+&amp;=\sum_ip_i\mbox{tr}(P(\rho_i-\sigma_i))+\sum_i(p_i-q_i)\mbox{tr}(P\sigma_i)\\
+&amp;\le\sum_ip_iD(\rho_i,\sigma_i)+D(p_i,q_i)
+\end{align}
+\]</span> Where we have used <span class="math inline">\(\sum_i(p_i-q_i)\mbox{tr}(P\sigma_i)\le\max_S(p(S)-q(S))\)</span>.</p>
+</blockquote>
+<p>As a special case, joint convexity says <span class="math display">\[
+D(\sum_ip_i\rho_i,\sum_ip_i\sigma_i)\le\sum_ip_iD(\rho_i,\sigma_i)
+\]</span></p>
+<blockquote>
+<p><strong>Exercise 9.8</strong> Take <span class="math inline">\(q_i\equiv p_i\)</span>, trivial.</p>
+<p><strong>Exercise 9.9</strong> <em>Schauder's fixed point theorem:</em> any continuous map on a convex, compact subset of a Hilbert Space has a fixed point.</p>
+</blockquote>
+<p><em>Fidelity:</em> <span class="math display">\[
+F(\rho,\sigma)\equiv\mbox{tr}\sqrt{\rho^{1/2}\sigma\rho^{1/2}}
+\]</span> when <span class="math inline">\(\rho\)</span> and <span class="math inline">\(\sigma\)</span> commute, it degenerates to the classical case. <span class="math display">\[
+F(|\psi\rangle,\rho)=\sqrt{\langle\psi|\sigma|\psi\rangle}
+\]</span> No similar clear geometric interpretation is known for fidelity between two states of a qubit. <span class="math display">\[
+F(U\rho U^\dagger,U\sigma U^\dagger)=F(\rho,\sigma)
+\]</span> Note that for any positive <span class="math inline">\(A\)</span> and unitary <span class="math inline">\(U\)</span>, <span class="math inline">\(\sqrt{UAU^\dagger}=U\sqrt A U^\dagger\)</span>.</p>
+<p><strong>Theorem 9.4 (Uhlmann's thm):</strong> <span class="math inline">\(\rho\)</span> and <span class="math inline">\(\sigma\)</span> are states of system <span class="math inline">\(Q\)</span>. Introduce a second system <span class="math inline">\(R\)</span> which is a copy of <span class="math inline">\(Q\)</span>. Then <span class="math display">\[
+F(\rho,\sigma)=\max_{|\psi\rangle,|\varphi\rangle}|\langle\psi|\varphi\rangle|
+\]</span> where the maximization is over all purifications <span class="math inline">\(|\psi\rangle\)</span> of <span class="math inline">\(\rho\)</span> and <span class="math inline">\(|\varphi\rangle\)</span> of <span class="math inline">\(\sigma\)</span> into <span class="math inline">\(RQ\)</span>.</p>
+<blockquote>
+<p><strong>Proof:</strong> (Lemma 9.5) For any operator <span class="math inline">\(A\)</span>, unitary <span class="math inline">\(U\)</span>, then <span class="math display">\[
+|\mbox{tr}(AU)|\le\mbox{tr}|A|
+\]</span> with equality being attained by choosing <span class="math inline">\(U=V^\dagger\)</span>, where <span class="math inline">\(A=V|A|\)</span> is the polar decomposition of <span class="math inline">\(A\)</span>. This can be seen by <span class="math display">\[
+|\mbox{tr}(AU)|=|\mbox{tr}(V|A|U)|=|\mbox{tr}(|A|^{1/2}|A|^{1/2}UV)|
+\]</span> Then exploit Cauchy-Schwarz inequality, <span class="math display">\[
+|\mbox{tr}(AU)|\le\sqrt{
+\mbox{tr}(|A|)
+\mbox{tr}(V^\dagger U^\dagger|A|UV)
+}=\mbox{tr}(|A|)
+\]</span> Back to Uhlmann's theorem, define <span class="math inline">\(|m\rangle=\sum_i|i_R\rangle|i_Q\rangle\)</span>, where the basis for <span class="math inline">\(R\)</span> and <span class="math inline">\(Q\)</span> are fixed. Let <span class="math inline">\(|\psi\rangle\)</span> be any purification of <span class="math inline">\(\rho\)</span>, then <span class="math display">\[
+|\psi\rangle=(U_R\otimes\sqrt{\rho}U_Q)|m\rangle
+\]</span> And <span class="math display">\[
+|\varphi\rangle=(V_R\otimes\sqrt{\rho}V_Q)|m\rangle
+\]</span> Inner product <span class="math display">\[
+\begin{align}|\langle\varphi|\psi\rangle|&amp;=|\langle m|U_R^\dagger V_R\otimes U_Q^\dagger\sqrt{\rho}\sqrt{\sigma}U_Q|m\rangle|\\&amp;=|\mbox{tr}(V^\dagger_RU_RU^\dagger_Q\sqrt{\rho}\sqrt{\sigma}V_Q)|\\&amp;=|\mbox{tr}(\sqrt{\rho}\sqrt{\sigma}V_QV_R^\dagger U_RU_Q^\dagger)|\\&amp;\le\mbox{tr}|\sqrt{\rho}\sqrt{\sigma}|=\mbox{tr}\sqrt{\sigma^{1/2}\rho\sigma^{1/2}}\end{align}
+\]</span> The equality is attained when, for example, <span class="math inline">\(U_Q=U_R=V_R=I\)</span> and <span class="math inline">\(V_Q=V^\dagger\)</span> where <span class="math display">\[
+\sqrt{\rho}\sqrt{\sigma}=V|\sqrt{\rho}\sqrt{\sigma}|
+\]</span> is the polar decomposition.</p>
 </blockquote>
 <blockquote>
-<p><strong>Prop</strong> The set of <span class="math inline">\(x\)</span> such that <span class="math inline">\(x\prec y\)</span> is convex</p>
-<p><strong>Proof</strong> <span class="math inline">\(x\)</span> may only lie on a hyperplane <span class="math inline">\(\sum x_j=\sum y_j\)</span>. If <span class="math inline">\(x_1\prec y\)</span>, <span class="math inline">\(x_2\prec y\)</span>, then any biased average <span class="math inline">\(px_1+(1-p)x_2\prec y\)</span>, because <span class="math inline">\(\forall t\)</span>, <span class="math display">\[
-\begin{align}
-\sum_j\max(px_{1j}+(1-p)x_{2j}-t,0)&amp;\le\sum_j\max(px_{1j}-pt,0)+\sum_j\max((1-p)x_{2j}-(1-p)t,0)\\
-&amp;\le\sum_jp\max(y_j-t,0)+\sum_j(1-p)\max(y_j-t,0)\\
-&amp;=\sum_j\max(y_j-t,0)
-\end{align}
-\]</span> q.e.d.</p>
+<p><strong>Exercise 9.15:</strong> <span class="math inline">\(F(\rho,\sigma)=\max_{|\varphi\rangle}|\langle\psi|\varphi\rangle|\)</span> .</p>
 </blockquote>
-<p><strong>Proposition</strong> <span class="math inline">\(x\prec y\)</span> iff <span class="math inline">\(x=\sum_jp_jP_jy\)</span> for some probability distribution <span class="math inline">\(p_j\)</span> and permutation matrices <span class="math inline">\(P_j\)</span></p>
-<p><strong>Proof</strong> Suppose <span class="math inline">\(x\prec y\)</span> and <span class="math inline">\(x=x^\downarrow\)</span>, <span class="math inline">\(y=y^\downarrow\)</span>. Induction on <span class="math inline">\(d\)</span>, for <span class="math inline">\(d=1\)</span>, conclusion trivial. Assume correct for <span class="math inline">\(d\)</span>, consider two <span class="math inline">\((d+1)\)</span>-dim'l vectors <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>. So <span class="math inline">\(x_1\le y_1\)</span>, then pick <span class="math inline">\(j\)</span> such <span class="math inline">\(y_j\le x_1\le y_{j-1}\)</span> and define <span class="math inline">\(t\in[0,1]\)</span> with <span class="math inline">\(x_1=ty_1+(1-t)y_j\)</span>. Define <span class="math inline">\(D\equiv tI+(1-t)T\)</span> where <span class="math inline">\(T\)</span> is permutation which transposes the 1st and j-th elements. So <span class="math display">\[
-Dy=(x_1,y_2,\ldots,y_{j-1},(1-t)y_1+ty_j,y_{j+1},\ldots,y_{d+1})
-\]</span> Define <span class="math inline">\(x&#39;=(x_2,\ldots,x_{d+1})\)</span> and <span class="math inline">\(y&#39;=(y_2,\ldots,y_{j-1},(1-t)y_1+ty_j,y_{j+1},\ldots,y_{d+1})\)</span>. Also <span class="math inline">\(y_2\ge\ldots\ge y_{j-1}\ge x_1\ge x_2\)</span>. Since <span class="math inline">\(x\prec y\)</span>, and <span class="math inline">\((1-t)y_1+ty_j\ge y_j\)</span>. And <span class="math inline">\(y_2\ge\ldots\ge y_{j-1}\ge x_1\ge x_2\ldots\ge x_{d+1}\)</span>, so <span class="math display">\[
-\sum_{i=2}^{k}x_i\le\sum_{i=2}^ky_i
-\]</span> for <span class="math inline">\(k\le j-1\)</span>. And for <span class="math inline">\(k\ge j\)</span>, it can be shown that <span class="math display">\[
-\sum^k y&#39;-\sum^k x&#39;=\sum^k y-\sum^k x\ge0
-\]</span> thus <span class="math inline">\(x&#39;\prec y&#39;\)</span>. So by inductive hypothesis <span class="math inline">\(x&#39;=\sum_jp_j&#39;P_j&#39;y&#39;\)</span>, thus <span class="math inline">\(x=(\sum_jp_j&#39;P_j&#39;)Dy\)</span>, where actions on d-dim'l space is extended to (d+1)-dim' with the first entry undergoing identity transform. Since <span class="math display">\[
-\sum_jp_j&#39;P_j&#39;(tI+(1-t)T)=\sum_jp_jP_j
-\]</span> the result follows. Conversely, if <span class="math inline">\(x=\sum_jp_jP_jy\)</span>, and <span class="math inline">\(P_jy\prec y\)</span>. Convexity guarantees <span class="math inline">\(x\prec y\)</span>.</p>
-<p>q.e.d.</p>
-<p><em>Doubly stochastic</em> matrices are those with non-negative entries and each of the rows and columns sum to one.</p>
-<p><strong>Theorem</strong> (Birkhoff-von Neumann theorem) A <span class="math inline">\(d\times d\)</span> matrix <span class="math inline">\(D\)</span> is doubly stochastic iff <span class="math inline">\(D\)</span> can be written as a convex combination of permutation matrices, <span class="math inline">\(D=\sum_jp_jP_j\)</span>.</p>
-<p><strong>Corollary</strong> <span class="math inline">\(x\prec y\)</span> iff <span class="math inline">\(x=Dy\)</span> for some doubly stochastic <span class="math inline">\(D\)</span>.</p>
-<p><strong>Theorem</strong> Let <span class="math inline">\(H\)</span> and <span class="math inline">\(K\)</span> be Hermitian operators. Then <span class="math inline">\(H\prec K\)</span> (defined by <span class="math inline">\(\lambda(H)\prec\lambda(K)\)</span>) iff there is a probability distribution <span class="math inline">\(p_j\)</span> and unitary matrices <span class="math inline">\(U_j\)</span> such that <span class="math display">\[
-H=\sum_jp_jU_jKU_j^\dagger
-\]</span> <strong>Proof</strong> Suppose <span class="math inline">\(H\prec K\)</span>, then <span class="math inline">\(\lambda(H)=\sum_jp_jP_j\lambda(K)\)</span>. Denote <span class="math inline">\(\mbox{diag}(\lambda(H))\equiv\Lambda(H)\)</span>, then <span class="math display">\[
-\Lambda(H)=\sum_jp_jP_j\Lambda(K)P_j^\dagger
-\]</span> but we have <span class="math inline">\(H=V\Lambda(H)V^\dagger\)</span> and <span class="math inline">\(\Lambda(K)=WKW^\dagger\)</span> for some unitary <span class="math inline">\(V\)</span> and <span class="math inline">\(W\)</span>, giving <span class="math display">\[
-H=\sum_jp_jVP_jWKW^\dagger P_j^\dagger V^\dagger=\sum_jp_jU_jKU_j^\dagger
-\]</span> with <span class="math inline">\(U_j\equiv VP_jW\)</span>. Conversely, suppose <span class="math inline">\(H=\sum_jp_jU_jKU_j^\dagger\)</span>. Then we must have <span class="math inline">\(\Lambda(H)=\sum_jp_jV_j\Lambda(K)V_j^\dagger\)</span> for some unitary <span class="math inline">\(V_j\)</span>. In components, we have <span class="math display">\[
-\lambda(H)_k=\sum_{jl}p_jV_{j,kl}\lambda(K)_lV_{j,lk}^\dagger=\sum_{jl}p_j|V_{j,kl}|^2\lambda(K)_l
-\]</span> Thus <span class="math inline">\(\lambda(H)=D\lambda(K)\)</span> with <span class="math inline">\(D_{kl}\equiv\sum_jp_j|V_{j,kl}|^2\)</span>. Thus <span class="math inline">\(D\)</span> is doubly stochastic and thus <span class="math inline">\(H\prec K\)</span>.</p>
-<p>q.e.d.</p>
-<p><strong>Proposition</strong> Suppose <span class="math inline">\(|\psi\rangle\)</span> can be transformed to <span class="math inline">\(|\varphi\rangle\)</span> by LOCC. Then this transformation can be achieved by a protocol involving just the following steps: Alice performs a single measurement described by measurement operators <span class="math inline">\(M_j\)</span>, sends the result <span class="math inline">\(j\)</span> to Bob, who performs a unitary operation <span class="math inline">\(U_j\)</span> on his system.</p>
-<p><strong>Proof</strong> Without loss of generality, we may suppose the protocol consists of Alice performing a measurement, sending the result to Bob, who performs a measurement whose nature may depend on the information received from Alice, and sends the result back to Alice, who performs a measurement ... and so on. The idea is to replace Bob's actions by Alice's actions.</p>
-<p>Suppose Bob performs measurement <span class="math inline">\(M_j\)</span> on a pure state <span class="math inline">\(|\psi\rangle=\sum_l\sqrt{\lambda_l}|l_A\rangle|l_B\rangle\)</span>. Duplicate <span class="math inline">\(M_j\)</span>'s action on <span class="math inline">\(B\)</span> to yield <span class="math inline">\(N_j\)</span> whose actions are on <span class="math inline">\(A\)</span>. Namely <span class="math display">\[
-M_j=\sum_{kl}M_{j,kl}|k_B\rangle\langle l_B|,~N_j\equiv\sum_{kl}M_{j,kl}|k_A\rangle\langle l_A|
-\]</span> Bob's action: Post-measurement state being <span class="math inline">\(|\psi_j\rangle\propto M_j|\psi\rangle=\sum_{kl}M_{j,kl}\sqrt{\lambda_l}|l_A\rangle|k_B\rangle\)</span>, with probability <span class="math inline">\(\sum_{kl}\lambda_l|M_{j,kl}|^2\)</span>.</p>
-<p>On the other hand, had Alice made measurement: Post-measurement state being <span class="math inline">\(|\varphi_j\rangle\propto N_j|\psi\rangle=\sum_{kl}M_{j,kl}\sqrt{\lambda_l}|k_A\rangle|l_B\rangle\)</span>, with probability <span class="math inline">\(\sum_{kl}\lambda_l|M_{j,kl}|^2\)</span>. Those are same states upon interchange of Alice's and Bob's systems, thus share same Schmidt components, thus there is <span class="math inline">\(|\psi_j\rangle=(U_j\otimes V_j)|\varphi_j\rangle\)</span>.</p>
-<p>Therefore, Bob performing a measurement described by measurement operators <span class="math inline">\(M_j\)</span> is equivalent to Alice performing the measurement described by measurement operators <span class="math inline">\(U_jN_j\)</span> followed by Bob performing the unitary transformation <span class="math inline">\(V_j\)</span>. In other words, a measurement by Bob on a known pure state can be simulated by a measurement by Alice, up to a unitary transformation of Bob.</p>
-<p>Thus multi-round protocol can be equivalently done by letting Alice do all the measurements. And all measurements performed by Alice can be combined into one single measurement, whose result determines a unitary transformation to be performed by Bob.</p>
-<p>q.e.d.</p>
-<p><strong>Theorem</strong> A bipartite pure state <span class="math inline">\(|\psi\rangle\)</span> may be transformed to another pure state <span class="math inline">\(|\varphi\rangle\)</span> by LOCC iff <span class="math inline">\(\lambda_\psi\prec\lambda_\varphi\)</span>.</p>
-<p><strong>Proof</strong> LOCC reduces to the above situation proposed. Given Alice uses measurement operators <span class="math inline">\(M_j\)</span> only and tell Bob the result <span class="math inline">\(j\)</span>, which Bob exploited in turn to perform unitary transformation <span class="math inline">\(U_j\)</span> on his part. For Alice's part, <span class="math inline">\(\rho_\psi\)</span> transforms to <span class="math inline">\(\rho_\varphi\)</span> regardless of the measurement result, thus <span class="math display">\[
-M_j\rho_\psi M_j^\dagger=p_j\rho_\varphi
-\]</span> where <span class="math inline">\(p_j\)</span> is the probability of outcome <span class="math inline">\(j\)</span>. Polar decomposing <span class="math inline">\(M_j\sqrt{\rho_\psi}\)</span> gives <span class="math display">\[
-M_j\sqrt{\rho_\psi}=\sqrt{M_j\rho_\psi M_j^\dagger}V_j=\sqrt{p_j\rho_\varphi}V_j
-\]</span> thus <span class="math display">\[
-\sqrt{\rho_\psi}M_j^\dagger M_j\sqrt{\rho_\psi}=p_jV_j^\dagger \rho_\varphi V_j
-\]</span> Using completeness condition, we have <span class="math display">\[
-\rho_\psi=\sum_j\sqrt{\rho_\psi}M_j^\dagger M_j\sqrt{\rho_\psi}=\sum_jp_jV_j^\dagger \rho_\varphi V_j
-\]</span> whence <span class="math inline">\(\lambda_\psi\prec\lambda_\varphi\)</span>. Conversely, if <span class="math inline">\(\lambda_\psi\prec\lambda_\varphi\)</span>, so <span class="math inline">\(\rho_\psi\prec\rho_\varphi\)</span>, then there is <span class="math inline">\(U_j\)</span> and <span class="math inline">\(p_j\)</span> such that <span class="math display">\[
-\rho_\psi=\sum_jp_jU_j\rho_\varphi U_j^\dagger
-\]</span> First assume <span class="math inline">\(\rho_\psi\)</span> is invertible (uninvertible case can be deduced via continuity). Define operators <span class="math inline">\(M_j\)</span> for Alice's system by <span class="math display">\[
-M_j\sqrt{\rho_\psi}\equiv\sqrt{p_j\rho_\varphi}U_j^\dagger
-\]</span> Since <span class="math inline">\(M_j=\sqrt{p_j\rho_\varphi}U_j^\dagger\rho_\psi^{-1/2}\)</span> and thus completeness relation <span class="math display">\[
-\sum_jM_j^\dagger M_j=\rho_\psi^{-1/2}(\sum_jp_jU_j\rho_\varphi U_j^\dagger)\rho_\psi^{-1/2}=\rho_\psi^{-1/2}\rho_\psi\rho_\psi^{-1/2}=I
-\]</span> With <span class="math display">\[
-\rho_j\propto M_j\rho_\psi M_j^\dagger=p_j\rho_\varphi
-\]</span> Giving <span class="math inline">\(\rho_j=\rho_\varphi\)</span>. And easily Bob may convert <span class="math inline">\(|\psi_j\rangle\)</span> into <span class="math inline">\(|\varphi\rangle\)</span> through suitable unitary transformation <span class="math inline">\(V_j\)</span> on <span class="math inline">\(B\)</span>.</p>
+<p>Uhlmann's formula gives: <span class="math inline">\(F(\rho,\sigma)\)</span> is symmetric in its inputs, and ranges <span class="math inline">\(0\le F(\rho,\sigma)\le1\)</span>. <span class="math inline">\(F(\rho,\sigma)=1\)</span> iff <span class="math inline">\(\rho=\sigma\)</span>. <span class="math inline">\(F(\rho,\sigma)=0\)</span> iff <span class="math inline">\(\rho\)</span> and <span class="math inline">\(\sigma\)</span> have support on orthogonal subspaces - perfectly distinguishable. Also <span class="math display">\[
+F(\rho,\sigma)=\min_{\{E_m\}}F(p_m,q_m)
+\]</span> where the minimum is over all POVMS <span class="math inline">\(\{E_m\}\)</span> and <span class="math inline">\(p_m=\mbox{tr}(\rho E_m)\)</span>, <span class="math inline">\(q_m=\mbox{tr}(\sigma E_m)\)</span>. By polar decomposition <span class="math inline">\(\sqrt{\rho^{1/2}\sigma\rho^{1/2}}=\sqrt{\rho}\sqrt{\sigma}U\)</span>, then <span class="math display">\[
+\begin{align}
+F(\rho,\sigma)&amp;=\mbox{tr}(\sqrt{\rho}\sqrt{\sigma}U)=
+\sum_m\mbox{tr}(\sqrt{\rho}\sqrt{E_m}\sqrt{E_m}\sqrt{\sigma}U)\\
+&amp;\le\sum_m\sqrt{\mbox{tr}(\rho E_m)\mbox{tr}(\sigma E_m)}=F(p_m,q_m)
+\end{align}
+\]</span> The equality would require <span class="math inline">\(\sqrt{E_m}\sqrt{\rho}=\alpha_m\sqrt{E_m}\sqrt{\sigma}U\)</span>, for some set of complex numbers <span class="math inline">\(\{\alpha_m\}\)</span>. For invertible <span class="math inline">\(\rho\)</span>, equality condition is <span class="math display">\[
+\sqrt{E_m}(I-\alpha_m\rho^{-1/2}\sqrt{\rho^{1/2}\sigma\rho^{1/2}}\rho^{-1/2})=0
+\]</span> Spectral decomposition <span class="math display">\[
+\rho^{-1/2}\sqrt{\rho^{1/2}\sigma\rho^{1/2}}\rho^{-1/2}=\sum_m\beta_m|m\rangle\langle m|
+\]</span> Then pick <span class="math inline">\(E_m=|m\rangle\langle m|\)</span>, <span class="math inline">\(\alpha_m=1/\beta_m\)</span>.Thus equality is achievable. The case for non-invertible <span class="math inline">\(\rho\)</span> follows from continuity.</p>
+<p>To generalize a metric sense for fidelity, define <em>angle</em> <span class="math display">\[
+A(\rho,\sigma)\equiv \arccos F(\rho,\sigma)
+\]</span> (Should be metric, satisfy triangle inequality)</p>
+<p><strong>Theorem 9.6:</strong> (Monotonicity of fidelity) <span class="math inline">\(\mathcal{E}\)</span> is a trace-preserving quantum operation. Then <span class="math inline">\(F(\mathcal{E}(\rho),\mathcal{E}(\sigma))\ge F(\rho,\sigma)\)</span>.</p>
 <blockquote>
-<p><strong>Entanglement catalysis</strong> <span class="math inline">\(|\psi\rangle=\sqrt{0.4}|00\rangle+\sqrt{0.4}|11\rangle+\sqrt{0.1}|22\rangle+\sqrt{0.1}|33\rangle\)</span>. <span class="math inline">\(|\varphi\rangle=\sqrt{0.5}|00\rangle+\sqrt{0.25}|11\rangle+\sqrt{0.25}|22\rangle\)</span>.</p>
-<p>So <span class="math inline">\(\lambda_{\psi}=(0.4,0.4,0.1,0.1)\)</span> and <span class="math inline">\(\lambda_\varphi=(0.5,0.25,0.25,0)\)</span>, which clearly gives <span class="math inline">\(\lambda_\psi\nprec\lambda_\varphi\)</span>.</p>
-<p>By lending catalyst, <span class="math inline">\(|c\rangle=\sqrt{0.6}|00\rangle+\sqrt{0.4}|11\rangle\)</span>, one has <span class="math display">\[
-\begin{align}
-|\psi\rangle|c\rangle=&amp;\sqrt{0.6}(\sqrt{0.4}|00\rangle+\sqrt{0.4}|11\rangle+\sqrt{0.1}|22\rangle+\sqrt{0.1}|33\rangle)|00\rangle
-\\
-&amp;+\sqrt{0.4}(\sqrt{0.4}|00\rangle+\sqrt{0.4}|11\rangle+\sqrt{0.1}|22\rangle+\sqrt{0.1}|33\rangle)|11\rangle
-\end{align}
-\]</span> and <span class="math display">\[
-\begin{align}
-|\varphi\rangle|c\rangle=&amp;\sqrt{0.6}(\sqrt{0.5}|00\rangle+\sqrt{0.25}|11\rangle+\sqrt{0.25}|22\rangle)|00\rangle
-\\
-&amp;+\sqrt{0.4}(\sqrt{0.5}|00\rangle+\sqrt{0.25}|11\rangle+\sqrt{0.25}|22\rangle)|11\rangle
-\end{align}
-\]</span> With corresponding <span class="math inline">\(\lambda_{\psi,c}=(.24,.24,.16,.16,.06,.06,.04,.04,0,\ldots,0)\)</span>. <span class="math inline">\(\lambda_{\varphi,c}=(.30,.20,.15,.15,.10,.10,0,\ldots,0)\)</span>.</p>
-<p>Which satisfies <span class="math inline">\(\lambda_{\psi,c}\prec\lambda_{\varphi,c}\)</span>, thus through LOCC with catalyst one can transform <span class="math inline">\(\psi\)</span> to <span class="math inline">\(\varphi\)</span> and then return <span class="math inline">\(c\)</span>.</p>
+<p><strong>Proof:</strong> Just note that <span class="math inline">\(U|\psi\rangle|0\rangle\)</span> is purification of <span class="math inline">\(\mathcal{E}(\rho)\)</span> and likewise for <span class="math inline">\(\mathcal{E}(\sigma)\)</span>.</p>
+<p><strong>Remark:</strong> Angle would have contractivity property.</p>
 </blockquote>
+<p><strong>Theorem 9.7:</strong> (Strong concavity of fidelity) Let <span class="math inline">\(p_i\)</span> and <span class="math inline">\(q_i\)</span> be probability distributions over the same index set, and <span class="math inline">\(\rho_i\)</span> and <span class="math inline">\(\sigma_i\)</span> density operators also indexed by the same index set. Then <span class="math display">\[
+F(\sum_ip_i\rho_i,\sum_iq_i\sigma_i)\ge\sum_i\sqrt{p_iq_i}F(\rho_i,\sigma_i)
+\]</span></p>
+<blockquote>
+<p><strong>Proof:</strong> Be <span class="math inline">\(|\psi_i\rangle\)</span> and <span class="math inline">\(|\varphi_i\rangle\)</span> the purifications of <span class="math inline">\(\rho_i\)</span> and <span class="math inline">\(\sigma_i\)</span> such that <span class="math inline">\(F(\rho_i,\sigma_i)=\langle\psi_i|\varphi_i\rangle\)</span>. Introduce <span class="math display">\[
+|\psi\rangle\equiv\sum_i\sqrt{p_i}|\psi_i\rangle|i\rangle;~|\varphi\rangle\equiv\sum_i\sqrt{q_i}|\varphi_i\rangle|i\rangle
+\]</span> Thus <span class="math display">\[
+F(\sum_ip_i\rho_i,\sum_iq_i\sigma_i)\ge|\langle\psi|\varphi\rangle|=\sum_i\sqrt{p_iq_i}F(\rho_i,\sigma_i)
+\]</span></p>
+</blockquote>
+<blockquote>
+<p><strong>Exercise 9.19:</strong> (Joint concavity of fidelity) <span class="math display">\[
+F(\sum_ip_i\rho_i,\sum_ip_i\sigma_i)\ge\sum_ip_iF(\rho_i,\sigma_i)
+\]</span> <strong>Exercise 9.20:</strong> (Concavity of fidelity) <span class="math display">\[
+F(\sum_ip_i\rho_i,\sigma)\ge\sum_ip_iF(\rho_i,\sigma)
+\]</span></p>
+</blockquote>
+<h3 id="relationships-between-distance-measures">Relationships between distance measures</h3>
+<p>In the case of pures states, trace distance is completely equivalent to fidelity <span class="math display">\[
+D(|a\rangle,|b\rangle)=\sqrt{1-F^2(|a\rangle,|b\rangle)}
+\]</span> While generally <span class="math display">\[
+D(\rho,\sigma)\le D(|\psi\rangle,|\varphi\rangle)=\sqrt{1-F^2(\rho,\sigma)}
+\]</span> where <span class="math inline">\(|\psi\rangle\)</span> and <span class="math inline">\(|\varphi\rangle\)</span> are purifications chosen such that <span class="math inline">\(F(\rho,\sigma)=|\langle\psi|\varphi\rangle|=F(|\psi\rangle,|\varphi\rangle)\)</span>.</p>
+<p>Let <span class="math inline">\(\{E_m\}\)</span> be a POVM such <span class="math display">\[
+F(\rho,\sigma)=\sum_m\sqrt{\mbox{tr}(\rho E_m)\mbox{tr}(\sigma E_m)}
+\]</span> Observe first that (<span class="math inline">\(p_m\equiv\mbox{tr}(\rho E_m)\)</span> and <span class="math inline">\(q_m\equiv\mbox{tr}(\sigma E_m)\)</span>) <span class="math display">\[
+\begin{align}
+\sum_m(\sqrt{p_m}-\sqrt{q_m})^2&amp;=\sum_m(p_m+q_m)-2F(\rho,\sigma)=2-2F(\rho,\sigma)
+\\&amp;\le
+\sum_m|\sqrt{p_m}-\sqrt{q_m}|\cdot|\sqrt{p_m}+\sqrt{q_m}|\\
+&amp;=\sum_m|p_m-q_m|=2D(p_m,q_m)\le2D(\rho,\sigma)
+\end{align}
+\]</span> Thus <span class="math display">\[
+1-F(\rho,\sigma)\le D(\rho,\sigma)\le\sqrt{1-F^2(\rho,\sigma)}
+\]</span> Showing that <span class="math inline">\(D\)</span> and <span class="math inline">\(F\)</span> are qualitatively equivalent measures of closeness for quantum states.</p>
+<blockquote>
+<p><strong>Exercise 9.21:</strong> <span class="math inline">\(1-F^2(|\psi\rangle,\sigma)\le D(|\psi\rangle,\sigma)\)</span>.</p>
+</blockquote>
+<hr />
+<p><strong>Reference:</strong></p>
+<p>[1] Michael A. Nielsen &amp; Isaac L. Chuang, Quantum Computation and Quantum Information.</p>
 
       
 
@@ -342,7 +398,7 @@ M_j\sqrt{\rho_\psi}\equiv\sqrt{p_j\rho_\varphi}U_j^\dagger
           
           <br>
           <strong>Link：</strong>
-          <a rel="license" href="http://cammheyn.github.io/2020/04/13/Entanglement%20as%20a%20physical%20resource/">http://cammheyn.github.io/2020/04/13/Entanglement%20as%20a%20physical%20resource/</a>
+          <a rel="license" href="http://cammheyn.github.io/2020/04/09/Distance-Measures-for-Quantum-Information/">http://cammheyn.github.io/2020/04/09/Distance-Measures-for-Quantum-Information/</a>
           <br>
           <!-- <strong>Copyright：</strong> -->
           <em>This work is licensed under
@@ -365,7 +421,7 @@ M_j\sqrt{\rho_\psi}\equiv\sqrt{p_j\rho_\varphi}U_j^\dagger
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Quantum Information, Entanglement</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Quantum Information</a>
         		</li>
       		
 		</ul>
@@ -421,7 +477,7 @@ M_j\sqrt{\rho_\psi}\equiv\sqrt{p_j\rho_\varphi}U_j^\dagger
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://cammheyn.github.io/2020/04/13/Entanglement%20as%20a%20physical%20resource/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://cammheyn.github.io/2020/04/09/Distance-Measures-for-Quantum-Information/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -435,18 +491,18 @@ M_j\sqrt{\rho_\psi}\equiv\sqrt{p_j\rho_\varphi}U_j^\dagger
   
 <nav id="article-nav">
   
-    <a href="/2020/10/28/Chapter%202%20Representation/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/04/13/Entanglement-as-a-Physical-Resource/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Trivia of Finite Group Theory - Chapter 2 Representation
+          Entanglement as a Physical Resource
         
       </div>
     </a>
   
   
-    <a href="/2020/04/09/Ch9.%20Distance%20measures%20for%20QI/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Distance Measures for Quantum Information</div>
+    <a href="/2020/04/04/Introduction-to-Quantum-Mechanics/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Introduction to Quantum Mechanics</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -641,6 +697,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Entanglement</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Algebra</a>
               </li>
              
@@ -649,19 +709,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Quantum Information, Entanglement</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Analysis</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Real Analysis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Groceries</a>
               </li>
             
             <div class="clearfix"></div>
@@ -713,7 +765,7 @@ MathJax.Hub.Queue(function() {
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
+              <a href="https://stardustlu.github.io" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Yipeng Lu</a>
             </li>
           
         </ul>
