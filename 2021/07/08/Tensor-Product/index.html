@@ -8,15 +8,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://cammheyn.github.io">
-  <title>Tag: Group Theory | SETTLERS</title>
+  <title>Tensor Product | SETTLERS</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="SETTLERS">
-<meta property="og:url" content="http://cammheyn.github.io/tags/Group-Theory/index.html">
+  <meta name="description" content="In this note, the notion of tensor products will be examined in a more rigorous algebraic fashion. We restrict our attention to the situation of finite dimensional linear spaces on the field \(K\). 1.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tensor Product">
+<meta property="og:url" content="http://cammheyn.github.io/2021/07/08/Tensor-Product/index.html">
 <meta property="og:site_name" content="SETTLERS">
+<meta property="og:description" content="In this note, the notion of tensor products will be examined in a more rigorous algebraic fashion. We restrict our attention to the situation of finite dimensional linear spaces on the field \(K\). 1.">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://cammheyn.github.io/2021/07/08/img/tensor.png">
+<meta property="og:image" content="http://cammheyn.github.io/2021/07/08/img/tensorIso.png">
+<meta property="article:published_time" content="2021-07-08T11:08:53.624Z">
+<meta property="article:modified_time" content="2021-08-26T07:25:20.075Z">
 <meta property="article:author" content="Qi Camm Huang">
+<meta property="article:tag" content="Algebra">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://cammheyn.github.io/2021/07/08/img/tensor.png">
   
     <link rel="alternative" href="/atom.xml" title="SETTLERS" type="application/atom+xml">
   
@@ -144,36 +152,160 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Tensor-Product" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/28/Finite-Group-Theory-2.Representation/" class="archive-article-date">
-  	<time datetime="2020-10-28T02:14:21.568Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-28</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/28/Finite-Group-Theory-2.Representation/">Finite Group Theory - 2.Representation</a>
+    <h1 class="article-title" itemprop="name">
+      Tensor Product
     </h1>
   
 
-        <div class="article-info info-on-right">
+        
+        <a href="/2021/07/08/Tensor-Product/" class="archive-article-date">
+  	<time datetime="2021-07-08T11:08:53.624Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-08</time>
+</a>
+
+
+        <!-- 需要添加的位置 -->
+        <!-- 开始添加字数统计-->
+        
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text">  <strong>Word Count:</strong> </span>
+        <span class="post-count">533 <strong>Words</strong></span>
+      </span>
+    </span>
+
+    <!-- 不展示阅读时长 -->
+    
+    <!--
+      
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text">  阅读时长: </span>
+        <span class="post-count">3分</span>
+      </span>
+    </span>
+
+    -->
+
+    <! -- 不展示阅读时长 -->
+
+</div>
+
+
           
+        <!-- 添加完成 -->
+
+        
+
+        <!-- 添加代码 -->
+        
+            <span class="archive-article-date">
+                 Views: <span id="busuanzi_value_page_pv"></span>
+            </span>
+      
+
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>In this note, the notion of tensor products will be examined in a more rigorous algebraic fashion. We restrict our attention to the situation of finite dimensional linear spaces on the field <span class="math inline">\(K\)</span>.</p>
+<h1 id="fundamentals">1. Fundamentals</h1>
+<p><strong>Definition 1.1</strong> Tensor Product</p>
+<p><img src="../img/tensor.png" alt="tensor" style="zoom:50%;" /></p>
+<blockquote>
+<p>Given two linear spaces <span class="math inline">\(U\)</span> and <span class="math inline">\(V\)</span>, an ordered pair <span class="math inline">\((W,\varphi)\)</span>, with <span class="math inline">\(W\)</span> being a linear space and <span class="math inline">\(\varphi:U\times V\rightarrow W\)</span> a bilinear map, is called a <em>tensor product</em> of <span class="math inline">\(U\)</span> and <span class="math inline">\(V\)</span> if it satisfies:</p>
+<blockquote>
+<p>for any linear space <span class="math inline">\(P\)</span> and any bilinear map <span class="math inline">\(f:U\times V\rightarrow P\)</span>, there <strong>exists a unique</strong> linear map <span class="math display">\[
+\tau:W\rightarrow P,
+\]</span> such that <span class="math display">\[
+f = \tau\circ \varphi.
+\]</span></p>
+</blockquote>
+</blockquote>
+<a id="more"></a>
+<p><strong>Remark</strong> By direct construction, a tensor product of <span class="math inline">\(U\)</span> and <span class="math inline">\(V\)</span> can take the following form <span class="math display">\[
+W = U\otimes V = \mathrm{Span}(\epsilon_i\otimes\eta_j),
+\]</span> where <span class="math inline">\(\{\epsilon_i\}\)</span> and <span class="math inline">\(\{\eta_j\}\)</span> are respectively the complete bases of <span class="math inline">\(U\)</span> and <span class="math inline">\(V\)</span>, with <span class="math inline">\(\{\epsilon_i\otimes\eta_j\}\)</span> considered as an artificial set of distinct mathematical objects serving the purpose of spanning the linear space <span class="math inline">\(W\)</span>. The bilinear map <span class="math display">\[
+\varphi:U\times V\rightarrow W:(\epsilon_i,\eta_j)\mapsto\epsilon_i\otimes\eta_j
+\]</span> further justifies that the pair <span class="math inline">\((W,\varphi)\)</span> is indeed a tensor product of <span class="math inline">\(U\)</span> and <span class="math inline">\(V\)</span>, since for any linear space <span class="math inline">\(P\)</span> and any bilinear map <span class="math display">\[
+f:U\times V\rightarrow P: (\epsilon_i,\eta_j)\mapsto\sum_k f_{ij}^k\zeta_k,
+\]</span> where <span class="math inline">\(\{\zeta_k\}\)</span> is a complete basis of <span class="math inline">\(P\)</span>, there exists a linear map <span class="math display">\[
+\tau_1:W\rightarrow P: \epsilon_i\otimes\eta_j\mapsto \sum_k f_{ij}^k\zeta_k,
+\]</span> such that <span class="math inline">\(f = \tau_1\circ \varphi\)</span>. Further, if there exists another linear map <span class="math display">\[
+\tau_2:W\rightarrow P,
+\]</span> such that <span class="math inline">\(f = \tau_1\circ \varphi = \tau_2\circ\varphi\)</span>, while <span class="math inline">\(\tau_2\ne\tau_1\)</span>. Thus, for any pair <span class="math inline">\((u,v)\in U\times V\)</span>, we must have <span class="math display">\[
+\tau_1(\varphi(u,v)) = \tau_2(\varphi(u,v)).
+\]</span> While <span class="math inline">\(\varphi\)</span> is a full rank mapping, or namely <span class="math inline">\(\mathrm{Im}(\varphi) = W\)</span>, this relation actually indicates that <span class="math inline">\(\tau_1\)</span> and <span class="math inline">\(\tau_2\)</span> perform the exact same action, namely <span class="math inline">\(\tau_1 = \tau_2\)</span>, hence the linear map <span class="math inline">\(\tau_1\)</span> is, perforce, unique.</p>
+<p><strong>Proposition 1.1</strong> Tensor product is unique up to an isomorphism.</p>
+<p><img src="../img/tensorIso.png" alt="tensorIso" style="zoom:50%;" /></p>
+<blockquote>
+<p><strong>Proof</strong> Suppose there are two tensor products <span class="math inline">\((W_1,\varphi_1)\)</span> and <span class="math inline">\((W_2,\varphi_2)\)</span> of <span class="math inline">\(U\)</span> and <span class="math inline">\(V\)</span>, each satisfying the criterion that for any linear space <span class="math inline">\(P\)</span> and any bilinear map <span class="math display">\[
+f:U\times V\rightarrow P :(\epsilon_i,\eta_j)\mapsto\sum_kf_{ij}^k\zeta_k,
+\]</span> there exists, respectively, a unique linear map <span class="math display">\[
+\tau_1:W_1\rightarrow P:\alpha_l\mapsto\sum_{k}X_l^k\zeta_k
+\]</span> and <span class="math display">\[
+\tau_2:W_2\rightarrow P:\beta_m\mapsto\sum_kY_m^k\zeta_k
+\]</span> such that <span class="math display">\[
+f = \tau_1\circ\varphi_1 = \tau_2\circ\varphi_2,
+\]</span> where <span class="math inline">\(\{\alpha_l\}\)</span> and <span class="math inline">\(\{\beta_m\}\)</span> are complete bases of <span class="math inline">\(W_1\)</span> and <span class="math inline">\(W_2\)</span>. By specifying <span class="math display">\[
+\varphi_1:U\times V\rightarrow W_1:(\epsilon_i,\eta_j)\mapsto\sum_lA_{ij}^l \alpha_l
+\]</span> and <span class="math display">\[
+\varphi_2:U\times V\rightarrow W_2:(\epsilon_i,\eta_j)\mapsto\sum_m B_{ij}^m\beta_m,
+\]</span> we could have <span class="math display">\[
+\begin{aligned}
+f(\epsilon_i,\eta_j) = (\tau_1\circ\varphi_1)(\epsilon_i,\eta_j)&amp;= \sum_{kl} (X_l^kA_{ij}^l)\zeta_k
+\\
+&amp;=\sum_{km}(Y_m^kB_{ij}^m)\zeta_k =(\tau_2\circ\varphi_2)(\epsilon_i,\eta_j).
+\end{aligned}
+\]</span> Component-wise, we have <span class="math display">\[
+\sum_l X_l^k A^l_{ij} = \sum_m Y_m^k B_{ij}^m = f_{ij}^k
+\]</span> for any <span class="math inline">\(k\)</span>, <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span>.</p>
+</blockquote>
+
+      
+
+
+
+      <!-- 增加版权声明 -->
+
+      
+      
+        <div class="declare">
+          <strong>Author：</strong>
+          
+            Qi Camm Huang
+          
+          <br>
+          <strong>Link：</strong>
+          <a rel="license" href="http://cammheyn.github.io/2021/07/08/Tensor-Product/">http://cammheyn.github.io/2021/07/08/Tensor-Product/</a>
+          <br>
+          <!-- <strong>Copyright：</strong> -->
+          <em>This work is licensed under
+          <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>. Please indicate the source and author upon redistribution.</em>
+          
+        </div>
+      
+
+      <!-- 增加版权声明结束 -->
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -181,69 +313,143 @@
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Algebra</a>
         		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Group Theory</a>
-        		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://cammheyn.github.io/2021/07/08/Tensor-Product/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/27/Finite-Group-Theory-1.Basics/" class="archive-article-date">
-  	<time datetime="2020-03-27T07:36:01.511Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-27</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2021/05/18/Career-Plan/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Career-Plan</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/27/Finite-Group-Theory-1.Basics/">Finite Group Theory - 1.Basics</a>
-    </h1>
+  <section id="comments" class="comments">
+    <style>
+      .comments{margin:30px;padding:10px;background:#fff}
+      @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+    </style>
+    <div class="valine_comment"></div>
+<!--载入js，在</body>之前插入即可-->
+<!--Leancloud 操作库:-->
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<!--Valine 的核心代码库-->
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+  var notify = 'true' == true ? true : false;
+  var verify = 'false' == true ? true : false;
+  new Valine({
+      // AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+      av: AV,
+      el: '.valine_comment',
+      emoticon_url: 'https://cloud.panjunwen.com/alu',
+      emoticon_list: ["狂汗.png","不说话.png","汗.png","坐等.png","献花.png","不高兴.png","中刀.png","害羞.png","皱眉.png","小眼睛.png","暗地观察.png"],
+      app_id: 't6PSIkcw0zqEWRoyRQyEgBpi-gzGzoHsz',
+      app_key: 'Y87veFdvmilkbAn87n7yELkA',
+      placeholder: 'say something...',
+      lang:'en'
+    });
+</script>
+
+
+    </section>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Algebra</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Group Theory</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -275,9 +481,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
